@@ -51,7 +51,7 @@
      ]
     },
     "DefinitionS3Location": {
-     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c5c0939f025871637721705dba6c427911ee81b5a2ccb1e8f3da8453063b88fa.graphql"
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fb4a1e47adf6324f0383ec05ba6193e5d2fcf547450c5d6fc9b39210f62694b2.graphql"
     }
    },
    "UpdateReplacePolicy": "Delete",
@@ -133,7 +133,7 @@
     "aws:asset:property": "TemplateURL"
    }
   },
-  "amplifyDataBettingPredictionNestedStackBettingPredictionNestedStackResourceD2E47AFF": {
+  "amplifyDataProductNestedStackProductNestedStackResource648F4D75": {
    "Type": "AWS::CloudFormation::Stack",
    "Properties": {
     "Parameters": {
@@ -210,7 +210,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/fffd7acbb7c48d2ba1713f9653f12b21fabd9e312b8a5dedbe3d1d772a51e0fc.json"
+       "/56c3fd245f42eb5c2a68945edc928d3889ed53cae82ed8c9601861dba5be7b0d.json"
       ]
      ]
     }
@@ -221,12 +221,12 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction.NestedStack/BettingPrediction.NestedStackResource",
-    "aws:asset:path": "amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataBettingPredictionDBF626FF.nested.template.json",
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Product.NestedStack/Product.NestedStackResource",
+    "aws:asset:path": "amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataProduct8375D310.nested.template.json",
     "aws:asset:property": "TemplateURL"
    }
   },
-  "amplifyDataUserPreferencesNestedStackUserPreferencesNestedStackResource62693304": {
+  "amplifyDataCategoryNestedStackCategoryNestedStackResource018C67D6": {
    "Type": "AWS::CloudFormation::Stack",
    "Properties": {
     "Parameters": {
@@ -303,7 +303,7 @@
        {
         "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
        },
-       "/ca7065860e557a8b96162dc2b3e77e747a2838f58d4f4e5af6a3dcdae71b5b0f.json"
+       "/4501ecfd3d699e5271f4b8c015dadd6581b3cc84b07d3eac80f07755c3e0fd20.json"
       ]
      ]
     }
@@ -314,9 +314,880 @@
    "UpdateReplacePolicy": "Delete",
    "DeletionPolicy": "Delete",
    "Metadata": {
-    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences.NestedStack/UserPreferences.NestedStackResource",
-    "aws:asset:path": "amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataUserPreferences3EED561E.nested.template.json",
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Category.NestedStack/Category.NestedStackResource",
+    "aws:asset:path": "amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataCategory5850E232.nested.template.json",
     "aws:asset:property": "TemplateURL"
+   }
+  },
+  "amplifyDataUserProfileNestedStackUserProfileNestedStackResource1B3713C5": {
+   "Type": "AWS::CloudFormation::Stack",
+   "Properties": {
+    "Parameters": {
+     "DynamoDBModelTableReadIOPS": {
+      "Ref": "DynamoDBModelTableReadIOPS"
+     },
+     "DynamoDBModelTableWriteIOPS": {
+      "Ref": "DynamoDBModelTableWriteIOPS"
+     },
+     "DynamoDBBillingMode": {
+      "Ref": "DynamoDBBillingMode"
+     },
+     "DynamoDBEnablePointInTimeRecovery": {
+      "Ref": "DynamoDBEnablePointInTimeRecovery"
+     },
+     "DynamoDBEnableServerSideEncryption": {
+      "Ref": "DynamoDBEnableServerSideEncryption"
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceCD71964BOutputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTab00779152": {
+      "Fn::GetAtt": [
+       "amplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource86290833",
+       "Outputs.amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent7B95DC8AArn"
+      ]
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId": {
+      "Fn::GetAtt": [
+       "amplifyDataGraphQLAPI42A6FA33",
+       "ApiId"
+      ]
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name": {
+      "Fn::GetAtt": [
+       "amplifyDataGraphQLAPINONEDS684BF699",
+       "Name"
+      ]
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref": {
+      "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref"
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref": {
+      "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref"
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref": {
+      "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref"
+     }
+    },
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "amplifyData"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ],
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/",
+       {
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+       },
+       "/1c2d3bac1766b63b99d0647565311d0de358612eb60a37cc8ac59266f256c3d3.json"
+      ]
+     ]
+    }
+   },
+   "DependsOn": [
+    "amplifyDataGraphQLAPITransformerSchemaFF50A789"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserProfile.NestedStack/UserProfile.NestedStackResource",
+    "aws:asset:path": "amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataUserProfile28D9640B.nested.template.json",
+    "aws:asset:property": "TemplateURL"
+   }
+  },
+  "amplifyDataOrderNestedStackOrderNestedStackResource8194E227": {
+   "Type": "AWS::CloudFormation::Stack",
+   "Properties": {
+    "Parameters": {
+     "DynamoDBModelTableReadIOPS": {
+      "Ref": "DynamoDBModelTableReadIOPS"
+     },
+     "DynamoDBModelTableWriteIOPS": {
+      "Ref": "DynamoDBModelTableWriteIOPS"
+     },
+     "DynamoDBBillingMode": {
+      "Ref": "DynamoDBBillingMode"
+     },
+     "DynamoDBEnablePointInTimeRecovery": {
+      "Ref": "DynamoDBEnablePointInTimeRecovery"
+     },
+     "DynamoDBEnableServerSideEncryption": {
+      "Ref": "DynamoDBEnableServerSideEncryption"
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceCD71964BOutputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTab00779152": {
+      "Fn::GetAtt": [
+       "amplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource86290833",
+       "Outputs.amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent7B95DC8AArn"
+      ]
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId": {
+      "Fn::GetAtt": [
+       "amplifyDataGraphQLAPI42A6FA33",
+       "ApiId"
+      ]
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name": {
+      "Fn::GetAtt": [
+       "amplifyDataGraphQLAPINONEDS684BF699",
+       "Name"
+      ]
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref": {
+      "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref"
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref": {
+      "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref"
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref": {
+      "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref"
+     }
+    },
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "amplifyData"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ],
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/",
+       {
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+       },
+       "/6cadc5bbb71bb4ad470ac87e22cbc529143097263de409286d8e898a0a252549.json"
+      ]
+     ]
+    }
+   },
+   "DependsOn": [
+    "amplifyDataGraphQLAPITransformerSchemaFF50A789"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Order.NestedStack/Order.NestedStackResource",
+    "aws:asset:path": "amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataOrderDA98C1DF.nested.template.json",
+    "aws:asset:property": "TemplateURL"
+   }
+  },
+  "amplifyDataOrderItemNestedStackOrderItemNestedStackResource8EA5ECBF": {
+   "Type": "AWS::CloudFormation::Stack",
+   "Properties": {
+    "Parameters": {
+     "DynamoDBModelTableReadIOPS": {
+      "Ref": "DynamoDBModelTableReadIOPS"
+     },
+     "DynamoDBModelTableWriteIOPS": {
+      "Ref": "DynamoDBModelTableWriteIOPS"
+     },
+     "DynamoDBBillingMode": {
+      "Ref": "DynamoDBBillingMode"
+     },
+     "DynamoDBEnablePointInTimeRecovery": {
+      "Ref": "DynamoDBEnablePointInTimeRecovery"
+     },
+     "DynamoDBEnableServerSideEncryption": {
+      "Ref": "DynamoDBEnableServerSideEncryption"
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceCD71964BOutputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTab00779152": {
+      "Fn::GetAtt": [
+       "amplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource86290833",
+       "Outputs.amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent7B95DC8AArn"
+      ]
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId": {
+      "Fn::GetAtt": [
+       "amplifyDataGraphQLAPI42A6FA33",
+       "ApiId"
+      ]
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name": {
+      "Fn::GetAtt": [
+       "amplifyDataGraphQLAPINONEDS684BF699",
+       "Name"
+      ]
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref": {
+      "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref"
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref": {
+      "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref"
+     },
+     "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref": {
+      "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref"
+     }
+    },
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "amplifyData"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ],
+    "TemplateURL": {
+     "Fn::Join": [
+      "",
+      [
+       "https://s3.",
+       {
+        "Ref": "AWS::Region"
+       },
+       ".",
+       {
+        "Ref": "AWS::URLSuffix"
+       },
+       "/",
+       {
+        "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}"
+       },
+       "/fd989b558634bf5bc347c27acdf35257a90e6811037986d9502d9d29ede06ef8.json"
+      ]
+     ]
+    }
+   },
+   "DependsOn": [
+    "amplifyDataGraphQLAPITransformerSchemaFF50A789"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/OrderItem.NestedStack/OrderItem.NestedStackResource",
+    "aws:asset:path": "amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataOrderItem01F4F6CD.nested.template.json",
+    "aws:asset:property": "TemplateURL"
+   }
+  },
+  "amplifyDataAuthRolePolicy01567A5654": {
+   "Type": "AWS::IAM::ManagedPolicy",
+   "Properties": {
+    "Description": "",
+    "Path": "/",
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "appsync:GraphQL",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/*",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Product"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/*",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Category"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Query",
+           "fieldName": "getProduct"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Query",
+           "fieldName": "listProducts"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Mutation",
+           "fieldName": "createProduct"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Mutation",
+           "fieldName": "updateProduct"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Mutation",
+           "fieldName": "deleteProduct"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Subscription",
+           "fieldName": "onCreateProduct"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Subscription",
+           "fieldName": "onUpdateProduct"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Subscription",
+           "fieldName": "onDeleteProduct"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Query",
+           "fieldName": "getCategory"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Query",
+           "fieldName": "listCategories"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Mutation",
+           "fieldName": "createCategory"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Mutation",
+           "fieldName": "updateCategory"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Mutation",
+           "fieldName": "deleteCategory"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Subscription",
+           "fieldName": "onCreateCategory"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Subscription",
+           "fieldName": "onUpdateCategory"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Subscription",
+           "fieldName": "onDeleteCategory"
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Roles": [
+     {
+      "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/AuthRolePolicy01/Resource"
+   }
+  },
+  "amplifyDataUnauthRolePolicy01355B9DCF": {
+   "Type": "AWS::IAM::ManagedPolicy",
+   "Properties": {
+    "Description": "",
+    "Path": "/",
+    "PolicyDocument": {
+     "Statement": [
+      {
+       "Action": "appsync:GraphQL",
+       "Effect": "Allow",
+       "Resource": [
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/*",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Product"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/*",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Category"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Query",
+           "fieldName": "getProduct"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Query",
+           "fieldName": "listProducts"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Mutation",
+           "fieldName": "createProduct"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Mutation",
+           "fieldName": "updateProduct"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Mutation",
+           "fieldName": "deleteProduct"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Subscription",
+           "fieldName": "onCreateProduct"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Subscription",
+           "fieldName": "onUpdateProduct"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Subscription",
+           "fieldName": "onDeleteProduct"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Query",
+           "fieldName": "getCategory"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Query",
+           "fieldName": "listCategories"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Mutation",
+           "fieldName": "createCategory"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Mutation",
+           "fieldName": "updateCategory"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Mutation",
+           "fieldName": "deleteCategory"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Subscription",
+           "fieldName": "onCreateCategory"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Subscription",
+           "fieldName": "onUpdateCategory"
+          }
+         ]
+        },
+        {
+         "Fn::Sub": [
+          "arn:${AWS::Partition}:appsync:${AWS::Region}:${AWS::AccountId}:apis/${apiId}/types/${typeName}/fields/${fieldName}",
+          {
+           "apiId": {
+            "Fn::GetAtt": [
+             "amplifyDataGraphQLAPI42A6FA33",
+             "ApiId"
+            ]
+           },
+           "typeName": "Subscription",
+           "fieldName": "onDeleteCategory"
+          }
+         ]
+        }
+       ]
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Roles": [
+     {
+      "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UnauthRolePolicy01/Resource"
    }
   },
   "amplifyDataAmplifyCodegenAssetsAmplifyCodegenAssetsBucket9CCB4ACA": {
@@ -492,7 +1363,7 @@
      }
     ],
     "SourceObjectKeys": [
-     "a49fdff237816dba3429f78c4cad3ba98a479eeec8a6c4395198f8763fc53e2d.zip"
+     "c70101ddfbfb1e09c58433deeba8886431b90713402017dcea4f7f64a2bcec77.zip"
     ],
     "SourceMarkers": [
      {}
@@ -1004,7 +1875,7 @@
      }
     ],
     "SourceObjectKeys": [
-     "20bf6faa163c24658567fddc075b63a8fcdc8792551be31f2eb6d734f586e2e2.zip"
+     "6e8cf1b59d8ee7b6ed9de7c44197b6b366e7f150f3654739e1dc18bc0e901761.zip"
     ],
     "SourceMarkers": [
      {}
@@ -1099,7 +1970,7 @@
   "CDKMetadata": {
    "Type": "AWS::CDK::Metadata",
    "Properties": {
-    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1VSy27CMBD8lt6NC+HSKw+1F4ookXqNFmcLBj9SrwOKrPx77ZhHOe3M7GY8XqfgxfiNj1/gQiNRn0ZK7nhYI3msSw/ixLZItnUCWZyoAjQNdUbw8OGgOfyqWSPnQMgWP2ZQvlZR+cdKcUANbG0NLsFDma1i/8F6RlMe5q04oU+dK8plY5UU3UO+8kzSyenrKtTYKNtpNJ7n1vIuMCBCT3yWSs8U6F0NPETHFXTovtGRtIaV0uwVemveWyN8Uu4gjt5wzyRoHrZWDZcY6iNiRjERxZnSu2i5AQcaPbqhfyN9n2je76Ilb/V9y8n1hnPWSqWcVVy/UJLPLrRQcojOhitFl3086Mk/kc/4VIP+5L9x9ixrdHl1xtbIj/R6LqZ8Mol/wZGkHLnWeKmRb3P9A+ntGfoiAgAA"
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1VSy27CMBD8lt6Ny+PSKw+VC0WUSL1Gi70Fg2OnXgcURfn3+lGgOe3MeDxerz3l0/EbH7/AjUZCXkZaHXi3RfIoCw/iwvZItnECWXCUHdQ1tUbwbu2gPv3oea0WQMiW3yYpn5ug/GOFOGEFbGsNrsBDkaPC+pP1TEHFuw8wcES5s1qJNjqGwt7qtC/VpymjntGMd4tGXNBH9Q/l8jQPeCax+bi77CTW2rYVGs/z0uohMCBCT3weS880VAcJvAuJG2jRfaEjZQ0rlDlq9Na8N0b4qDxAsN5xOI3CdQvvgn0HDir06NJd7qTvI83jXzbkbfV4hDiBO859lDr2UIbXEVrx+Y2WWqW2WGo3pBzDQYP8PN26Tvogf+fsVUl0eSzGSuRner1OZ3wyCZ/kTEqNXGO8qpDvc/0FaiD+RUECAAA="
    },
    "Metadata": {
     "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/CDKMetadata/Default"

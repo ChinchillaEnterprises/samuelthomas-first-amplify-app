@@ -1,0 +1,57 @@
+type Product @model @auth(rules: [{allow: public, provider: iam, operations: [read]},
+  {allow: owner, operations: [create, update, delete], ownerField: "owner"}])
+{
+  name: String!
+  description: String
+  price: Float!
+  category: String!
+  imageUrl: String
+  inStock: Boolean @default(value: "true")
+  stockQuantity: Int @default(value: "0")
+  discount: Float @default(value: "0")
+  featured: Boolean @default(value: "false")
+  tags: [String]
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Category @model @auth(rules: [{allow: public, provider: iam, operations: [read]},
+  {allow: owner, operations: [create, update, delete], ownerField: "owner"}])
+{
+  name: String!
+  description: String
+  imageUrl: String
+  parentCategoryId: ID
+}
+
+type UserProfile @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  firstName: String
+  lastName: String
+  email: AWSEmail
+  phone: String
+  address: String
+  city: String
+  state: String
+  zipCode: String
+  country: String @default(value: "US")
+}
+
+type Order @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  totalAmount: Float!
+  status: String!
+  shippingAddress: String
+  billingAddress: String
+  orderDate: AWSDateTime
+  shippedDate: AWSDateTime
+  deliveredDate: AWSDateTime
+}
+
+type OrderItem @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  orderId: ID!
+  productId: ID!
+  quantity: Int!
+  price: Float!
+}

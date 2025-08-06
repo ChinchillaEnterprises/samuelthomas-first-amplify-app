@@ -1,0 +1,671 @@
+type Product @aws_iam @aws_cognito_user_pools {
+  name: String!
+  description: String
+  price: Float!
+  category: String!
+  imageUrl: String
+  inStock: Boolean
+  stockQuantity: Int
+  discount: Float
+  featured: Boolean
+  tags: [String]
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+  owner: String
+}
+
+type Category @aws_iam @aws_cognito_user_pools {
+  name: String!
+  description: String
+  imageUrl: String
+  parentCategoryId: ID
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type UserProfile @aws_iam @aws_cognito_user_pools {
+  firstName: String
+  lastName: String
+  email: AWSEmail
+  phone: String
+  address: String
+  city: String
+  state: String
+  zipCode: String
+  country: String
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type Order @aws_iam @aws_cognito_user_pools {
+  totalAmount: Float!
+  status: String!
+  shippingAddress: String
+  billingAddress: String
+  orderDate: AWSDateTime
+  shippedDate: AWSDateTime
+  deliveredDate: AWSDateTime
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type OrderItem @aws_iam @aws_cognito_user_pools {
+  orderId: ID!
+  productId: ID!
+  quantity: Int!
+  price: Float!
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+input AmplifyAIConversationTurnErrorInput {
+  errorType: String!
+  message: String!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelProductConnection @aws_iam {
+  items: [Product]!
+  nextToken: String
+}
+
+input ModelProductFilterInput {
+  name: ModelStringInput
+  description: ModelStringInput
+  price: ModelFloatInput
+  category: ModelStringInput
+  imageUrl: ModelStringInput
+  inStock: ModelBooleanInput
+  stockQuantity: ModelIntInput
+  discount: ModelFloatInput
+  featured: ModelBooleanInput
+  tags: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  id: ModelIDInput
+  and: [ModelProductFilterInput]
+  or: [ModelProductFilterInput]
+  not: ModelProductFilterInput
+  owner: ModelStringInput
+}
+
+type Query {
+  getProduct(id: ID!): Product @aws_iam
+  listProducts(filter: ModelProductFilterInput, limit: Int, nextToken: String): ModelProductConnection @aws_iam
+  getCategory(id: ID!): Category @aws_iam
+  listCategories(filter: ModelCategoryFilterInput, limit: Int, nextToken: String): ModelCategoryConnection @aws_iam
+  getUserProfile(id: ID!): UserProfile @aws_iam @aws_cognito_user_pools
+  listUserProfiles(filter: ModelUserProfileFilterInput, limit: Int, nextToken: String): ModelUserProfileConnection @aws_iam @aws_cognito_user_pools
+  getOrder(id: ID!): Order @aws_iam @aws_cognito_user_pools
+  listOrders(filter: ModelOrderFilterInput, limit: Int, nextToken: String): ModelOrderConnection @aws_iam @aws_cognito_user_pools
+  getOrderItem(id: ID!): OrderItem @aws_iam @aws_cognito_user_pools
+  listOrderItems(filter: ModelOrderItemFilterInput, limit: Int, nextToken: String): ModelOrderItemConnection @aws_iam @aws_cognito_user_pools
+}
+
+input ModelProductConditionInput {
+  name: ModelStringInput
+  description: ModelStringInput
+  price: ModelFloatInput
+  category: ModelStringInput
+  imageUrl: ModelStringInput
+  inStock: ModelBooleanInput
+  stockQuantity: ModelIntInput
+  discount: ModelFloatInput
+  featured: ModelBooleanInput
+  tags: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelProductConditionInput]
+  or: [ModelProductConditionInput]
+  not: ModelProductConditionInput
+  owner: ModelStringInput
+}
+
+input CreateProductInput {
+  name: String!
+  description: String
+  price: Float!
+  category: String!
+  imageUrl: String
+  inStock: Boolean
+  stockQuantity: Int
+  discount: Float
+  featured: Boolean
+  tags: [String]
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID
+}
+
+input UpdateProductInput {
+  name: String
+  description: String
+  price: Float
+  category: String
+  imageUrl: String
+  inStock: Boolean
+  stockQuantity: Int
+  discount: Float
+  featured: Boolean
+  tags: [String]
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+}
+
+input DeleteProductInput {
+  id: ID!
+}
+
+type Mutation {
+  createProduct(input: CreateProductInput!, condition: ModelProductConditionInput): Product @aws_iam @aws_cognito_user_pools
+  updateProduct(input: UpdateProductInput!, condition: ModelProductConditionInput): Product @aws_iam @aws_cognito_user_pools
+  deleteProduct(input: DeleteProductInput!, condition: ModelProductConditionInput): Product @aws_iam @aws_cognito_user_pools
+  createCategory(input: CreateCategoryInput!, condition: ModelCategoryConditionInput): Category @aws_iam @aws_cognito_user_pools
+  updateCategory(input: UpdateCategoryInput!, condition: ModelCategoryConditionInput): Category @aws_iam @aws_cognito_user_pools
+  deleteCategory(input: DeleteCategoryInput!, condition: ModelCategoryConditionInput): Category @aws_iam @aws_cognito_user_pools
+  createUserProfile(input: CreateUserProfileInput!, condition: ModelUserProfileConditionInput): UserProfile @aws_iam @aws_cognito_user_pools
+  updateUserProfile(input: UpdateUserProfileInput!, condition: ModelUserProfileConditionInput): UserProfile @aws_iam @aws_cognito_user_pools
+  deleteUserProfile(input: DeleteUserProfileInput!, condition: ModelUserProfileConditionInput): UserProfile @aws_iam @aws_cognito_user_pools
+  createOrder(input: CreateOrderInput!, condition: ModelOrderConditionInput): Order @aws_iam @aws_cognito_user_pools
+  updateOrder(input: UpdateOrderInput!, condition: ModelOrderConditionInput): Order @aws_iam @aws_cognito_user_pools
+  deleteOrder(input: DeleteOrderInput!, condition: ModelOrderConditionInput): Order @aws_iam @aws_cognito_user_pools
+  createOrderItem(input: CreateOrderItemInput!, condition: ModelOrderItemConditionInput): OrderItem @aws_iam @aws_cognito_user_pools
+  updateOrderItem(input: UpdateOrderItemInput!, condition: ModelOrderItemConditionInput): OrderItem @aws_iam @aws_cognito_user_pools
+  deleteOrderItem(input: DeleteOrderItemInput!, condition: ModelOrderItemConditionInput): OrderItem @aws_iam @aws_cognito_user_pools
+}
+
+input ModelSubscriptionProductFilterInput {
+  name: ModelSubscriptionStringInput
+  description: ModelSubscriptionStringInput
+  price: ModelSubscriptionFloatInput
+  category: ModelSubscriptionStringInput
+  imageUrl: ModelSubscriptionStringInput
+  inStock: ModelSubscriptionBooleanInput
+  stockQuantity: ModelSubscriptionIntInput
+  discount: ModelSubscriptionFloatInput
+  featured: ModelSubscriptionBooleanInput
+  tags: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  and: [ModelSubscriptionProductFilterInput]
+  or: [ModelSubscriptionProductFilterInput]
+  owner: ModelStringInput
+}
+
+type Subscription {
+  onCreateProduct(filter: ModelSubscriptionProductFilterInput): Product @aws_subscribe(mutations: ["createProduct"]) @aws_iam
+  onUpdateProduct(filter: ModelSubscriptionProductFilterInput): Product @aws_subscribe(mutations: ["updateProduct"]) @aws_iam
+  onDeleteProduct(filter: ModelSubscriptionProductFilterInput): Product @aws_subscribe(mutations: ["deleteProduct"]) @aws_iam
+  onCreateCategory(filter: ModelSubscriptionCategoryFilterInput): Category @aws_subscribe(mutations: ["createCategory"]) @aws_iam
+  onUpdateCategory(filter: ModelSubscriptionCategoryFilterInput): Category @aws_subscribe(mutations: ["updateCategory"]) @aws_iam
+  onDeleteCategory(filter: ModelSubscriptionCategoryFilterInput): Category @aws_subscribe(mutations: ["deleteCategory"]) @aws_iam
+  onCreateUserProfile(filter: ModelSubscriptionUserProfileFilterInput, owner: String): UserProfile @aws_subscribe(mutations: ["createUserProfile"]) @aws_iam @aws_cognito_user_pools
+  onUpdateUserProfile(filter: ModelSubscriptionUserProfileFilterInput, owner: String): UserProfile @aws_subscribe(mutations: ["updateUserProfile"]) @aws_iam @aws_cognito_user_pools
+  onDeleteUserProfile(filter: ModelSubscriptionUserProfileFilterInput, owner: String): UserProfile @aws_subscribe(mutations: ["deleteUserProfile"]) @aws_iam @aws_cognito_user_pools
+  onCreateOrder(filter: ModelSubscriptionOrderFilterInput, owner: String): Order @aws_subscribe(mutations: ["createOrder"]) @aws_iam @aws_cognito_user_pools
+  onUpdateOrder(filter: ModelSubscriptionOrderFilterInput, owner: String): Order @aws_subscribe(mutations: ["updateOrder"]) @aws_iam @aws_cognito_user_pools
+  onDeleteOrder(filter: ModelSubscriptionOrderFilterInput, owner: String): Order @aws_subscribe(mutations: ["deleteOrder"]) @aws_iam @aws_cognito_user_pools
+  onCreateOrderItem(filter: ModelSubscriptionOrderItemFilterInput, owner: String): OrderItem @aws_subscribe(mutations: ["createOrderItem"]) @aws_iam @aws_cognito_user_pools
+  onUpdateOrderItem(filter: ModelSubscriptionOrderItemFilterInput, owner: String): OrderItem @aws_subscribe(mutations: ["updateOrderItem"]) @aws_iam @aws_cognito_user_pools
+  onDeleteOrderItem(filter: ModelSubscriptionOrderItemFilterInput, owner: String): OrderItem @aws_subscribe(mutations: ["deleteOrderItem"]) @aws_iam @aws_cognito_user_pools
+}
+
+type ModelCategoryConnection @aws_iam {
+  items: [Category]!
+  nextToken: String
+}
+
+input ModelCategoryFilterInput {
+  name: ModelStringInput
+  description: ModelStringInput
+  imageUrl: ModelStringInput
+  parentCategoryId: ModelIDInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelCategoryFilterInput]
+  or: [ModelCategoryFilterInput]
+  not: ModelCategoryFilterInput
+  owner: ModelStringInput
+}
+
+input ModelCategoryConditionInput {
+  name: ModelStringInput
+  description: ModelStringInput
+  imageUrl: ModelStringInput
+  parentCategoryId: ModelIDInput
+  and: [ModelCategoryConditionInput]
+  or: [ModelCategoryConditionInput]
+  not: ModelCategoryConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateCategoryInput {
+  name: String!
+  description: String
+  imageUrl: String
+  parentCategoryId: ID
+  id: ID
+}
+
+input UpdateCategoryInput {
+  name: String
+  description: String
+  imageUrl: String
+  parentCategoryId: ID
+  id: ID!
+}
+
+input DeleteCategoryInput {
+  id: ID!
+}
+
+input ModelSubscriptionCategoryFilterInput {
+  name: ModelSubscriptionStringInput
+  description: ModelSubscriptionStringInput
+  imageUrl: ModelSubscriptionStringInput
+  parentCategoryId: ModelSubscriptionIDInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionCategoryFilterInput]
+  or: [ModelSubscriptionCategoryFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelUserProfileConnection @aws_iam @aws_cognito_user_pools {
+  items: [UserProfile]!
+  nextToken: String
+}
+
+input ModelUserProfileFilterInput {
+  firstName: ModelStringInput
+  lastName: ModelStringInput
+  email: ModelStringInput
+  phone: ModelStringInput
+  address: ModelStringInput
+  city: ModelStringInput
+  state: ModelStringInput
+  zipCode: ModelStringInput
+  country: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelUserProfileFilterInput]
+  or: [ModelUserProfileFilterInput]
+  not: ModelUserProfileFilterInput
+  owner: ModelStringInput
+}
+
+input ModelUserProfileConditionInput {
+  firstName: ModelStringInput
+  lastName: ModelStringInput
+  email: ModelStringInput
+  phone: ModelStringInput
+  address: ModelStringInput
+  city: ModelStringInput
+  state: ModelStringInput
+  zipCode: ModelStringInput
+  country: ModelStringInput
+  and: [ModelUserProfileConditionInput]
+  or: [ModelUserProfileConditionInput]
+  not: ModelUserProfileConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateUserProfileInput {
+  firstName: String
+  lastName: String
+  email: AWSEmail
+  phone: String
+  address: String
+  city: String
+  state: String
+  zipCode: String
+  country: String
+  id: ID
+}
+
+input UpdateUserProfileInput {
+  firstName: String
+  lastName: String
+  email: AWSEmail
+  phone: String
+  address: String
+  city: String
+  state: String
+  zipCode: String
+  country: String
+  id: ID!
+}
+
+input DeleteUserProfileInput {
+  id: ID!
+}
+
+input ModelSubscriptionUserProfileFilterInput {
+  firstName: ModelSubscriptionStringInput
+  lastName: ModelSubscriptionStringInput
+  email: ModelSubscriptionStringInput
+  phone: ModelSubscriptionStringInput
+  address: ModelSubscriptionStringInput
+  city: ModelSubscriptionStringInput
+  state: ModelSubscriptionStringInput
+  zipCode: ModelSubscriptionStringInput
+  country: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionUserProfileFilterInput]
+  or: [ModelSubscriptionUserProfileFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelOrderConnection @aws_iam @aws_cognito_user_pools {
+  items: [Order]!
+  nextToken: String
+}
+
+input ModelOrderFilterInput {
+  totalAmount: ModelFloatInput
+  status: ModelStringInput
+  shippingAddress: ModelStringInput
+  billingAddress: ModelStringInput
+  orderDate: ModelStringInput
+  shippedDate: ModelStringInput
+  deliveredDate: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelOrderFilterInput]
+  or: [ModelOrderFilterInput]
+  not: ModelOrderFilterInput
+  owner: ModelStringInput
+}
+
+input ModelOrderConditionInput {
+  totalAmount: ModelFloatInput
+  status: ModelStringInput
+  shippingAddress: ModelStringInput
+  billingAddress: ModelStringInput
+  orderDate: ModelStringInput
+  shippedDate: ModelStringInput
+  deliveredDate: ModelStringInput
+  and: [ModelOrderConditionInput]
+  or: [ModelOrderConditionInput]
+  not: ModelOrderConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateOrderInput {
+  totalAmount: Float!
+  status: String!
+  shippingAddress: String
+  billingAddress: String
+  orderDate: AWSDateTime
+  shippedDate: AWSDateTime
+  deliveredDate: AWSDateTime
+  id: ID
+}
+
+input UpdateOrderInput {
+  totalAmount: Float
+  status: String
+  shippingAddress: String
+  billingAddress: String
+  orderDate: AWSDateTime
+  shippedDate: AWSDateTime
+  deliveredDate: AWSDateTime
+  id: ID!
+}
+
+input DeleteOrderInput {
+  id: ID!
+}
+
+input ModelSubscriptionOrderFilterInput {
+  totalAmount: ModelSubscriptionFloatInput
+  status: ModelSubscriptionStringInput
+  shippingAddress: ModelSubscriptionStringInput
+  billingAddress: ModelSubscriptionStringInput
+  orderDate: ModelSubscriptionStringInput
+  shippedDate: ModelSubscriptionStringInput
+  deliveredDate: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionOrderFilterInput]
+  or: [ModelSubscriptionOrderFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelOrderItemConnection @aws_iam @aws_cognito_user_pools {
+  items: [OrderItem]!
+  nextToken: String
+}
+
+input ModelOrderItemFilterInput {
+  orderId: ModelIDInput
+  productId: ModelIDInput
+  quantity: ModelIntInput
+  price: ModelFloatInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelOrderItemFilterInput]
+  or: [ModelOrderItemFilterInput]
+  not: ModelOrderItemFilterInput
+  owner: ModelStringInput
+}
+
+input ModelOrderItemConditionInput {
+  orderId: ModelIDInput
+  productId: ModelIDInput
+  quantity: ModelIntInput
+  price: ModelFloatInput
+  and: [ModelOrderItemConditionInput]
+  or: [ModelOrderItemConditionInput]
+  not: ModelOrderItemConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateOrderItemInput {
+  orderId: ID!
+  productId: ID!
+  quantity: Int!
+  price: Float!
+  id: ID
+}
+
+input UpdateOrderItemInput {
+  orderId: ID
+  productId: ID
+  quantity: Int
+  price: Float
+  id: ID!
+}
+
+input DeleteOrderItemInput {
+  id: ID!
+}
+
+input ModelSubscriptionOrderItemFilterInput {
+  orderId: ModelSubscriptionIDInput
+  productId: ModelSubscriptionIDInput
+  quantity: ModelSubscriptionIntInput
+  price: ModelSubscriptionFloatInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionOrderItemFilterInput]
+  or: [ModelSubscriptionOrderItemFilterInput]
+  owner: ModelStringInput
+}

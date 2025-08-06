@@ -1,0 +1,13 @@
+## [Start] Setting "inStock" to default value of "true". **
+$util.qr($context.args.input.put("inStock", $util.defaultIfNull($ctx.args.input.inStock, true)))
+## [End] Setting "inStock" to default value of "true". **
+## [Start] Setting "stockQuantity" to default value of "0". **
+$util.qr($context.args.input.put("stockQuantity", $util.defaultIfNull($ctx.args.input.stockQuantity, 0)))
+## [End] Setting "stockQuantity" to default value of "0". **
+## [Start] Setting "discount" to default value of "0". **
+$util.qr($context.args.input.put("discount", $util.defaultIfNull($ctx.args.input.discount, 0)))
+## [End] Setting "discount" to default value of "0". **
+## [Start] Setting "featured" to default value of "false". **
+$util.qr($context.args.input.put("featured", $util.defaultIfNull($ctx.args.input.featured, false)))
+## [End] Setting "featured" to default value of "false". **
+{}
