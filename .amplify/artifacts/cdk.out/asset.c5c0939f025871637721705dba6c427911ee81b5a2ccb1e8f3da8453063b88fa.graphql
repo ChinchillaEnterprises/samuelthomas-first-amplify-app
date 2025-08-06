@@ -1,0 +1,391 @@
+type BettingPrediction @aws_iam @aws_cognito_user_pools {
+  sport: String!
+  homeTeam: String!
+  awayTeam: String!
+  matchDate: AWSDateTime!
+  recommendedBet: String!
+  confidence: Float!
+  odds: Float!
+  platform: String!
+  analysis: String
+  potentialReturn: Float
+  stake: Float
+  betType: String!
+  isLive: Boolean
+  result: String
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+type UserPreferences @aws_iam @aws_cognito_user_pools {
+  favoriteSports: [String]
+  preferredPlatforms: [String]
+  bankroll: Float
+  riskTolerance: String
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+input AmplifyAIConversationTurnErrorInput {
+  errorType: String!
+  message: String!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelBettingPredictionConnection @aws_iam @aws_cognito_user_pools {
+  items: [BettingPrediction]!
+  nextToken: String
+}
+
+input ModelBettingPredictionFilterInput {
+  sport: ModelStringInput
+  homeTeam: ModelStringInput
+  awayTeam: ModelStringInput
+  matchDate: ModelStringInput
+  recommendedBet: ModelStringInput
+  confidence: ModelFloatInput
+  odds: ModelFloatInput
+  platform: ModelStringInput
+  analysis: ModelStringInput
+  potentialReturn: ModelFloatInput
+  stake: ModelFloatInput
+  betType: ModelStringInput
+  isLive: ModelBooleanInput
+  result: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelBettingPredictionFilterInput]
+  or: [ModelBettingPredictionFilterInput]
+  not: ModelBettingPredictionFilterInput
+  owner: ModelStringInput
+}
+
+type Query {
+  getBettingPrediction(id: ID!): BettingPrediction @aws_iam @aws_cognito_user_pools
+  listBettingPredictions(filter: ModelBettingPredictionFilterInput, limit: Int, nextToken: String): ModelBettingPredictionConnection @aws_iam @aws_cognito_user_pools
+  getUserPreferences(id: ID!): UserPreferences @aws_iam @aws_cognito_user_pools
+  listUserPreferences(filter: ModelUserPreferencesFilterInput, limit: Int, nextToken: String): ModelUserPreferencesConnection @aws_iam @aws_cognito_user_pools
+}
+
+input ModelBettingPredictionConditionInput {
+  sport: ModelStringInput
+  homeTeam: ModelStringInput
+  awayTeam: ModelStringInput
+  matchDate: ModelStringInput
+  recommendedBet: ModelStringInput
+  confidence: ModelFloatInput
+  odds: ModelFloatInput
+  platform: ModelStringInput
+  analysis: ModelStringInput
+  potentialReturn: ModelFloatInput
+  stake: ModelFloatInput
+  betType: ModelStringInput
+  isLive: ModelBooleanInput
+  result: ModelStringInput
+  and: [ModelBettingPredictionConditionInput]
+  or: [ModelBettingPredictionConditionInput]
+  not: ModelBettingPredictionConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateBettingPredictionInput {
+  sport: String!
+  homeTeam: String!
+  awayTeam: String!
+  matchDate: AWSDateTime!
+  recommendedBet: String!
+  confidence: Float!
+  odds: Float!
+  platform: String!
+  analysis: String
+  potentialReturn: Float
+  stake: Float
+  betType: String!
+  isLive: Boolean
+  result: String
+  id: ID
+}
+
+input UpdateBettingPredictionInput {
+  sport: String
+  homeTeam: String
+  awayTeam: String
+  matchDate: AWSDateTime
+  recommendedBet: String
+  confidence: Float
+  odds: Float
+  platform: String
+  analysis: String
+  potentialReturn: Float
+  stake: Float
+  betType: String
+  isLive: Boolean
+  result: String
+  id: ID!
+}
+
+input DeleteBettingPredictionInput {
+  id: ID!
+}
+
+type Mutation {
+  createBettingPrediction(input: CreateBettingPredictionInput!, condition: ModelBettingPredictionConditionInput): BettingPrediction @aws_iam @aws_cognito_user_pools
+  updateBettingPrediction(input: UpdateBettingPredictionInput!, condition: ModelBettingPredictionConditionInput): BettingPrediction @aws_iam @aws_cognito_user_pools
+  deleteBettingPrediction(input: DeleteBettingPredictionInput!, condition: ModelBettingPredictionConditionInput): BettingPrediction @aws_iam @aws_cognito_user_pools
+  createUserPreferences(input: CreateUserPreferencesInput!, condition: ModelUserPreferencesConditionInput): UserPreferences @aws_iam @aws_cognito_user_pools
+  updateUserPreferences(input: UpdateUserPreferencesInput!, condition: ModelUserPreferencesConditionInput): UserPreferences @aws_iam @aws_cognito_user_pools
+  deleteUserPreferences(input: DeleteUserPreferencesInput!, condition: ModelUserPreferencesConditionInput): UserPreferences @aws_iam @aws_cognito_user_pools
+}
+
+input ModelSubscriptionBettingPredictionFilterInput {
+  sport: ModelSubscriptionStringInput
+  homeTeam: ModelSubscriptionStringInput
+  awayTeam: ModelSubscriptionStringInput
+  matchDate: ModelSubscriptionStringInput
+  recommendedBet: ModelSubscriptionStringInput
+  confidence: ModelSubscriptionFloatInput
+  odds: ModelSubscriptionFloatInput
+  platform: ModelSubscriptionStringInput
+  analysis: ModelSubscriptionStringInput
+  potentialReturn: ModelSubscriptionFloatInput
+  stake: ModelSubscriptionFloatInput
+  betType: ModelSubscriptionStringInput
+  isLive: ModelSubscriptionBooleanInput
+  result: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionBettingPredictionFilterInput]
+  or: [ModelSubscriptionBettingPredictionFilterInput]
+  owner: ModelStringInput
+}
+
+type Subscription {
+  onCreateBettingPrediction(filter: ModelSubscriptionBettingPredictionFilterInput, owner: String): BettingPrediction @aws_subscribe(mutations: ["createBettingPrediction"]) @aws_iam @aws_cognito_user_pools
+  onUpdateBettingPrediction(filter: ModelSubscriptionBettingPredictionFilterInput, owner: String): BettingPrediction @aws_subscribe(mutations: ["updateBettingPrediction"]) @aws_iam @aws_cognito_user_pools
+  onDeleteBettingPrediction(filter: ModelSubscriptionBettingPredictionFilterInput, owner: String): BettingPrediction @aws_subscribe(mutations: ["deleteBettingPrediction"]) @aws_iam @aws_cognito_user_pools
+  onCreateUserPreferences(filter: ModelSubscriptionUserPreferencesFilterInput, owner: String): UserPreferences @aws_subscribe(mutations: ["createUserPreferences"]) @aws_iam @aws_cognito_user_pools
+  onUpdateUserPreferences(filter: ModelSubscriptionUserPreferencesFilterInput, owner: String): UserPreferences @aws_subscribe(mutations: ["updateUserPreferences"]) @aws_iam @aws_cognito_user_pools
+  onDeleteUserPreferences(filter: ModelSubscriptionUserPreferencesFilterInput, owner: String): UserPreferences @aws_subscribe(mutations: ["deleteUserPreferences"]) @aws_iam @aws_cognito_user_pools
+}
+
+type ModelUserPreferencesConnection @aws_iam @aws_cognito_user_pools {
+  items: [UserPreferences]!
+  nextToken: String
+}
+
+input ModelUserPreferencesFilterInput {
+  favoriteSports: ModelStringInput
+  preferredPlatforms: ModelStringInput
+  bankroll: ModelFloatInput
+  riskTolerance: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelUserPreferencesFilterInput]
+  or: [ModelUserPreferencesFilterInput]
+  not: ModelUserPreferencesFilterInput
+  owner: ModelStringInput
+}
+
+input ModelUserPreferencesConditionInput {
+  favoriteSports: ModelStringInput
+  preferredPlatforms: ModelStringInput
+  bankroll: ModelFloatInput
+  riskTolerance: ModelStringInput
+  and: [ModelUserPreferencesConditionInput]
+  or: [ModelUserPreferencesConditionInput]
+  not: ModelUserPreferencesConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateUserPreferencesInput {
+  favoriteSports: [String]
+  preferredPlatforms: [String]
+  bankroll: Float
+  riskTolerance: String
+  id: ID
+}
+
+input UpdateUserPreferencesInput {
+  favoriteSports: [String]
+  preferredPlatforms: [String]
+  bankroll: Float
+  riskTolerance: String
+  id: ID!
+}
+
+input DeleteUserPreferencesInput {
+  id: ID!
+}
+
+input ModelSubscriptionUserPreferencesFilterInput {
+  favoriteSports: ModelSubscriptionStringInput
+  preferredPlatforms: ModelSubscriptionStringInput
+  bankroll: ModelSubscriptionFloatInput
+  riskTolerance: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionUserPreferencesFilterInput]
+  or: [ModelSubscriptionUserPreferencesFilterInput]
+  owner: ModelStringInput
+}

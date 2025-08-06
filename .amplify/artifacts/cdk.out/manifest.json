@@ -22,7 +22,7 @@
         "validateOnSynth": false,
         "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-deploy-role-${AWS::AccountId}-${AWS::Region}",
         "cloudFormationExecutionRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-cfn-exec-role-${AWS::AccountId}-${AWS::Region}",
-        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a083e69b64ecfbb5093f00e056f20f6b16d4903207746506408bd764548e5494.json",
+        "stackTemplateAssetObjectUrl": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6024cae214501930cd0658bd934e28b98cffa7355df1438845bb21efefe8e96d.json",
         "requiresBootstrapStackVersion": 6,
         "bootstrapStackVersionSsmParameter": "/cdk-bootstrap/hnb659fds/version",
         "additionalDependencies": [
@@ -375,532 +375,1070 @@
             "data": "amplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource86290833"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/DynamoDBModelTableReadIOPS": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/DynamoDBModelTableReadIOPS": [
           {
             "type": "aws:cdk:logicalId",
             "data": "DynamoDBModelTableReadIOPS"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/DynamoDBModelTableWriteIOPS": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/DynamoDBModelTableWriteIOPS": [
           {
             "type": "aws:cdk:logicalId",
             "data": "DynamoDBModelTableWriteIOPS"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/DynamoDBBillingMode": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/DynamoDBBillingMode": [
           {
             "type": "aws:cdk:logicalId",
             "data": "DynamoDBBillingMode"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/DynamoDBEnablePointInTimeRecovery": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/DynamoDBEnablePointInTimeRecovery": [
           {
             "type": "aws:cdk:logicalId",
             "data": "DynamoDBEnablePointInTimeRecovery"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/DynamoDBEnableServerSideEncryption": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/DynamoDBEnableServerSideEncryption": [
           {
             "type": "aws:cdk:logicalId",
             "data": "DynamoDBEnableServerSideEncryption"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/HasEnvironmentParameter": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/HasEnvironmentParameter": [
           {
             "type": "aws:cdk:logicalId",
             "data": "HasEnvironmentParameter"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/ShouldUsePayPerRequestBilling": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/ShouldUsePayPerRequestBilling": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ShouldUsePayPerRequestBilling"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/ShouldUsePointInTimeRecovery": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/ShouldUsePointInTimeRecovery": [
           {
             "type": "aws:cdk:logicalId",
             "data": "ShouldUsePointInTimeRecovery"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/TodoTable": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/BettingPredictionTable": [
           {
             "type": "graphqltransformer:resourceName",
-            "data": "Todo"
+            "data": "BettingPrediction"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/TodoTable/Default/Default": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/BettingPredictionTable/Default/Default": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "TodoTable"
+            "data": "BettingPredictionTable"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "Todo"
+            "data": "BettingPrediction"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/CustomTableTodoTable": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/CustomTableBettingPredictionTable": [
           {
             "type": "graphqltransformer:resourceName",
-            "data": "Todo"
+            "data": "BettingPrediction"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/GetAttTodoTableStreamArn": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/GetAttBettingPredictionTableStreamArn": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "GetAttTodoTableStreamArn"
+            "data": "GetAttBettingPredictionTableStreamArn"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/GetAttTodoTableName": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/GetAttBettingPredictionTableName": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "GetAttTodoTableName"
+            "data": "GetAttBettingPredictionTableName"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/TodoIAMRole": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/BettingPredictionIAMRole": [
           {
             "type": "graphqltransformer:resourceName",
-            "data": "TodoIAMRole"
+            "data": "BettingPredictionIAMRole"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/TodoIAMRole/Resource": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/BettingPredictionIAMRole/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "TodoIAMRole2DA8E66E"
+            "data": "BettingPredictionIAMRoleF636199F"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "TodoIAMRole"
+            "data": "BettingPredictionIAMRole"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/TodoDataSource": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/BettingPredictionDataSource": [
           {
             "type": "graphqltransformer:resourceName",
-            "data": "TodoTable"
+            "data": "BettingPredictionTable"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/TodoDataSource/Resource": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/BettingPredictionDataSource/Resource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "TodoDataSource"
+            "data": "BettingPredictionDataSource"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "TodoTable"
+            "data": "BettingPredictionTable"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/QuerygetTodoauth0Function/QuerygetTodoauth0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/QuerygetBettingPredictionauth0Function/QuerygetBettingPredictionauth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "QuerygetTodoauth0FunctionQuerygetTodoauth0FunctionAppSyncFunction846D8436"
+            "data": "QuerygetBettingPredictionauth0FunctionQuerygetBettingPredictionauth0FunctionAppSyncFunction62E9430E"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "QuerygetTodoauth0Function"
+            "data": "QuerygetBettingPredictionauth0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/QuerygetTodopostAuth0Function/QuerygetTodopostAuth0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/QuerygetBettingPredictionpostAuth0Function/QuerygetBettingPredictionpostAuth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "QuerygetTodopostAuth0FunctionQuerygetTodopostAuth0FunctionAppSyncFunction6BE14593"
+            "data": "QuerygetBettingPredictionpostAuth0FunctionQuerygetBettingPredictionpostAuth0FunctionAppSyncFunction19CEE0D0"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "QuerygetTodopostAuth0Function"
+            "data": "QuerygetBettingPredictionpostAuth0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/QueryGetTodoDataResolverFn/QueryGetTodoDataResolverFn.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/QueryGetBettingPredictionDataResolverFn/QueryGetBettingPredictionDataResolverFn.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "QueryGetTodoDataResolverFnQueryGetTodoDataResolverFnAppSyncFunctionE2B57DAD"
+            "data": "QueryGetBettingPredictionDataResolverFnQueryGetBettingPredictionDataResolverFnAppSyncFunctionA5361287"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "QueryGetTodoDataResolverFn"
+            "data": "QueryGetBettingPredictionDataResolverFn"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/queryGetTodoResolver": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/queryGetBettingPredictionResolver": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "GetTodoResolver"
+            "data": "GetBettingPredictionResolver"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "Query.getTodo"
+            "data": "Query.getBettingPrediction"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/QuerylistTodosauth0Function/QuerylistTodosauth0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/QuerylistBettingPredictionsauth0Function/QuerylistBettingPredictionsauth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "QuerylistTodosauth0FunctionQuerylistTodosauth0FunctionAppSyncFunction7D761961"
+            "data": "QuerylistBettingPredictionsauth0FunctionQuerylistBettingPredictionsauth0FunctionAppSyncFunctionEB29FCC2"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "QuerylistTodosauth0Function"
+            "data": "QuerylistBettingPredictionsauth0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/QuerylistTodospostAuth0Function/QuerylistTodospostAuth0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/QuerylistBettingPredictionspostAuth0Function/QuerylistBettingPredictionspostAuth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "QuerylistTodospostAuth0FunctionQuerylistTodospostAuth0FunctionAppSyncFunction154D8577"
+            "data": "QuerylistBettingPredictionspostAuth0FunctionQuerylistBettingPredictionspostAuth0FunctionAppSyncFunction2853CD36"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "QuerylistTodospostAuth0Function"
+            "data": "QuerylistBettingPredictionspostAuth0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/QueryListTodosDataResolverFn/QueryListTodosDataResolverFn.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/QueryListBettingPredictionsDataResolverFn/QueryListBettingPredictionsDataResolverFn.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "QueryListTodosDataResolverFnQueryListTodosDataResolverFnAppSyncFunctionF825FE47"
+            "data": "QueryListBettingPredictionsDataResolverFnQueryListBettingPredictionsDataResolverFnAppSyncFunctionFD5CF72F"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "QueryListTodosDataResolverFn"
+            "data": "QueryListBettingPredictionsDataResolverFn"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/queryListTodosResolver": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/queryListBettingPredictionsResolver": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "ListTodoResolver"
+            "data": "ListBettingPredictionResolver"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "Query.listTodos"
+            "data": "Query.listBettingPredictions"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/MutationcreateTodoinit0Function/MutationcreateTodoinit0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationcreateBettingPredictioninit0Function/MutationcreateBettingPredictioninit0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MutationcreateTodoinit0FunctionMutationcreateTodoinit0FunctionAppSyncFunction54DE5B8B"
+            "data": "MutationcreateBettingPredictioninit0FunctionMutationcreateBettingPredictioninit0FunctionAppSyncFunction7AB9C363"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "MutationcreateTodoinit0Function"
+            "data": "MutationcreateBettingPredictioninit0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/MutationcreateTodoauth0Function/MutationcreateTodoauth0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationcreateBettingPredictioninit1Function/MutationcreateBettingPredictioninit1Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MutationcreateTodoauth0FunctionMutationcreateTodoauth0FunctionAppSyncFunction21817E36"
+            "data": "MutationcreateBettingPredictioninit1FunctionMutationcreateBettingPredictioninit1FunctionAppSyncFunctionE5222085"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "MutationcreateTodoauth0Function"
+            "data": "MutationcreateBettingPredictioninit1Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/MutationcreateTodopostAuth0Function/MutationcreateTodopostAuth0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationcreateBettingPredictionauth0Function/MutationcreateBettingPredictionauth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MutationcreateTodopostAuth0FunctionMutationcreateTodopostAuth0FunctionAppSyncFunctionED59EB9F"
+            "data": "MutationcreateBettingPredictionauth0FunctionMutationcreateBettingPredictionauth0FunctionAppSyncFunction38B9E445"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "MutationcreateTodopostAuth0Function"
+            "data": "MutationcreateBettingPredictionauth0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/MutationCreateTodoDataResolverFn/MutationCreateTodoDataResolverFn.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationcreateBettingPredictionpostAuth0Function/MutationcreateBettingPredictionpostAuth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MutationCreateTodoDataResolverFnMutationCreateTodoDataResolverFnAppSyncFunction900EC5CF"
+            "data": "MutationcreateBettingPredictionpostAuth0FunctionMutationcreateBettingPredictionpostAuth0FunctionAppSyncFunction2996467C"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "MutationCreateTodoDataResolverFn"
+            "data": "MutationcreateBettingPredictionpostAuth0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/mutationCreateTodoResolver": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationCreateBettingPredictionDataResolverFn/MutationCreateBettingPredictionDataResolverFn.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "CreateTodoResolver"
+            "data": "MutationCreateBettingPredictionDataResolverFnMutationCreateBettingPredictionDataResolverFnAppSyncFunctionD7D96D15"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "Mutation.createTodo"
+            "data": "MutationCreateBettingPredictionDataResolverFn"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/MutationupdateTodoinit0Function/MutationupdateTodoinit0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/mutationCreateBettingPredictionResolver": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MutationupdateTodoinit0FunctionMutationupdateTodoinit0FunctionAppSyncFunction1B95BB19"
+            "data": "CreateBettingPredictionResolver"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "MutationupdateTodoinit0Function"
+            "data": "Mutation.createBettingPrediction"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/MutationupdateTodoauth0Function/MutationupdateTodoauth0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationupdateBettingPredictioninit0Function/MutationupdateBettingPredictioninit0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MutationupdateTodoauth0FunctionMutationupdateTodoauth0FunctionAppSyncFunction1E4A3112"
+            "data": "MutationupdateBettingPredictioninit0FunctionMutationupdateBettingPredictioninit0FunctionAppSyncFunction2FAD3169"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "MutationupdateTodoauth0Function"
+            "data": "MutationupdateBettingPredictioninit0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/MutationupdateTodopostAuth0Function/MutationupdateTodopostAuth0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationupdateBettingPredictionauth0Function/MutationupdateBettingPredictionauth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MutationupdateTodopostAuth0FunctionMutationupdateTodopostAuth0FunctionAppSyncFunction50C507D7"
+            "data": "MutationupdateBettingPredictionauth0FunctionMutationupdateBettingPredictionauth0FunctionAppSyncFunctionB7967138"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "MutationupdateTodopostAuth0Function"
+            "data": "MutationupdateBettingPredictionauth0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/MutationUpdateTodoDataResolverFn/MutationUpdateTodoDataResolverFn.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationupdateBettingPredictionpostAuth0Function/MutationupdateBettingPredictionpostAuth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MutationUpdateTodoDataResolverFnMutationUpdateTodoDataResolverFnAppSyncFunctionBC238C49"
+            "data": "MutationupdateBettingPredictionpostAuth0FunctionMutationupdateBettingPredictionpostAuth0FunctionAppSyncFunction8B7EC679"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "MutationUpdateTodoDataResolverFn"
+            "data": "MutationupdateBettingPredictionpostAuth0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/mutationUpdateTodoResolver": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationUpdateBettingPredictionDataResolverFn/MutationUpdateBettingPredictionDataResolverFn.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "UpdateTodoResolver"
+            "data": "MutationUpdateBettingPredictionDataResolverFnMutationUpdateBettingPredictionDataResolverFnAppSyncFunctionD3712422"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "Mutation.updateTodo"
+            "data": "MutationUpdateBettingPredictionDataResolverFn"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/MutationdeleteTodoauth0Function/MutationdeleteTodoauth0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/mutationUpdateBettingPredictionResolver": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MutationdeleteTodoauth0FunctionMutationdeleteTodoauth0FunctionAppSyncFunctionC82C218C"
+            "data": "UpdateBettingPredictionResolver"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "MutationdeleteTodoauth0Function"
+            "data": "Mutation.updateBettingPrediction"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/MutationdeleteTodopostAuth0Function/MutationdeleteTodopostAuth0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationdeleteBettingPredictionauth0Function/MutationdeleteBettingPredictionauth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MutationdeleteTodopostAuth0FunctionMutationdeleteTodopostAuth0FunctionAppSyncFunction483271A2"
+            "data": "MutationdeleteBettingPredictionauth0FunctionMutationdeleteBettingPredictionauth0FunctionAppSyncFunctionCD07C2CE"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "MutationdeleteTodopostAuth0Function"
+            "data": "MutationdeleteBettingPredictionauth0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/MutationDeleteTodoDataResolverFn/MutationDeleteTodoDataResolverFn.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationdeleteBettingPredictionpostAuth0Function/MutationdeleteBettingPredictionpostAuth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "MutationDeleteTodoDataResolverFnMutationDeleteTodoDataResolverFnAppSyncFunction3879153F"
+            "data": "MutationdeleteBettingPredictionpostAuth0FunctionMutationdeleteBettingPredictionpostAuth0FunctionAppSyncFunctionD2E0B3CF"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "MutationDeleteTodoDataResolverFn"
+            "data": "MutationdeleteBettingPredictionpostAuth0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/mutationDeleteTodoResolver": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationDeleteBettingPredictionDataResolverFn/MutationDeleteBettingPredictionDataResolverFn.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "DeleteTodoResolver"
+            "data": "MutationDeleteBettingPredictionDataResolverFnMutationDeleteBettingPredictionDataResolverFnAppSyncFunction4FCF260B"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "Mutation.deleteTodo"
+            "data": "MutationDeleteBettingPredictionDataResolverFn"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/SubscriptiononCreateTodoauth0Function/SubscriptiononCreateTodoauth0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/mutationDeleteBettingPredictionResolver": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SubscriptiononCreateTodoauth0FunctionSubscriptiononCreateTodoauth0FunctionAppSyncFunction042EF9E1"
+            "data": "DeleteBettingPredictionResolver"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "SubscriptiononCreateTodoauth0Function"
+            "data": "Mutation.deleteBettingPrediction"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/SubscriptiononCreateTodopostAuth0Function/SubscriptiononCreateTodopostAuth0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptiononCreateBettingPredictionauth0Function/SubscriptiononCreateBettingPredictionauth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SubscriptiononCreateTodopostAuth0FunctionSubscriptiononCreateTodopostAuth0FunctionAppSyncFunction18E34C4E"
+            "data": "SubscriptiononCreateBettingPredictionauth0FunctionSubscriptiononCreateBettingPredictionauth0FunctionAppSyncFunctionE8A8418B"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "SubscriptiononCreateTodopostAuth0Function"
+            "data": "SubscriptiononCreateBettingPredictionauth0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/SubscriptionOnCreateTodoDataResolverFn/SubscriptionOnCreateTodoDataResolverFn.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptiononCreateBettingPredictionpostAuth0Function/SubscriptiononCreateBettingPredictionpostAuth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SubscriptionOnCreateTodoDataResolverFnSubscriptionOnCreateTodoDataResolverFnAppSyncFunction462A70C9"
+            "data": "SubscriptiononCreateBettingPredictionpostAuth0FunctionSubscriptiononCreateBettingPredictionpostAuth0FunctionAppSyncFunction30DCF10D"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "SubscriptionOnCreateTodoDataResolverFn"
+            "data": "SubscriptiononCreateBettingPredictionpostAuth0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/subscriptionOnCreateTodoResolver": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptionOnCreateBettingPredictionDataResolverFn/SubscriptionOnCreateBettingPredictionDataResolverFn.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SubscriptiononCreateTodoResolver"
+            "data": "SubscriptionOnCreateBettingPredictionDataResolverFnSubscriptionOnCreateBettingPredictionDataResolverFnAppSyncFunction7BD6B90C"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "Subscription.onCreateTodo"
+            "data": "SubscriptionOnCreateBettingPredictionDataResolverFn"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/SubscriptiononUpdateTodoauth0Function/SubscriptiononUpdateTodoauth0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/subscriptionOnCreateBettingPredictionResolver": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SubscriptiononUpdateTodoauth0FunctionSubscriptiononUpdateTodoauth0FunctionAppSyncFunction80D0DFA3"
+            "data": "SubscriptiononCreateBettingPredictionResolver"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "SubscriptiononUpdateTodoauth0Function"
+            "data": "Subscription.onCreateBettingPrediction"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/SubscriptiononUpdateTodopostAuth0Function/SubscriptiononUpdateTodopostAuth0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptiononUpdateBettingPredictionauth0Function/SubscriptiononUpdateBettingPredictionauth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SubscriptiononUpdateTodopostAuth0FunctionSubscriptiononUpdateTodopostAuth0FunctionAppSyncFunction04445BC7"
+            "data": "SubscriptiononUpdateBettingPredictionauth0FunctionSubscriptiononUpdateBettingPredictionauth0FunctionAppSyncFunction2B725876"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "SubscriptiononUpdateTodopostAuth0Function"
+            "data": "SubscriptiononUpdateBettingPredictionauth0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/SubscriptionOnUpdateTodoDataResolverFn/SubscriptionOnUpdateTodoDataResolverFn.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptiononUpdateBettingPredictionpostAuth0Function/SubscriptiononUpdateBettingPredictionpostAuth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SubscriptionOnUpdateTodoDataResolverFnSubscriptionOnUpdateTodoDataResolverFnAppSyncFunction523DF0E4"
+            "data": "SubscriptiononUpdateBettingPredictionpostAuth0FunctionSubscriptiononUpdateBettingPredictionpostAuth0FunctionAppSyncFunctionA1D1C837"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "SubscriptionOnUpdateTodoDataResolverFn"
+            "data": "SubscriptiononUpdateBettingPredictionpostAuth0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/subscriptionOnUpdateTodoResolver": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptionOnUpdateBettingPredictionDataResolverFn/SubscriptionOnUpdateBettingPredictionDataResolverFn.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SubscriptiononUpdateTodoResolver"
+            "data": "SubscriptionOnUpdateBettingPredictionDataResolverFnSubscriptionOnUpdateBettingPredictionDataResolverFnAppSyncFunction08B6BF28"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "Subscription.onUpdateTodo"
+            "data": "SubscriptionOnUpdateBettingPredictionDataResolverFn"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/SubscriptiononDeleteTodoauth0Function/SubscriptiononDeleteTodoauth0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/subscriptionOnUpdateBettingPredictionResolver": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SubscriptiononDeleteTodoauth0FunctionSubscriptiononDeleteTodoauth0FunctionAppSyncFunctionF69F2220"
+            "data": "SubscriptiononUpdateBettingPredictionResolver"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "SubscriptiononDeleteTodoauth0Function"
+            "data": "Subscription.onUpdateBettingPrediction"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/SubscriptiononDeleteTodopostAuth0Function/SubscriptiononDeleteTodopostAuth0Function.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptiononDeleteBettingPredictionauth0Function/SubscriptiononDeleteBettingPredictionauth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SubscriptiononDeleteTodopostAuth0FunctionSubscriptiononDeleteTodopostAuth0FunctionAppSyncFunctionE131CBE7"
+            "data": "SubscriptiononDeleteBettingPredictionauth0FunctionSubscriptiononDeleteBettingPredictionauth0FunctionAppSyncFunction8BE60DCE"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "SubscriptiononDeleteTodopostAuth0Function"
+            "data": "SubscriptiononDeleteBettingPredictionauth0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/SubscriptionOnDeleteTodoDataResolverFn/SubscriptionOnDeleteTodoDataResolverFn.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptiononDeleteBettingPredictionpostAuth0Function/SubscriptiononDeleteBettingPredictionpostAuth0Function.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SubscriptionOnDeleteTodoDataResolverFnSubscriptionOnDeleteTodoDataResolverFnAppSyncFunction3E641E8C"
+            "data": "SubscriptiononDeleteBettingPredictionpostAuth0FunctionSubscriptiononDeleteBettingPredictionpostAuth0FunctionAppSyncFunction9C957C43"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "SubscriptionOnDeleteTodoDataResolverFn"
+            "data": "SubscriptiononDeleteBettingPredictionpostAuth0Function"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/subscriptionOnDeleteTodoResolver": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptionOnDeleteBettingPredictionDataResolverFn/SubscriptionOnDeleteBettingPredictionDataResolverFn.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "SubscriptiononDeleteTodoResolver"
+            "data": "SubscriptionOnDeleteBettingPredictionDataResolverFnSubscriptionOnDeleteBettingPredictionDataResolverFnAppSyncFunctionAC48D61B"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "Subscription.onDeleteTodo"
+            "data": "SubscriptionOnDeleteBettingPredictionDataResolverFn"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/TodoOwnerDataResolverFn/TodoOwnerDataResolverFn.AppSyncFunction": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/subscriptionOnDeleteBettingPredictionResolver": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "TodoOwnerDataResolverFnTodoOwnerDataResolverFnAppSyncFunction0C7BF45B"
+            "data": "SubscriptiononDeleteBettingPredictionResolver"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "TodoOwnerDataResolverFn"
+            "data": "Subscription.onDeleteBettingPrediction"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/todoOwnerResolver": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/BettingPredictionOwnerDataResolverFn/BettingPredictionOwnerDataResolverFn.AppSyncFunction": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "TodoownerResolver"
+            "data": "BettingPredictionOwnerDataResolverFnBettingPredictionOwnerDataResolverFnAppSyncFunctionA7342C2A"
           },
           {
             "type": "graphqltransformer:resourceName",
-            "data": "Todo.owner"
+            "data": "BettingPredictionOwnerDataResolverFn"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/CDKMetadata/Default": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/bettingPredictionOwnerResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "BettingPredictionownerResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "BettingPrediction.owner"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/CDKMetadata/Default": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadata"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/CDKMetadata/Condition": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/CDKMetadata/Condition": [
           {
             "type": "aws:cdk:logicalId",
             "data": "CDKMetadataAvailable"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceCD71964BOutputs.amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent7B95DC8AArn": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceCD71964BOutputs.amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent7B95DC8AArn": [
           {
             "type": "aws:cdk:logicalId",
             "data": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceCD71964BOutputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTab00779152"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId": [
           {
             "type": "aws:cdk:logicalId",
             "data": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name": [
           {
             "type": "aws:cdk:logicalId",
             "data": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputs.amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputs.amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref": [
           {
             "type": "aws:cdk:logicalId",
             "data": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputs.amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputs.amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref": [
           {
             "type": "aws:cdk:logicalId",
             "data": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputs.amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputs.amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref": [
           {
             "type": "aws:cdk:logicalId",
             "data": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref"
           }
         ],
-        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/Todo.NestedStack/Todo.NestedStackResource": [
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction.NestedStack/BettingPrediction.NestedStackResource": [
           {
             "type": "aws:cdk:logicalId",
-            "data": "amplifyDataTodoNestedStackTodoNestedStackResource551CEA56"
+            "data": "amplifyDataBettingPredictionNestedStackBettingPredictionNestedStackResourceD2E47AFF"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/DynamoDBModelTableReadIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableReadIOPS"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/DynamoDBModelTableWriteIOPS": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBModelTableWriteIOPS"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/DynamoDBBillingMode": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBBillingMode"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/DynamoDBEnablePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnablePointInTimeRecovery"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/DynamoDBEnableServerSideEncryption": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DynamoDBEnableServerSideEncryption"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/HasEnvironmentParameter": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "HasEnvironmentParameter"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/ShouldUsePayPerRequestBilling": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePayPerRequestBilling"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/ShouldUsePointInTimeRecovery": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ShouldUsePointInTimeRecovery"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/UserPreferencesTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserPreferences"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/UserPreferencesTable/Default/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPreferencesTable"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserPreferences"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/CustomTableUserPreferencesTable": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserPreferences"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/GetAttUserPreferencesTableStreamArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttUserPreferencesTableStreamArn"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/GetAttUserPreferencesTableName": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetAttUserPreferencesTableName"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/UserPreferencesIAMRole": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserPreferencesIAMRole"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/UserPreferencesIAMRole/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPreferencesIAMRole33BAB33D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserPreferencesIAMRole"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/UserPreferencesDataSource": [
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserPreferencesTable"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/UserPreferencesDataSource/Resource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPreferencesDataSource"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserPreferencesTable"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/QuerygetUserPreferencesauth0Function/QuerygetUserPreferencesauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetUserPreferencesauth0FunctionQuerygetUserPreferencesauth0FunctionAppSyncFunctionC4597F9D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetUserPreferencesauth0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/QuerygetUserPreferencespostAuth0Function/QuerygetUserPreferencespostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerygetUserPreferencespostAuth0FunctionQuerygetUserPreferencespostAuth0FunctionAppSyncFunction5A4A20D8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerygetUserPreferencespostAuth0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/QueryGetUserPreferencesDataResolverFn/QueryGetUserPreferencesDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryGetUserPreferencesDataResolverFnQueryGetUserPreferencesDataResolverFnAppSyncFunction990786AF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryGetUserPreferencesDataResolverFn"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/queryGetUserPreferencesResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "GetUserPreferencesResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.getUserPreferences"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/QuerylistUserPreferencesauth0Function/QuerylistUserPreferencesauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistUserPreferencesauth0FunctionQuerylistUserPreferencesauth0FunctionAppSyncFunctionA11B8EAB"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistUserPreferencesauth0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/QuerylistUserPreferencespostAuth0Function/QuerylistUserPreferencespostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QuerylistUserPreferencespostAuth0FunctionQuerylistUserPreferencespostAuth0FunctionAppSyncFunction0F69CCEE"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QuerylistUserPreferencespostAuth0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/QueryListUserPreferencesDataResolverFn/QueryListUserPreferencesDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "QueryListUserPreferencesDataResolverFnQueryListUserPreferencesDataResolverFnAppSyncFunctionD2642280"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "QueryListUserPreferencesDataResolverFn"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/queryListUserPreferencesResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "ListUserPreferencesResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Query.listUserPreferences"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/MutationcreateUserPreferencesinit0Function/MutationcreateUserPreferencesinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateUserPreferencesinit0FunctionMutationcreateUserPreferencesinit0FunctionAppSyncFunctionF8A1C5AF"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateUserPreferencesinit0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/MutationcreateUserPreferencesauth0Function/MutationcreateUserPreferencesauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateUserPreferencesauth0FunctionMutationcreateUserPreferencesauth0FunctionAppSyncFunction87A26D8A"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateUserPreferencesauth0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/MutationcreateUserPreferencespostAuth0Function/MutationcreateUserPreferencespostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationcreateUserPreferencespostAuth0FunctionMutationcreateUserPreferencespostAuth0FunctionAppSyncFunction429FA38E"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationcreateUserPreferencespostAuth0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/MutationCreateUserPreferencesDataResolverFn/MutationCreateUserPreferencesDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationCreateUserPreferencesDataResolverFnMutationCreateUserPreferencesDataResolverFnAppSyncFunctionA5AF8E5B"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationCreateUserPreferencesDataResolverFn"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/mutationCreateUserPreferencesResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CreateUserPreferencesResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.createUserPreferences"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/MutationupdateUserPreferencesinit0Function/MutationupdateUserPreferencesinit0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateUserPreferencesinit0FunctionMutationupdateUserPreferencesinit0FunctionAppSyncFunction7E83AFF1"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateUserPreferencesinit0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/MutationupdateUserPreferencesauth0Function/MutationupdateUserPreferencesauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateUserPreferencesauth0FunctionMutationupdateUserPreferencesauth0FunctionAppSyncFunction775ED4A8"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateUserPreferencesauth0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/MutationupdateUserPreferencespostAuth0Function/MutationupdateUserPreferencespostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationupdateUserPreferencespostAuth0FunctionMutationupdateUserPreferencespostAuth0FunctionAppSyncFunction1AC68368"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationupdateUserPreferencespostAuth0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/MutationUpdateUserPreferencesDataResolverFn/MutationUpdateUserPreferencesDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationUpdateUserPreferencesDataResolverFnMutationUpdateUserPreferencesDataResolverFnAppSyncFunction35D1DAF6"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationUpdateUserPreferencesDataResolverFn"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/mutationUpdateUserPreferencesResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UpdateUserPreferencesResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.updateUserPreferences"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/MutationdeleteUserPreferencesauth0Function/MutationdeleteUserPreferencesauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteUserPreferencesauth0FunctionMutationdeleteUserPreferencesauth0FunctionAppSyncFunctionE513F201"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteUserPreferencesauth0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/MutationdeleteUserPreferencespostAuth0Function/MutationdeleteUserPreferencespostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationdeleteUserPreferencespostAuth0FunctionMutationdeleteUserPreferencespostAuth0FunctionAppSyncFunction6D7C2DB9"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationdeleteUserPreferencespostAuth0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/MutationDeleteUserPreferencesDataResolverFn/MutationDeleteUserPreferencesDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "MutationDeleteUserPreferencesDataResolverFnMutationDeleteUserPreferencesDataResolverFnAppSyncFunction80CBCA93"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "MutationDeleteUserPreferencesDataResolverFn"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/mutationDeleteUserPreferencesResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "DeleteUserPreferencesResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Mutation.deleteUserPreferences"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/SubscriptiononCreateUserPreferencesauth0Function/SubscriptiononCreateUserPreferencesauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateUserPreferencesauth0FunctionSubscriptiononCreateUserPreferencesauth0FunctionAppSyncFunctionFEF2D774"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateUserPreferencesauth0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/SubscriptiononCreateUserPreferencespostAuth0Function/SubscriptiononCreateUserPreferencespostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateUserPreferencespostAuth0FunctionSubscriptiononCreateUserPreferencespostAuth0FunctionAppSyncFunction3DA87C57"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononCreateUserPreferencespostAuth0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/SubscriptionOnCreateUserPreferencesDataResolverFn/SubscriptionOnCreateUserPreferencesDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnCreateUserPreferencesDataResolverFnSubscriptionOnCreateUserPreferencesDataResolverFnAppSyncFunction61E1DB71"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnCreateUserPreferencesDataResolverFn"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/subscriptionOnCreateUserPreferencesResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononCreateUserPreferencesResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onCreateUserPreferences"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/SubscriptiononUpdateUserPreferencesauth0Function/SubscriptiononUpdateUserPreferencesauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateUserPreferencesauth0FunctionSubscriptiononUpdateUserPreferencesauth0FunctionAppSyncFunctionFB5A1BC0"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateUserPreferencesauth0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/SubscriptiononUpdateUserPreferencespostAuth0Function/SubscriptiononUpdateUserPreferencespostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateUserPreferencespostAuth0FunctionSubscriptiononUpdateUserPreferencespostAuth0FunctionAppSyncFunction6251EAC5"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononUpdateUserPreferencespostAuth0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/SubscriptionOnUpdateUserPreferencesDataResolverFn/SubscriptionOnUpdateUserPreferencesDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnUpdateUserPreferencesDataResolverFnSubscriptionOnUpdateUserPreferencesDataResolverFnAppSyncFunctionF5C6EE07"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnUpdateUserPreferencesDataResolverFn"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/subscriptionOnUpdateUserPreferencesResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononUpdateUserPreferencesResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onUpdateUserPreferences"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/SubscriptiononDeleteUserPreferencesauth0Function/SubscriptiononDeleteUserPreferencesauth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteUserPreferencesauth0FunctionSubscriptiononDeleteUserPreferencesauth0FunctionAppSyncFunction244868D2"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteUserPreferencesauth0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/SubscriptiononDeleteUserPreferencespostAuth0Function/SubscriptiononDeleteUserPreferencespostAuth0Function.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteUserPreferencespostAuth0FunctionSubscriptiononDeleteUserPreferencespostAuth0FunctionAppSyncFunctionE2B1376D"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptiononDeleteUserPreferencespostAuth0Function"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/SubscriptionOnDeleteUserPreferencesDataResolverFn/SubscriptionOnDeleteUserPreferencesDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptionOnDeleteUserPreferencesDataResolverFnSubscriptionOnDeleteUserPreferencesDataResolverFnAppSyncFunction1C5CBB69"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "SubscriptionOnDeleteUserPreferencesDataResolverFn"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/subscriptionOnDeleteUserPreferencesResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "SubscriptiononDeleteUserPreferencesResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "Subscription.onDeleteUserPreferences"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/UserPreferencesOwnerDataResolverFn/UserPreferencesOwnerDataResolverFn.AppSyncFunction": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPreferencesOwnerDataResolverFnUserPreferencesOwnerDataResolverFnAppSyncFunction45777C18"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserPreferencesOwnerDataResolverFn"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/userPreferencesOwnerResolver": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "UserPreferencesownerResolver"
+          },
+          {
+            "type": "graphqltransformer:resourceName",
+            "data": "UserPreferences.owner"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/CDKMetadata/Default": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadata"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/CDKMetadata/Condition": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "CDKMetadataAvailable"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceCD71964BOutputs.amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTableManagerTableManagerCustomProviderframeworkonEvent7B95DC8AArn": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceCD71964BOutputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTab00779152"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputs.amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputs.amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences/reference-to-amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputs.amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref"
+          }
+        ],
+        "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/UserPreferences.NestedStack/UserPreferences.NestedStackResource": [
+          {
+            "type": "aws:cdk:logicalId",
+            "data": "amplifyDataUserPreferencesNestedStackUserPreferencesNestedStackResource62693304"
           }
         ],
         "/amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsBucket/Resource": [

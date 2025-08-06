@@ -1,0 +1,2199 @@
+{
+ "Parameters": {
+  "DynamoDBModelTableReadIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of read IOPS the table should support."
+  },
+  "DynamoDBModelTableWriteIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of write IOPS the table should support."
+  },
+  "DynamoDBBillingMode": {
+   "Type": "String",
+   "Default": "PAY_PER_REQUEST",
+   "AllowedValues": [
+    "PAY_PER_REQUEST",
+    "PROVISIONED"
+   ],
+   "Description": "Configure @model types to create DynamoDB tables with PAY_PER_REQUEST or PROVISIONED billing modes."
+  },
+  "DynamoDBEnablePointInTimeRecovery": {
+   "Type": "String",
+   "Default": "false",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Whether to enable Point in Time Recovery on the table."
+  },
+  "DynamoDBEnableServerSideEncryption": {
+   "Type": "String",
+   "Default": "true",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Enable server side encryption powered by KMS."
+  },
+  "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceCD71964BOutputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTab00779152": {
+   "Type": "String"
+  },
+  "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId": {
+   "Type": "String"
+  },
+  "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name": {
+   "Type": "String"
+  },
+  "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref": {
+   "Type": "String"
+  },
+  "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref": {
+   "Type": "String"
+  },
+  "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref": {
+   "Type": "String"
+  }
+ },
+ "Conditions": {
+  "HasEnvironmentParameter": {
+   "Fn::Not": [
+    {
+     "Fn::Equals": [
+      "NONE",
+      "NONE"
+     ]
+    }
+   ]
+  },
+  "ShouldUsePayPerRequestBilling": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBBillingMode"
+    },
+    "PAY_PER_REQUEST"
+   ]
+  },
+  "ShouldUsePointInTimeRecovery": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBEnablePointInTimeRecovery"
+    },
+    "true"
+   ]
+  },
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-3"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-4"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Equals": [
+      {
+       "Ref": "AWS::Region"
+      },
+      "us-west-2"
+     ]
+    }
+   ]
+  }
+ },
+ "Resources": {
+  "BettingPredictionTable": {
+   "Type": "Custom::AmplifyDynamoDBTable",
+   "Properties": {
+    "ServiceToken": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResourceCD71964BOutputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataAmplifyTab00779152"
+    },
+    "tableName": {
+     "Fn::Join": [
+      "",
+      [
+       "BettingPrediction-",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "attributeDefinitions": [
+     {
+      "attributeName": "id",
+      "attributeType": "S"
+     }
+    ],
+    "keySchema": [
+     {
+      "attributeName": "id",
+      "keyType": "HASH"
+     }
+    ],
+    "provisionedThroughput": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      {
+       "Ref": "AWS::NoValue"
+      },
+      {
+       "ReadCapacityUnits": {
+        "Ref": "DynamoDBModelTableReadIOPS"
+       },
+       "WriteCapacityUnits": {
+        "Ref": "DynamoDBModelTableWriteIOPS"
+       }
+      }
+     ]
+    },
+    "sseSpecification": {
+     "sseEnabled": false
+    },
+    "streamSpecification": {
+     "streamViewType": "NEW_AND_OLD_IMAGES"
+    },
+    "deletionProtectionEnabled": false,
+    "allowDestructiveGraphqlSchemaUpdates": true,
+    "replaceTableUponGsiUpdate": true,
+    "pointInTimeRecoverySpecification": {
+     "Fn::If": [
+      "ShouldUsePointInTimeRecovery",
+      {
+       "PointInTimeRecoveryEnabled": true
+      },
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    },
+    "billingMode": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      "PAY_PER_REQUEST",
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/BettingPredictionTable/Default/Default"
+   }
+  },
+  "BettingPredictionIAMRoleF636199F": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "appsync.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Policies": [
+     {
+      "PolicyDocument": {
+       "Statement": [
+        {
+         "Action": [
+          "dynamodb:BatchGetItem",
+          "dynamodb:BatchWriteItem",
+          "dynamodb:PutItem",
+          "dynamodb:DeleteItem",
+          "dynamodb:GetItem",
+          "dynamodb:Scan",
+          "dynamodb:Query",
+          "dynamodb:UpdateItem",
+          "dynamodb:ConditionCheckItem",
+          "dynamodb:DescribeTable",
+          "dynamodb:GetRecords",
+          "dynamodb:GetShardIterator"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          {
+           "Fn::Sub": [
+            "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "BettingPrediction-",
+                {
+                 "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          },
+          {
+           "Fn::Sub": [
+            "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}/*",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "BettingPrediction-",
+                {
+                 "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "Version": "2012-10-17"
+      },
+      "PolicyName": "DynamoDBAccess"
+     }
+    ],
+    "RoleName": {
+     "Fn::Join": [
+      "",
+      [
+       "BettingPredictionIAM1b6116-",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "amplifyData"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/BettingPredictionIAMRole/Resource"
+   }
+  },
+  "BettingPredictionDataSource": {
+   "Type": "AWS::AppSync::DataSource",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DynamoDBConfig": {
+     "AwsRegion": {
+      "Ref": "AWS::Region"
+     },
+     "TableName": {
+      "Fn::Select": [
+       1,
+       {
+        "Fn::Split": [
+         "/",
+         {
+          "Fn::Select": [
+           5,
+           {
+            "Fn::Split": [
+             ":",
+             {
+              "Fn::GetAtt": [
+               "BettingPredictionTable",
+               "TableArn"
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "Name": "BettingPredictionTable",
+    "ServiceRoleArn": {
+     "Fn::GetAtt": [
+      "BettingPredictionIAMRoleF636199F",
+      "Arn"
+     ]
+    },
+    "Type": "AMAZON_DYNAMODB"
+   },
+   "DependsOn": [
+    "BettingPredictionIAMRoleF636199F"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/BettingPredictionDataSource/Resource"
+   }
+  },
+  "QuerygetBettingPredictionauth0FunctionQuerygetBettingPredictionauth0FunctionAppSyncFunction62E9430E": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetBettingPredictionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6b25c9b572c67e0f7ad41cb8019a90825f3db4b02a0a15b837c7a82dcb302060.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/QuerygetBettingPredictionauth0Function/QuerygetBettingPredictionauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetBettingPredictionpostAuth0FunctionQuerygetBettingPredictionpostAuth0FunctionAppSyncFunction19CEE0D0": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetBettingPredictionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/QuerygetBettingPredictionpostAuth0Function/QuerygetBettingPredictionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryGetBettingPredictionDataResolverFnQueryGetBettingPredictionDataResolverFnAppSyncFunctionA5361287": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "BettingPredictionDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryGetBettingPredictionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/08f4d557693d96c1a4efba0f9dc91330e4b19772fd5477c156468843e3d9cb5e.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4c6a2d29f01c6091bd1d9afe16e5849d456c96f17c3b215938c8067399532719.vtl"
+    }
+   },
+   "DependsOn": [
+    "BettingPredictionDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/QueryGetBettingPredictionDataResolverFn/QueryGetBettingPredictionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "GetBettingPredictionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "FieldName": "getBettingPrediction",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerygetBettingPredictionauth0FunctionQuerygetBettingPredictionauth0FunctionAppSyncFunction62E9430E",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetBettingPredictionpostAuth0FunctionQuerygetBettingPredictionpostAuth0FunctionAppSyncFunction19CEE0D0",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryGetBettingPredictionDataResolverFnQueryGetBettingPredictionDataResolverFnAppSyncFunctionA5361287",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getBettingPrediction\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "BettingPredictionTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/queryGetBettingPredictionResolver"
+   }
+  },
+  "QuerylistBettingPredictionsauth0FunctionQuerylistBettingPredictionsauth0FunctionAppSyncFunctionEB29FCC2": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistBettingPredictionsauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6b25c9b572c67e0f7ad41cb8019a90825f3db4b02a0a15b837c7a82dcb302060.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/QuerylistBettingPredictionsauth0Function/QuerylistBettingPredictionsauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistBettingPredictionspostAuth0FunctionQuerylistBettingPredictionspostAuth0FunctionAppSyncFunction2853CD36": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistBettingPredictionspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/QuerylistBettingPredictionspostAuth0Function/QuerylistBettingPredictionspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryListBettingPredictionsDataResolverFnQueryListBettingPredictionsDataResolverFnAppSyncFunctionFD5CF72F": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "BettingPredictionDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryListBettingPredictionsDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9fcbe070ecd3023c5bf5b966fa9584757db9762eef123bad0820bd87591b2174.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d.vtl"
+    }
+   },
+   "DependsOn": [
+    "BettingPredictionDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/QueryListBettingPredictionsDataResolverFn/QueryListBettingPredictionsDataResolverFn.AppSyncFunction"
+   }
+  },
+  "ListBettingPredictionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "FieldName": "listBettingPredictions",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerylistBettingPredictionsauth0FunctionQuerylistBettingPredictionsauth0FunctionAppSyncFunctionEB29FCC2",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistBettingPredictionspostAuth0FunctionQuerylistBettingPredictionspostAuth0FunctionAppSyncFunction2853CD36",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryListBettingPredictionsDataResolverFnQueryListBettingPredictionsDataResolverFnAppSyncFunctionFD5CF72F",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listBettingPredictions\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "BettingPredictionTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/queryListBettingPredictionsResolver"
+   }
+  },
+  "MutationcreateBettingPredictioninit0FunctionMutationcreateBettingPredictioninit0FunctionAppSyncFunction7AB9C363": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateBettingPredictioninit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationcreateBettingPredictioninit0Function/MutationcreateBettingPredictioninit0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateBettingPredictioninit1FunctionMutationcreateBettingPredictioninit1FunctionAppSyncFunctionE5222085": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateBettingPredictioninit1Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1cf3cf2f2297bf0f564bc3cbc347233af93d7580a8ff3e9f3ca44dc54fc22b99.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationcreateBettingPredictioninit1Function/MutationcreateBettingPredictioninit1Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateBettingPredictionauth0FunctionMutationcreateBettingPredictionauth0FunctionAppSyncFunction38B9E445": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateBettingPredictionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/211edb24f8cc845dab25b0a09dd77bf14095e2cae019f9505a1e05d137c16eb4.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationcreateBettingPredictionauth0Function/MutationcreateBettingPredictionauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateBettingPredictionpostAuth0FunctionMutationcreateBettingPredictionpostAuth0FunctionAppSyncFunction2996467C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateBettingPredictionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationcreateBettingPredictionpostAuth0Function/MutationcreateBettingPredictionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationCreateBettingPredictionDataResolverFnMutationCreateBettingPredictionDataResolverFnAppSyncFunctionD7D96D15": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "BettingPredictionDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationCreateBettingPredictionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/2b92082dd9c4daa8cf336f93012a6e724edce1d1e8d2e50e1568dcdbcda818bb.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "BettingPredictionDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationCreateBettingPredictionDataResolverFn/MutationCreateBettingPredictionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "CreateBettingPredictionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "FieldName": "createBettingPrediction",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationcreateBettingPredictioninit0FunctionMutationcreateBettingPredictioninit0FunctionAppSyncFunction7AB9C363",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateBettingPredictioninit1FunctionMutationcreateBettingPredictioninit1FunctionAppSyncFunctionE5222085",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateBettingPredictionauth0FunctionMutationcreateBettingPredictionauth0FunctionAppSyncFunction38B9E445",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateBettingPredictionpostAuth0FunctionMutationcreateBettingPredictionpostAuth0FunctionAppSyncFunction2996467C",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationCreateBettingPredictionDataResolverFnMutationCreateBettingPredictionDataResolverFnAppSyncFunctionD7D96D15",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createBettingPrediction\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "BettingPredictionTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/mutationCreateBettingPredictionResolver"
+   }
+  },
+  "MutationupdateBettingPredictioninit0FunctionMutationupdateBettingPredictioninit0FunctionAppSyncFunction2FAD3169": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateBettingPredictioninit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/06db846fd14e6fc371f22b12b5545ba8e2dbfeda85d8c8d586c71c282166657b.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationupdateBettingPredictioninit0Function/MutationupdateBettingPredictioninit0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateBettingPredictionauth0FunctionMutationupdateBettingPredictionauth0FunctionAppSyncFunctionB7967138": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "BettingPredictionDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateBettingPredictionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e8245f29c3b170103c4a8ec6ad9fb1bc83ab34a2be76b0a8fc71b099dc9d2236.vtl"
+    }
+   },
+   "DependsOn": [
+    "BettingPredictionDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationupdateBettingPredictionauth0Function/MutationupdateBettingPredictionauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateBettingPredictionpostAuth0FunctionMutationupdateBettingPredictionpostAuth0FunctionAppSyncFunction8B7EC679": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateBettingPredictionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationupdateBettingPredictionpostAuth0Function/MutationupdateBettingPredictionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationUpdateBettingPredictionDataResolverFnMutationUpdateBettingPredictionDataResolverFnAppSyncFunctionD3712422": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "BettingPredictionDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationUpdateBettingPredictionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/474bf0776ec2164a13191d1a0a9e057154931e4918fea5086f49850d02a5371b.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "BettingPredictionDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationUpdateBettingPredictionDataResolverFn/MutationUpdateBettingPredictionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "UpdateBettingPredictionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "FieldName": "updateBettingPrediction",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationupdateBettingPredictioninit0FunctionMutationupdateBettingPredictioninit0FunctionAppSyncFunction2FAD3169",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateBettingPredictionauth0FunctionMutationupdateBettingPredictionauth0FunctionAppSyncFunctionB7967138",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateBettingPredictionpostAuth0FunctionMutationupdateBettingPredictionpostAuth0FunctionAppSyncFunction8B7EC679",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationUpdateBettingPredictionDataResolverFnMutationUpdateBettingPredictionDataResolverFnAppSyncFunctionD3712422",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updateBettingPrediction\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "BettingPredictionTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/mutationUpdateBettingPredictionResolver"
+   }
+  },
+  "MutationdeleteBettingPredictionauth0FunctionMutationdeleteBettingPredictionauth0FunctionAppSyncFunctionCD07C2CE": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "BettingPredictionDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteBettingPredictionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/867fb7d7eb8e4127b6d0136b82c5c3f74a52eb410297086859986f8e7e4b02aa.vtl"
+    }
+   },
+   "DependsOn": [
+    "BettingPredictionDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationdeleteBettingPredictionauth0Function/MutationdeleteBettingPredictionauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeleteBettingPredictionpostAuth0FunctionMutationdeleteBettingPredictionpostAuth0FunctionAppSyncFunctionD2E0B3CF": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteBettingPredictionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationdeleteBettingPredictionpostAuth0Function/MutationdeleteBettingPredictionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationDeleteBettingPredictionDataResolverFnMutationDeleteBettingPredictionDataResolverFnAppSyncFunction4FCF260B": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "BettingPredictionDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationDeleteBettingPredictionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4f7907d1209a2c9953a0c053df402c634e359546d70c7cc5c2e8e21ea734880f.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "BettingPredictionDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/MutationDeleteBettingPredictionDataResolverFn/MutationDeleteBettingPredictionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "DeleteBettingPredictionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "FieldName": "deleteBettingPrediction",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteBettingPredictionauth0FunctionMutationdeleteBettingPredictionauth0FunctionAppSyncFunctionCD07C2CE",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteBettingPredictionpostAuth0FunctionMutationdeleteBettingPredictionpostAuth0FunctionAppSyncFunctionD2E0B3CF",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationDeleteBettingPredictionDataResolverFnMutationDeleteBettingPredictionDataResolverFnAppSyncFunction4FCF260B",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deleteBettingPrediction\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "BettingPredictionTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/mutationDeleteBettingPredictionResolver"
+   }
+  },
+  "SubscriptiononCreateBettingPredictionauth0FunctionSubscriptiononCreateBettingPredictionauth0FunctionAppSyncFunctionE8A8418B": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreateBettingPredictionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptiononCreateBettingPredictionauth0Function/SubscriptiononCreateBettingPredictionauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreateBettingPredictionpostAuth0FunctionSubscriptiononCreateBettingPredictionpostAuth0FunctionAppSyncFunction30DCF10D": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreateBettingPredictionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptiononCreateBettingPredictionpostAuth0Function/SubscriptiononCreateBettingPredictionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnCreateBettingPredictionDataResolverFnSubscriptionOnCreateBettingPredictionDataResolverFnAppSyncFunction7BD6B90C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnCreateBettingPredictionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptionOnCreateBettingPredictionDataResolverFn/SubscriptionOnCreateBettingPredictionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreateBettingPredictionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "FieldName": "onCreateBettingPrediction",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreateBettingPredictionauth0FunctionSubscriptiononCreateBettingPredictionauth0FunctionAppSyncFunctionE8A8418B",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreateBettingPredictionpostAuth0FunctionSubscriptiononCreateBettingPredictionpostAuth0FunctionAppSyncFunction30DCF10D",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnCreateBettingPredictionDataResolverFnSubscriptionOnCreateBettingPredictionDataResolverFnAppSyncFunction7BD6B90C",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreateBettingPrediction\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/subscriptionOnCreateBettingPredictionResolver"
+   }
+  },
+  "SubscriptiononUpdateBettingPredictionauth0FunctionSubscriptiononUpdateBettingPredictionauth0FunctionAppSyncFunction2B725876": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdateBettingPredictionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptiononUpdateBettingPredictionauth0Function/SubscriptiononUpdateBettingPredictionauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdateBettingPredictionpostAuth0FunctionSubscriptiononUpdateBettingPredictionpostAuth0FunctionAppSyncFunctionA1D1C837": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdateBettingPredictionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptiononUpdateBettingPredictionpostAuth0Function/SubscriptiononUpdateBettingPredictionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnUpdateBettingPredictionDataResolverFnSubscriptionOnUpdateBettingPredictionDataResolverFnAppSyncFunction08B6BF28": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnUpdateBettingPredictionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptionOnUpdateBettingPredictionDataResolverFn/SubscriptionOnUpdateBettingPredictionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdateBettingPredictionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "FieldName": "onUpdateBettingPrediction",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdateBettingPredictionauth0FunctionSubscriptiononUpdateBettingPredictionauth0FunctionAppSyncFunction2B725876",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdateBettingPredictionpostAuth0FunctionSubscriptiononUpdateBettingPredictionpostAuth0FunctionAppSyncFunctionA1D1C837",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnUpdateBettingPredictionDataResolverFnSubscriptionOnUpdateBettingPredictionDataResolverFnAppSyncFunction08B6BF28",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdateBettingPrediction\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/subscriptionOnUpdateBettingPredictionResolver"
+   }
+  },
+  "SubscriptiononDeleteBettingPredictionauth0FunctionSubscriptiononDeleteBettingPredictionauth0FunctionAppSyncFunction8BE60DCE": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeleteBettingPredictionauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptiononDeleteBettingPredictionauth0Function/SubscriptiononDeleteBettingPredictionauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeleteBettingPredictionpostAuth0FunctionSubscriptiononDeleteBettingPredictionpostAuth0FunctionAppSyncFunction9C957C43": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeleteBettingPredictionpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptiononDeleteBettingPredictionpostAuth0Function/SubscriptiononDeleteBettingPredictionpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnDeleteBettingPredictionDataResolverFnSubscriptionOnDeleteBettingPredictionDataResolverFnAppSyncFunctionAC48D61B": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnDeleteBettingPredictionDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/SubscriptionOnDeleteBettingPredictionDataResolverFn/SubscriptionOnDeleteBettingPredictionDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeleteBettingPredictionResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "FieldName": "onDeleteBettingPrediction",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeleteBettingPredictionauth0FunctionSubscriptiononDeleteBettingPredictionauth0FunctionAppSyncFunction8BE60DCE",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeleteBettingPredictionpostAuth0FunctionSubscriptiononDeleteBettingPredictionpostAuth0FunctionAppSyncFunction9C957C43",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnDeleteBettingPredictionDataResolverFnSubscriptionOnDeleteBettingPredictionDataResolverFnAppSyncFunctionAC48D61B",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeleteBettingPrediction\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/subscriptionOnDeleteBettingPredictionResolver"
+   }
+  },
+  "BettingPredictionOwnerDataResolverFnBettingPredictionOwnerDataResolverFnAppSyncFunctionA7342C2A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPINONEDS1F723A15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "BettingPredictionOwnerDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/041534e5fd916595f752318f161512d7c7f83b9f2cf32d0f0be381c12253ff68.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/064303962e481067b44300212516363b99aaee539b6bafaf756fdd83ff0b60f0.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/BettingPredictionOwnerDataResolverFn/BettingPredictionOwnerDataResolverFn.AppSyncFunction"
+   }
+  },
+  "BettingPredictionownerResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+    },
+    "FieldName": "owner",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "BettingPredictionOwnerDataResolverFnBettingPredictionOwnerDataResolverFnAppSyncFunctionA7342C2A",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"BettingPrediction\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"owner\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthauthenticatedUserRole5B98AF54Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthunauthenticatedUserRole9337E476Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authNestedStackauthNestedStackResource4EEE5A42Outputsamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726authamplifyAuthIdentityPool063CC7E3Ref"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "BettingPrediction"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/bettingPredictionOwnerResolver"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WQQW+DMAyFf8vuwWvpZdcVtOM20d0rkxiUQhIUO50qxH9foFOnnZ4/+cl+dgnl7gV2T/jNhTZDMdoW5ndiIXMS1IOqOv+JER0JxRWq4I0VG7xqiEOKmlSVWIL7w84/6jz2PJubRxdMC1/YjnREJmXRwdyE8e7OuiicJr55DXO92eu2RsHTY+R/ekteryFyms72KeKW6HfzeKW4KD6ckZmE4XWVzHBMeiBZAyyr9yPJlERt7Xxsb32/KB8MwYWfr+UB9vv8mQtbW8TkxTqC5q4/mAHDCTYBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726/data/amplifyData/BettingPrediction/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Outputs": {
+  "GetAttBettingPredictionTableStreamArn": {
+   "Description": "Your DynamoDB table StreamArn.",
+   "Value": {
+    "Fn::GetAtt": [
+     "BettingPredictionTable",
+     "TableStreamArn"
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+       },
+       "GetAtt:BettingPredictionTable:StreamArn"
+      ]
+     ]
+    }
+   }
+  },
+  "GetAttBettingPredictionTableName": {
+   "Description": "Your DynamoDB table name.",
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "BettingPrediction-",
+      {
+       "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+      },
+      "-NONE"
+     ]
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataGraphQLAPI488699B5ApiId"
+       },
+       "GetAtt:BettingPredictionTable:Name"
+      ]
+     ]
+    }
+   }
+  }
+ }
+}

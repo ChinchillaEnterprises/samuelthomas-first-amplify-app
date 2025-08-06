@@ -16,7 +16,7 @@
       }
     },
     "6b25c9b572c67e0f7ad41cb8019a90825f3db4b02a0a15b837c7a82dcb302060": {
-      "displayName": "data/amplifyData/Todo/QuerygetTodoauth0Function/Templateresolvers--Query.getTodo.auth.1.req.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/QuerygetBettingPredictionauth0Function/Templateresolvers--Query.getBettingPrediction.auth.1.req.vtl",
       "source": {
         "path": "asset.6b25c9b572c67e0f7ad41cb8019a90825f3db4b02a0a15b837c7a82dcb302060.vtl",
         "packaging": "file"
@@ -30,7 +30,7 @@
       }
     },
     "c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77": {
-      "displayName": "data/amplifyData/Todo/QuerygetTodopostAuth0Function/Templateresolvers--Query.getTodo.postAuth.1.req.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/QuerygetBettingPredictionpostAuth0Function/Templateresolvers--Query.getBettingPrediction.postAuth.1.req.vtl",
       "source": {
         "path": "asset.c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl",
         "packaging": "file"
@@ -44,7 +44,7 @@
       }
     },
     "08f4d557693d96c1a4efba0f9dc91330e4b19772fd5477c156468843e3d9cb5e": {
-      "displayName": "data/amplifyData/Todo/QueryGetTodoDataResolverFn/Templateresolvers--Query.getTodo.req.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/QueryGetBettingPredictionDataResolverFn/Templateresolvers--Query.getBettingPrediction.req.vtl",
       "source": {
         "path": "asset.08f4d557693d96c1a4efba0f9dc91330e4b19772fd5477c156468843e3d9cb5e.vtl",
         "packaging": "file"
@@ -58,7 +58,7 @@
       }
     },
     "4c6a2d29f01c6091bd1d9afe16e5849d456c96f17c3b215938c8067399532719": {
-      "displayName": "data/amplifyData/Todo/QueryGetTodoDataResolverFn/Templateresolvers--Query.getTodo.res.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/QueryGetBettingPredictionDataResolverFn/Templateresolvers--Query.getBettingPrediction.res.vtl",
       "source": {
         "path": "asset.4c6a2d29f01c6091bd1d9afe16e5849d456c96f17c3b215938c8067399532719.vtl",
         "packaging": "file"
@@ -72,7 +72,7 @@
       }
     },
     "9fcbe070ecd3023c5bf5b966fa9584757db9762eef123bad0820bd87591b2174": {
-      "displayName": "data/amplifyData/Todo/QueryListTodosDataResolverFn/Templateresolvers--Query.listTodos.req.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/QueryListBettingPredictionsDataResolverFn/Templateresolvers--Query.listBettingPredictions.req.vtl",
       "source": {
         "path": "asset.9fcbe070ecd3023c5bf5b966fa9584757db9762eef123bad0820bd87591b2174.vtl",
         "packaging": "file"
@@ -86,7 +86,7 @@
       }
     },
     "cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d": {
-      "displayName": "data/amplifyData/Todo/QueryListTodosDataResolverFn/Templateresolvers--Query.listTodos.res.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/QueryListBettingPredictionsDataResolverFn/Templateresolvers--Query.listBettingPredictions.res.vtl",
       "source": {
         "path": "asset.cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d.vtl",
         "packaging": "file"
@@ -100,7 +100,7 @@
       }
     },
     "a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc": {
-      "displayName": "data/amplifyData/Todo/MutationcreateTodoinit0Function/Templateresolvers--Mutation.createTodo.init.1.req.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/MutationcreateBettingPredictioninit0Function/Templateresolvers--Mutation.createBettingPrediction.init.1.req.vtl",
       "source": {
         "path": "asset.a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc.vtl",
         "packaging": "file"
@@ -113,36 +113,50 @@
         }
       }
     },
-    "e786c4df4a8df6c0cd892e6fff655d5af42e899857dd636f34fb7bbcc24c697b": {
-      "displayName": "data/amplifyData/Todo/MutationcreateTodoauth0Function/Templateresolvers--Mutation.createTodo.auth.1.req.vtl",
+    "1cf3cf2f2297bf0f564bc3cbc347233af93d7580a8ff3e9f3ca44dc54fc22b99": {
+      "displayName": "data/amplifyData/BettingPrediction/MutationcreateBettingPredictioninit1Function/Templateresolvers--Mutation.createBettingPrediction.init.2.req.vtl",
       "source": {
-        "path": "asset.e786c4df4a8df6c0cd892e6fff655d5af42e899857dd636f34fb7bbcc24c697b.vtl",
+        "path": "asset.1cf3cf2f2297bf0f564bc3cbc347233af93d7580a8ff3e9f3ca44dc54fc22b99.vtl",
         "packaging": "file"
       },
       "destinations": {
-        "current_account-current_region-bf9a894d": {
+        "current_account-current_region-aaf7a05c": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "e786c4df4a8df6c0cd892e6fff655d5af42e899857dd636f34fb7bbcc24c697b.vtl",
+          "objectKey": "1cf3cf2f2297bf0f564bc3cbc347233af93d7580a8ff3e9f3ca44dc54fc22b99.vtl",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
     },
-    "2bf64327ca5682da4be84d0d16440204e25abc3a221195b41f2d21dfa432e5ab": {
-      "displayName": "data/amplifyData/Todo/MutationCreateTodoDataResolverFn/Templateresolvers--Mutation.createTodo.req.vtl",
+    "211edb24f8cc845dab25b0a09dd77bf14095e2cae019f9505a1e05d137c16eb4": {
+      "displayName": "data/amplifyData/BettingPrediction/MutationcreateBettingPredictionauth0Function/Templateresolvers--Mutation.createBettingPrediction.auth.1.req.vtl",
       "source": {
-        "path": "asset.2bf64327ca5682da4be84d0d16440204e25abc3a221195b41f2d21dfa432e5ab.vtl",
+        "path": "asset.211edb24f8cc845dab25b0a09dd77bf14095e2cae019f9505a1e05d137c16eb4.vtl",
         "packaging": "file"
       },
       "destinations": {
-        "current_account-current_region-14e1cc0e": {
+        "current_account-current_region-9f815a6e": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "2bf64327ca5682da4be84d0d16440204e25abc3a221195b41f2d21dfa432e5ab.vtl",
+          "objectKey": "211edb24f8cc845dab25b0a09dd77bf14095e2cae019f9505a1e05d137c16eb4.vtl",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "2b92082dd9c4daa8cf336f93012a6e724edce1d1e8d2e50e1568dcdbcda818bb": {
+      "displayName": "data/amplifyData/BettingPrediction/MutationCreateBettingPredictionDataResolverFn/Templateresolvers--Mutation.createBettingPrediction.req.vtl",
+      "source": {
+        "path": "asset.2b92082dd9c4daa8cf336f93012a6e724edce1d1e8d2e50e1568dcdbcda818bb.vtl",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region-3037c08c": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "2b92082dd9c4daa8cf336f93012a6e724edce1d1e8d2e50e1568dcdbcda818bb.vtl",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
     },
     "f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249": {
-      "displayName": "data/amplifyData/Todo/MutationCreateTodoDataResolverFn/Templateresolvers--Mutation.createTodo.res.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/MutationCreateBettingPredictionDataResolverFn/Templateresolvers--Mutation.createBettingPrediction.res.vtl",
       "source": {
         "path": "asset.f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl",
         "packaging": "file"
@@ -156,7 +170,7 @@
       }
     },
     "06db846fd14e6fc371f22b12b5545ba8e2dbfeda85d8c8d586c71c282166657b": {
-      "displayName": "data/amplifyData/Todo/MutationupdateTodoinit0Function/Templateresolvers--Mutation.updateTodo.init.1.req.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/MutationupdateBettingPredictioninit0Function/Templateresolvers--Mutation.updateBettingPrediction.init.1.req.vtl",
       "source": {
         "path": "asset.06db846fd14e6fc371f22b12b5545ba8e2dbfeda85d8c8d586c71c282166657b.vtl",
         "packaging": "file"
@@ -170,7 +184,7 @@
       }
     },
     "1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c": {
-      "displayName": "data/amplifyData/Todo/MutationupdateTodoauth0Function/Templateresolvers--Mutation.updateTodo.auth.1.req.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/MutationupdateBettingPredictionauth0Function/Templateresolvers--Mutation.updateBettingPrediction.auth.1.req.vtl",
       "source": {
         "path": "asset.1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl",
         "packaging": "file"
@@ -183,22 +197,22 @@
         }
       }
     },
-    "681a269800c092c737d40c9c794e140000a5a63a3f51aa73661f758f4e2168af": {
-      "displayName": "data/amplifyData/Todo/MutationupdateTodoauth0Function/Templateresolvers--Mutation.updateTodo.auth.1.res.vtl",
+    "e8245f29c3b170103c4a8ec6ad9fb1bc83ab34a2be76b0a8fc71b099dc9d2236": {
+      "displayName": "data/amplifyData/BettingPrediction/MutationupdateBettingPredictionauth0Function/Templateresolvers--Mutation.updateBettingPrediction.auth.1.res.vtl",
       "source": {
-        "path": "asset.681a269800c092c737d40c9c794e140000a5a63a3f51aa73661f758f4e2168af.vtl",
+        "path": "asset.e8245f29c3b170103c4a8ec6ad9fb1bc83ab34a2be76b0a8fc71b099dc9d2236.vtl",
         "packaging": "file"
       },
       "destinations": {
-        "current_account-current_region-d3f33b1a": {
+        "current_account-current_region-64cbbae0": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "681a269800c092c737d40c9c794e140000a5a63a3f51aa73661f758f4e2168af.vtl",
+          "objectKey": "e8245f29c3b170103c4a8ec6ad9fb1bc83ab34a2be76b0a8fc71b099dc9d2236.vtl",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
     },
     "474bf0776ec2164a13191d1a0a9e057154931e4918fea5086f49850d02a5371b": {
-      "displayName": "data/amplifyData/Todo/MutationUpdateTodoDataResolverFn/Templateresolvers--Mutation.updateTodo.req.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/MutationUpdateBettingPredictionDataResolverFn/Templateresolvers--Mutation.updateBettingPrediction.req.vtl",
       "source": {
         "path": "asset.474bf0776ec2164a13191d1a0a9e057154931e4918fea5086f49850d02a5371b.vtl",
         "packaging": "file"
@@ -212,7 +226,7 @@
       }
     },
     "867fb7d7eb8e4127b6d0136b82c5c3f74a52eb410297086859986f8e7e4b02aa": {
-      "displayName": "data/amplifyData/Todo/MutationdeleteTodoauth0Function/Templateresolvers--Mutation.deleteTodo.auth.1.res.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/MutationdeleteBettingPredictionauth0Function/Templateresolvers--Mutation.deleteBettingPrediction.auth.1.res.vtl",
       "source": {
         "path": "asset.867fb7d7eb8e4127b6d0136b82c5c3f74a52eb410297086859986f8e7e4b02aa.vtl",
         "packaging": "file"
@@ -226,7 +240,7 @@
       }
     },
     "4f7907d1209a2c9953a0c053df402c634e359546d70c7cc5c2e8e21ea734880f": {
-      "displayName": "data/amplifyData/Todo/MutationDeleteTodoDataResolverFn/Templateresolvers--Mutation.deleteTodo.req.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/MutationDeleteBettingPredictionDataResolverFn/Templateresolvers--Mutation.deleteBettingPrediction.req.vtl",
       "source": {
         "path": "asset.4f7907d1209a2c9953a0c053df402c634e359546d70c7cc5c2e8e21ea734880f.vtl",
         "packaging": "file"
@@ -240,7 +254,7 @@
       }
     },
     "3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0": {
-      "displayName": "data/amplifyData/Todo/SubscriptiononCreateTodoauth0Function/Templateresolvers--Subscription.onCreateTodo.auth.1.req.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/SubscriptiononCreateBettingPredictionauth0Function/Templateresolvers--Subscription.onCreateBettingPrediction.auth.1.req.vtl",
       "source": {
         "path": "asset.3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl",
         "packaging": "file"
@@ -254,7 +268,7 @@
       }
     },
     "fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502": {
-      "displayName": "data/amplifyData/Todo/SubscriptionOnCreateTodoDataResolverFn/Templateresolvers--Subscription.onCreateTodo.req.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/SubscriptionOnCreateBettingPredictionDataResolverFn/Templateresolvers--Subscription.onCreateBettingPrediction.req.vtl",
       "source": {
         "path": "asset.fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl",
         "packaging": "file"
@@ -268,7 +282,7 @@
       }
     },
     "e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc": {
-      "displayName": "data/amplifyData/Todo/SubscriptionOnCreateTodoDataResolverFn/Templateresolvers--Subscription.onCreateTodo.res.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/SubscriptionOnCreateBettingPredictionDataResolverFn/Templateresolvers--Subscription.onCreateBettingPrediction.res.vtl",
       "source": {
         "path": "asset.e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl",
         "packaging": "file"
@@ -281,8 +295,50 @@
         }
       }
     },
+    "2eeb4730b0d79442d6d90c7de46ee36fdc7a82c29c2b60ad0995b677605affe2": {
+      "displayName": "data/amplifyData/UserPreferences/MutationcreateUserPreferencesauth0Function/Templateresolvers--Mutation.createUserPreferences.auth.1.req.vtl",
+      "source": {
+        "path": "asset.2eeb4730b0d79442d6d90c7de46ee36fdc7a82c29c2b60ad0995b677605affe2.vtl",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region-717e50e0": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "2eeb4730b0d79442d6d90c7de46ee36fdc7a82c29c2b60ad0995b677605affe2.vtl",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "3af81575643282c15e5b4b78b971f1abd43aef5c8fee4b5278d7a553cd6c0332": {
+      "displayName": "data/amplifyData/UserPreferences/MutationCreateUserPreferencesDataResolverFn/Templateresolvers--Mutation.createUserPreferences.req.vtl",
+      "source": {
+        "path": "asset.3af81575643282c15e5b4b78b971f1abd43aef5c8fee4b5278d7a553cd6c0332.vtl",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region-2bba5d80": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "3af81575643282c15e5b4b78b971f1abd43aef5c8fee4b5278d7a553cd6c0332.vtl",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "7d8ea6ae3506403c8e0d43ecc6918957909c001eb03a6087596dfd0b6852a07a": {
+      "displayName": "data/amplifyData/UserPreferences/MutationupdateUserPreferencesauth0Function/Templateresolvers--Mutation.updateUserPreferences.auth.1.res.vtl",
+      "source": {
+        "path": "asset.7d8ea6ae3506403c8e0d43ecc6918957909c001eb03a6087596dfd0b6852a07a.vtl",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region-7cd35405": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "7d8ea6ae3506403c8e0d43ecc6918957909c001eb03a6087596dfd0b6852a07a.vtl",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
     "041534e5fd916595f752318f161512d7c7f83b9f2cf32d0f0be381c12253ff68": {
-      "displayName": "data/amplifyData/Todo/TodoOwnerDataResolverFn/Templateresolvers--Todo.owner.req.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/BettingPredictionOwnerDataResolverFn/Templateresolvers--BettingPrediction.owner.req.vtl",
       "source": {
         "path": "asset.041534e5fd916595f752318f161512d7c7f83b9f2cf32d0f0be381c12253ff68.vtl",
         "packaging": "file"
@@ -296,7 +352,7 @@
       }
     },
     "064303962e481067b44300212516363b99aaee539b6bafaf756fdd83ff0b60f0": {
-      "displayName": "data/amplifyData/Todo/TodoOwnerDataResolverFn/Templateresolvers--Todo.owner.res.vtl",
+      "displayName": "data/amplifyData/BettingPrediction/BettingPredictionOwnerDataResolverFn/Templateresolvers--BettingPrediction.owner.res.vtl",
       "source": {
         "path": "asset.064303962e481067b44300212516363b99aaee539b6bafaf756fdd83ff0b60f0.vtl",
         "packaging": "file"
@@ -351,44 +407,44 @@
         }
       }
     },
-    "fb1ea8f31767ee6cc80b9bc2a956461ef912c6296a412ff97cf848dac27ac2c9": {
+    "a49fdff237816dba3429f78c4cad3ba98a479eeec8a6c4395198f8763fc53e2d": {
       "displayName": "data/amplifyData/AmplifyCodegenAssets/AmplifyCodegenAssetsDeployment/Asset1",
       "source": {
-        "path": "asset.fb1ea8f31767ee6cc80b9bc2a956461ef912c6296a412ff97cf848dac27ac2c9",
+        "path": "asset.a49fdff237816dba3429f78c4cad3ba98a479eeec8a6c4395198f8763fc53e2d",
         "packaging": "zip"
       },
       "destinations": {
-        "current_account-current_region-11640edf": {
+        "current_account-current_region-676d60f5": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "fb1ea8f31767ee6cc80b9bc2a956461ef912c6296a412ff97cf848dac27ac2c9.zip",
+          "objectKey": "a49fdff237816dba3429f78c4cad3ba98a479eeec8a6c4395198f8763fc53e2d.zip",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
     },
-    "a67342e985bbc4aecefc7a9816e66158f008f9578dddca561366606e5b14a9e9": {
+    "20bf6faa163c24658567fddc075b63a8fcdc8792551be31f2eb6d734f586e2e2": {
       "displayName": "data/modelIntrospectionSchemaBucketDeployment/Asset1",
       "source": {
-        "path": "asset.a67342e985bbc4aecefc7a9816e66158f008f9578dddca561366606e5b14a9e9",
+        "path": "asset.20bf6faa163c24658567fddc075b63a8fcdc8792551be31f2eb6d734f586e2e2",
         "packaging": "zip"
       },
       "destinations": {
-        "current_account-current_region-22d55f97": {
+        "current_account-current_region-b9fcfc03": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "a67342e985bbc4aecefc7a9816e66158f008f9578dddca561366606e5b14a9e9.zip",
+          "objectKey": "20bf6faa163c24658567fddc075b63a8fcdc8792551be31f2eb6d734f586e2e2.zip",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
     },
-    "b441cdf5d486d5b99ff72c931a70e45507a1ed2008f47d685ca62a960f51f60a": {
+    "c5c0939f025871637721705dba6c427911ee81b5a2ccb1e8f3da8453063b88fa": {
       "displayName": "data/amplifyData/GraphQLAPI/schema",
       "source": {
-        "path": "asset.b441cdf5d486d5b99ff72c931a70e45507a1ed2008f47d685ca62a960f51f60a.graphql",
+        "path": "asset.c5c0939f025871637721705dba6c427911ee81b5a2ccb1e8f3da8453063b88fa.graphql",
         "packaging": "file"
       },
       "destinations": {
-        "current_account-current_region-3eb8228c": {
+        "current_account-current_region-d023f7d0": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "b441cdf5d486d5b99ff72c931a70e45507a1ed2008f47d685ca62a960f51f60a.graphql",
+          "objectKey": "c5c0939f025871637721705dba6c427911ee81b5a2ccb1e8f3da8453063b88fa.graphql",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
@@ -421,44 +477,58 @@
         }
       }
     },
-    "b72b7f71fdf6f452247ca6952b61120be6699e3bb90d9cbb678d1fbda13c2bc0": {
-      "displayName": "data/amplifyData/Todo Nested Stack Template",
+    "fffd7acbb7c48d2ba1713f9653f12b21fabd9e312b8a5dedbe3d1d772a51e0fc": {
+      "displayName": "data/amplifyData/BettingPrediction Nested Stack Template",
       "source": {
-        "path": "amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataTodo859FB892.nested.template.json",
+        "path": "amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataBettingPredictionDBF626FF.nested.template.json",
         "packaging": "file"
       },
       "destinations": {
-        "current_account-current_region-7305ddcd": {
+        "current_account-current_region-3191898f": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "b72b7f71fdf6f452247ca6952b61120be6699e3bb90d9cbb678d1fbda13c2bc0.json",
+          "objectKey": "fffd7acbb7c48d2ba1713f9653f12b21fabd9e312b8a5dedbe3d1d772a51e0fc.json",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
     },
-    "6978e3d64acb5f042c76702ddec24ee7a56b38ba90fe67ebce7fc1b7362a9a71": {
+    "ca7065860e557a8b96162dc2b3e77e747a2838f58d4f4e5af6a3dcdae71b5b0f": {
+      "displayName": "data/amplifyData/UserPreferences Nested Stack Template",
+      "source": {
+        "path": "amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726dataamplifyDataUserPreferences3EED561E.nested.template.json",
+        "packaging": "file"
+      },
+      "destinations": {
+        "current_account-current_region-e4145dc0": {
+          "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
+          "objectKey": "ca7065860e557a8b96162dc2b3e77e747a2838f58d4f4e5af6a3dcdae71b5b0f.json",
+          "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
+        }
+      }
+    },
+    "24436e93d343c02cb83a7dccf2fb6677c25e6a22c69e80fe1ae4a0fa672aadc1": {
       "displayName": "data Nested Stack Template",
       "source": {
         "path": "amplifymyfirstamplifyappsamuelthomassandbox0cb4a15726data5AABC1D9.nested.template.json",
         "packaging": "file"
       },
       "destinations": {
-        "current_account-current_region-277f4abd": {
+        "current_account-current_region-594eb0a6": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "6978e3d64acb5f042c76702ddec24ee7a56b38ba90fe67ebce7fc1b7362a9a71.json",
+          "objectKey": "24436e93d343c02cb83a7dccf2fb6677c25e6a22c69e80fe1ae4a0fa672aadc1.json",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }
     },
-    "a083e69b64ecfbb5093f00e056f20f6b16d4903207746506408bd764548e5494": {
+    "6024cae214501930cd0658bd934e28b98cffa7355df1438845bb21efefe8e96d": {
       "displayName": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726 Template",
       "source": {
         "path": "amplify-myfirstamplifyapp-samuelthomas-sandbox-0cb4a15726.template.json",
         "packaging": "file"
       },
       "destinations": {
-        "current_account-current_region-94f947d1": {
+        "current_account-current_region-a08108f6": {
           "bucketName": "cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}",
-          "objectKey": "a083e69b64ecfbb5093f00e056f20f6b16d4903207746506408bd764548e5494.json",
+          "objectKey": "6024cae214501930cd0658bd934e28b98cffa7355df1438845bb21efefe8e96d.json",
           "assumeRoleArn": "arn:${AWS::Partition}:iam::${AWS::AccountId}:role/cdk-hnb659fds-file-publishing-role-${AWS::AccountId}-${AWS::Region}"
         }
       }

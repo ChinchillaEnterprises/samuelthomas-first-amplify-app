@@ -1,0 +1,25 @@
+type BettingPrediction @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  sport: String!
+  homeTeam: String!
+  awayTeam: String!
+  matchDate: AWSDateTime!
+  recommendedBet: String!
+  confidence: Float!
+  odds: Float!
+  platform: String!
+  analysis: String
+  potentialReturn: Float
+  stake: Float
+  betType: String!
+  isLive: Boolean @default(value: "false")
+  result: String
+}
+
+type UserPreferences @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  favoriteSports: [String]
+  preferredPlatforms: [String]
+  bankroll: Float
+  riskTolerance: String
+}
