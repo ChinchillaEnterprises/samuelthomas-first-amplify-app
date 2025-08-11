@@ -1,20 +1,14 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Inter } from "next/font/google";
+import "@aws-amplify/ui-react/styles.css";
 import "./globals.css";
+import ConfigureAmplifyClientSide from "./amplify-config";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Dollar World Carmel - Your Local Dollar Store",
-  description: "Dollar World in Carmel, NY - Party supplies, household items, and more at great prices. Located at US RT 6 - 1850 Putnam Plaza.",
+  title: "ContextChef - Smart Meal Planning",
+  description: "Plan meals that fit your pantry, budget, and dietary preferences",
 };
 
 export default function RootLayout({
@@ -24,9 +18,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={inter.className}>
+        <ConfigureAmplifyClientSide />
         {children}
       </body>
     </html>
