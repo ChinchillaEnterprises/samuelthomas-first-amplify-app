@@ -1,0 +1,131 @@
+type User @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  email: AWSEmail!
+  name: String!
+  location: AWSJSON!
+  dietaryPreferences: [String]
+  allergenList: [String]
+  defaultBudgetPerServing: Float @default(value: "5")
+  householdSize: Int @default(value: "2")
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type PantryItem @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  userId: ID!
+  name: String!
+  brand: String
+  quantity: Float!
+  unit: String!
+  expiresOn: AWSDate
+  tags: [String]
+  nutritionEstimate: AWSJSON
+  source: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Recipe @model @auth(rules: [{allow: private, operations: [read]},
+  {allow: owner, operations: [create, update, delete], ownerField: "owner"}])
+{
+  title: String!
+  steps: [String]!
+  ingredients: AWSJSON!
+  nutritionPerServing: AWSJSON!
+  servings: Int!
+  cuisine: String
+  difficulty: String!
+  estimatedCostPerServing: Float!
+  popularityScore: Float @default(value: "0")
+  prepTimeMinutes: Int
+  cookTimeMinutes: Int
+  tags: [String]
+  imageUrl: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Store @model @auth(rules: [{allow: private, operations: [read]},
+  {allow: owner, operations: [create, update, delete], ownerField: "owner"}])
+{
+  name: String!
+  location: AWSJSON!
+  hours: AWSJSON!
+  deliveryOptions: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Sale @model @auth(rules: [{allow: private, operations: [read]},
+  {allow: owner, operations: [create, update, delete], ownerField: "owner"}])
+{
+  storeId: ID!
+  itemName: String!
+  price: Float!
+  unit: String!
+  validFrom: AWSDateTime!
+  validTo: AWSDateTime!
+  tags: [String]
+  confidence: Float @default(value: "1")
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Receipt @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  userId: ID!
+  storeId: ID
+  date: AWSDateTime!
+  total: Float!
+  rawText: String
+  parsedItems: AWSJSON!
+  status: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type MealPlan @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  userId: ID!
+  startDate: AWSDate!
+  days: AWSJSON!
+  totalCost: Float
+  avgNutritionPerDay: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type ShoppingList @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  userId: ID!
+  planId: ID
+  items: AWSJSON!
+  totalEstimatedCost: Float
+  status: String @default(value: "active")
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type Preferences @model @auth(rules: [{allow: owner, ownerField: "owner"}])
+{
+  userId: ID!
+  dietaryProfile: String
+  allergens: [String]
+  dislikedIngredients: [String]
+  cuisineLikes: [String]
+  costTargetMin: Float @default(value: "2")
+  costTargetMax: Float @default(value: "10")
+  nutritionGoals: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+}
+
+type AnalyticsEvent @model @auth(rules: [{allow: private, operations: [create]},
+  {allow: owner, operations: [read], ownerField: "owner"}])
+{
+  userId: ID
+  eventType: String!
+  eventData: AWSJSON
+  timestamp: AWSDateTime!
+}

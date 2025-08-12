@@ -1,0 +1,2199 @@
+{
+ "Parameters": {
+  "DynamoDBModelTableReadIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of read IOPS the table should support."
+  },
+  "DynamoDBModelTableWriteIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of write IOPS the table should support."
+  },
+  "DynamoDBBillingMode": {
+   "Type": "String",
+   "Default": "PAY_PER_REQUEST",
+   "AllowedValues": [
+    "PAY_PER_REQUEST",
+    "PROVISIONED"
+   ],
+   "Description": "Configure @model types to create DynamoDB tables with PAY_PER_REQUEST or PROVISIONED billing modes."
+  },
+  "DynamoDBEnablePointInTimeRecovery": {
+   "Type": "String",
+   "Default": "false",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Whether to enable Point in Time Recovery on the table."
+  },
+  "DynamoDBEnableServerSideEncryption": {
+   "Type": "String",
+   "Default": "true",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Enable server side encryption powered by KMS."
+  },
+  "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource3738450FOutputsamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataAmplifyTableManagerTab2F2CB9CA": {
+   "Type": "String"
+  },
+  "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId": {
+   "Type": "String"
+  },
+  "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name": {
+   "Type": "String"
+  },
+  "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref": {
+   "Type": "String"
+  },
+  "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef": {
+   "Type": "String"
+  },
+  "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef": {
+   "Type": "String"
+  }
+ },
+ "Conditions": {
+  "HasEnvironmentParameter": {
+   "Fn::Not": [
+    {
+     "Fn::Equals": [
+      "NONE",
+      "NONE"
+     ]
+    }
+   ]
+  },
+  "ShouldUsePayPerRequestBilling": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBBillingMode"
+    },
+    "PAY_PER_REQUEST"
+   ]
+  },
+  "ShouldUsePointInTimeRecovery": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBEnablePointInTimeRecovery"
+    },
+    "true"
+   ]
+  },
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-3"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-4"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Equals": [
+      {
+       "Ref": "AWS::Region"
+      },
+      "us-west-2"
+     ]
+    }
+   ]
+  }
+ },
+ "Resources": {
+  "PreferencesTable": {
+   "Type": "Custom::AmplifyDynamoDBTable",
+   "Properties": {
+    "ServiceToken": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource3738450FOutputsamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataAmplifyTableManagerTab2F2CB9CA"
+    },
+    "tableName": {
+     "Fn::Join": [
+      "",
+      [
+       "Preferences-",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "attributeDefinitions": [
+     {
+      "attributeName": "id",
+      "attributeType": "S"
+     }
+    ],
+    "keySchema": [
+     {
+      "attributeName": "id",
+      "keyType": "HASH"
+     }
+    ],
+    "provisionedThroughput": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      {
+       "Ref": "AWS::NoValue"
+      },
+      {
+       "ReadCapacityUnits": {
+        "Ref": "DynamoDBModelTableReadIOPS"
+       },
+       "WriteCapacityUnits": {
+        "Ref": "DynamoDBModelTableWriteIOPS"
+       }
+      }
+     ]
+    },
+    "sseSpecification": {
+     "sseEnabled": false
+    },
+    "streamSpecification": {
+     "streamViewType": "NEW_AND_OLD_IMAGES"
+    },
+    "deletionProtectionEnabled": false,
+    "allowDestructiveGraphqlSchemaUpdates": true,
+    "replaceTableUponGsiUpdate": true,
+    "pointInTimeRecoverySpecification": {
+     "Fn::If": [
+      "ShouldUsePointInTimeRecovery",
+      {
+       "PointInTimeRecoveryEnabled": true
+      },
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    },
+    "billingMode": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      "PAY_PER_REQUEST",
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/PreferencesTable/Default/Default"
+   }
+  },
+  "PreferencesIAMRole4F6E1855": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "appsync.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Policies": [
+     {
+      "PolicyDocument": {
+       "Statement": [
+        {
+         "Action": [
+          "dynamodb:BatchGetItem",
+          "dynamodb:BatchWriteItem",
+          "dynamodb:PutItem",
+          "dynamodb:DeleteItem",
+          "dynamodb:GetItem",
+          "dynamodb:Scan",
+          "dynamodb:Query",
+          "dynamodb:UpdateItem",
+          "dynamodb:ConditionCheckItem",
+          "dynamodb:DescribeTable",
+          "dynamodb:GetRecords",
+          "dynamodb:GetShardIterator"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          {
+           "Fn::Sub": [
+            "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "Preferences-",
+                {
+                 "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          },
+          {
+           "Fn::Sub": [
+            "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}/*",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "Preferences-",
+                {
+                 "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "Version": "2012-10-17"
+      },
+      "PolicyName": "DynamoDBAccess"
+     }
+    ],
+    "RoleName": {
+     "Fn::Join": [
+      "",
+      [
+       "PreferencesIAMRole41edd6-",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "amplifyData"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/PreferencesIAMRole/Resource"
+   }
+  },
+  "PreferencesDataSource": {
+   "Type": "AWS::AppSync::DataSource",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DynamoDBConfig": {
+     "AwsRegion": {
+      "Ref": "AWS::Region"
+     },
+     "TableName": {
+      "Fn::Select": [
+       1,
+       {
+        "Fn::Split": [
+         "/",
+         {
+          "Fn::Select": [
+           5,
+           {
+            "Fn::Split": [
+             ":",
+             {
+              "Fn::GetAtt": [
+               "PreferencesTable",
+               "TableArn"
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "Name": "PreferencesTable",
+    "ServiceRoleArn": {
+     "Fn::GetAtt": [
+      "PreferencesIAMRole4F6E1855",
+      "Arn"
+     ]
+    },
+    "Type": "AMAZON_DYNAMODB"
+   },
+   "DependsOn": [
+    "PreferencesIAMRole4F6E1855"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/PreferencesDataSource/Resource"
+   }
+  },
+  "QuerygetPreferencesauth0FunctionQuerygetPreferencesauth0FunctionAppSyncFunctionA0BE6987": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetPreferencesauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6b25c9b572c67e0f7ad41cb8019a90825f3db4b02a0a15b837c7a82dcb302060.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/QuerygetPreferencesauth0Function/QuerygetPreferencesauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetPreferencespostAuth0FunctionQuerygetPreferencespostAuth0FunctionAppSyncFunction32CF7F8E": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetPreferencespostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/QuerygetPreferencespostAuth0Function/QuerygetPreferencespostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryGetPreferencesDataResolverFnQueryGetPreferencesDataResolverFnAppSyncFunctionE3CBD167": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "PreferencesDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryGetPreferencesDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/08f4d557693d96c1a4efba0f9dc91330e4b19772fd5477c156468843e3d9cb5e.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4c6a2d29f01c6091bd1d9afe16e5849d456c96f17c3b215938c8067399532719.vtl"
+    }
+   },
+   "DependsOn": [
+    "PreferencesDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/QueryGetPreferencesDataResolverFn/QueryGetPreferencesDataResolverFn.AppSyncFunction"
+   }
+  },
+  "GetPreferencesResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "getPreferences",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerygetPreferencesauth0FunctionQuerygetPreferencesauth0FunctionAppSyncFunctionA0BE6987",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetPreferencespostAuth0FunctionQuerygetPreferencespostAuth0FunctionAppSyncFunction32CF7F8E",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryGetPreferencesDataResolverFnQueryGetPreferencesDataResolverFnAppSyncFunctionE3CBD167",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getPreferences\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "PreferencesTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/queryGetPreferencesResolver"
+   }
+  },
+  "QuerylistPreferencesauth0FunctionQuerylistPreferencesauth0FunctionAppSyncFunction2B2D7374": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistPreferencesauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6b25c9b572c67e0f7ad41cb8019a90825f3db4b02a0a15b837c7a82dcb302060.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/QuerylistPreferencesauth0Function/QuerylistPreferencesauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistPreferencespostAuth0FunctionQuerylistPreferencespostAuth0FunctionAppSyncFunctionC9574E71": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistPreferencespostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/QuerylistPreferencespostAuth0Function/QuerylistPreferencespostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryListPreferencesDataResolverFnQueryListPreferencesDataResolverFnAppSyncFunction54218BB0": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "PreferencesDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryListPreferencesDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9fcbe070ecd3023c5bf5b966fa9584757db9762eef123bad0820bd87591b2174.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d.vtl"
+    }
+   },
+   "DependsOn": [
+    "PreferencesDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/QueryListPreferencesDataResolverFn/QueryListPreferencesDataResolverFn.AppSyncFunction"
+   }
+  },
+  "ListPreferencesResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "listPreferences",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerylistPreferencesauth0FunctionQuerylistPreferencesauth0FunctionAppSyncFunction2B2D7374",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistPreferencespostAuth0FunctionQuerylistPreferencespostAuth0FunctionAppSyncFunctionC9574E71",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryListPreferencesDataResolverFnQueryListPreferencesDataResolverFnAppSyncFunction54218BB0",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listPreferences\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "PreferencesTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/queryListPreferencesResolver"
+   }
+  },
+  "MutationcreatePreferencesinit0FunctionMutationcreatePreferencesinit0FunctionAppSyncFunctionA984B0BB": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreatePreferencesinit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/MutationcreatePreferencesinit0Function/MutationcreatePreferencesinit0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreatePreferencesinit1FunctionMutationcreatePreferencesinit1FunctionAppSyncFunction4C593EC6": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreatePreferencesinit1Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/d31823ecd97e8643bdc7b432a80309b257ca6060323d1c4b4fc62a7892279bd5.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/MutationcreatePreferencesinit1Function/MutationcreatePreferencesinit1Function.AppSyncFunction"
+   }
+  },
+  "MutationcreatePreferencesauth0FunctionMutationcreatePreferencesauth0FunctionAppSyncFunctionA97309B6": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreatePreferencesauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/5203c52c9d8417f790d7c3ab8f2a2415fdddca8f6b473544d6426418cc735c9a.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/MutationcreatePreferencesauth0Function/MutationcreatePreferencesauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreatePreferencespostAuth0FunctionMutationcreatePreferencespostAuth0FunctionAppSyncFunction5D1A17F6": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreatePreferencespostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/MutationcreatePreferencespostAuth0Function/MutationcreatePreferencespostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationCreatePreferencesDataResolverFnMutationCreatePreferencesDataResolverFnAppSyncFunctionAD41437A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "PreferencesDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationCreatePreferencesDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/479730430e466a8ded14194fc716dc7ab027a4f35028eb5dac608c9d7960c785.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "PreferencesDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/MutationCreatePreferencesDataResolverFn/MutationCreatePreferencesDataResolverFn.AppSyncFunction"
+   }
+  },
+  "CreatePreferencesResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "createPreferences",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationcreatePreferencesinit0FunctionMutationcreatePreferencesinit0FunctionAppSyncFunctionA984B0BB",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreatePreferencesinit1FunctionMutationcreatePreferencesinit1FunctionAppSyncFunction4C593EC6",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreatePreferencesauth0FunctionMutationcreatePreferencesauth0FunctionAppSyncFunctionA97309B6",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreatePreferencespostAuth0FunctionMutationcreatePreferencespostAuth0FunctionAppSyncFunction5D1A17F6",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationCreatePreferencesDataResolverFnMutationCreatePreferencesDataResolverFnAppSyncFunctionAD41437A",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createPreferences\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "PreferencesTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/mutationCreatePreferencesResolver"
+   }
+  },
+  "MutationupdatePreferencesinit0FunctionMutationupdatePreferencesinit0FunctionAppSyncFunction28380ED3": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdatePreferencesinit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/06db846fd14e6fc371f22b12b5545ba8e2dbfeda85d8c8d586c71c282166657b.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/MutationupdatePreferencesinit0Function/MutationupdatePreferencesinit0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdatePreferencesauth0FunctionMutationupdatePreferencesauth0FunctionAppSyncFunction9AD2E178": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "PreferencesDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdatePreferencesauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/75bd5894b992b4e3378110b7c28d334a6fb7c9d0185caffef278cf157af67a1a.vtl"
+    }
+   },
+   "DependsOn": [
+    "PreferencesDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/MutationupdatePreferencesauth0Function/MutationupdatePreferencesauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdatePreferencespostAuth0FunctionMutationupdatePreferencespostAuth0FunctionAppSyncFunctionA03A742E": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdatePreferencespostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/MutationupdatePreferencespostAuth0Function/MutationupdatePreferencespostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationUpdatePreferencesDataResolverFnMutationUpdatePreferencesDataResolverFnAppSyncFunction1DCE7DAA": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "PreferencesDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationUpdatePreferencesDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/474bf0776ec2164a13191d1a0a9e057154931e4918fea5086f49850d02a5371b.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "PreferencesDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/MutationUpdatePreferencesDataResolverFn/MutationUpdatePreferencesDataResolverFn.AppSyncFunction"
+   }
+  },
+  "UpdatePreferencesResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "updatePreferences",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationupdatePreferencesinit0FunctionMutationupdatePreferencesinit0FunctionAppSyncFunction28380ED3",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdatePreferencesauth0FunctionMutationupdatePreferencesauth0FunctionAppSyncFunction9AD2E178",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdatePreferencespostAuth0FunctionMutationupdatePreferencespostAuth0FunctionAppSyncFunctionA03A742E",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationUpdatePreferencesDataResolverFnMutationUpdatePreferencesDataResolverFnAppSyncFunction1DCE7DAA",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updatePreferences\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "PreferencesTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/mutationUpdatePreferencesResolver"
+   }
+  },
+  "MutationdeletePreferencesauth0FunctionMutationdeletePreferencesauth0FunctionAppSyncFunctionDC0416AD": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "PreferencesDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeletePreferencesauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/867fb7d7eb8e4127b6d0136b82c5c3f74a52eb410297086859986f8e7e4b02aa.vtl"
+    }
+   },
+   "DependsOn": [
+    "PreferencesDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/MutationdeletePreferencesauth0Function/MutationdeletePreferencesauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeletePreferencespostAuth0FunctionMutationdeletePreferencespostAuth0FunctionAppSyncFunctionD55E1321": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeletePreferencespostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/MutationdeletePreferencespostAuth0Function/MutationdeletePreferencespostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationDeletePreferencesDataResolverFnMutationDeletePreferencesDataResolverFnAppSyncFunction73E4666C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "PreferencesDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationDeletePreferencesDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4f7907d1209a2c9953a0c053df402c634e359546d70c7cc5c2e8e21ea734880f.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "PreferencesDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/MutationDeletePreferencesDataResolverFn/MutationDeletePreferencesDataResolverFn.AppSyncFunction"
+   }
+  },
+  "DeletePreferencesResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "deletePreferences",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationdeletePreferencesauth0FunctionMutationdeletePreferencesauth0FunctionAppSyncFunctionDC0416AD",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeletePreferencespostAuth0FunctionMutationdeletePreferencespostAuth0FunctionAppSyncFunctionD55E1321",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationDeletePreferencesDataResolverFnMutationDeletePreferencesDataResolverFnAppSyncFunction73E4666C",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deletePreferences\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "PreferencesTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/mutationDeletePreferencesResolver"
+   }
+  },
+  "SubscriptiononCreatePreferencesauth0FunctionSubscriptiononCreatePreferencesauth0FunctionAppSyncFunctionE9BD7BBD": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreatePreferencesauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/SubscriptiononCreatePreferencesauth0Function/SubscriptiononCreatePreferencesauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreatePreferencespostAuth0FunctionSubscriptiononCreatePreferencespostAuth0FunctionAppSyncFunction2AD239A7": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreatePreferencespostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/SubscriptiononCreatePreferencespostAuth0Function/SubscriptiononCreatePreferencespostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnCreatePreferencesDataResolverFnSubscriptionOnCreatePreferencesDataResolverFnAppSyncFunction9DC97171": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnCreatePreferencesDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/SubscriptionOnCreatePreferencesDataResolverFn/SubscriptionOnCreatePreferencesDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreatePreferencesResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "onCreatePreferences",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreatePreferencesauth0FunctionSubscriptiononCreatePreferencesauth0FunctionAppSyncFunctionE9BD7BBD",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreatePreferencespostAuth0FunctionSubscriptiononCreatePreferencespostAuth0FunctionAppSyncFunction2AD239A7",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnCreatePreferencesDataResolverFnSubscriptionOnCreatePreferencesDataResolverFnAppSyncFunction9DC97171",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreatePreferences\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/subscriptionOnCreatePreferencesResolver"
+   }
+  },
+  "SubscriptiononUpdatePreferencesauth0FunctionSubscriptiononUpdatePreferencesauth0FunctionAppSyncFunctionC1F578D7": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdatePreferencesauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/SubscriptiononUpdatePreferencesauth0Function/SubscriptiononUpdatePreferencesauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdatePreferencespostAuth0FunctionSubscriptiononUpdatePreferencespostAuth0FunctionAppSyncFunction3BAB9994": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdatePreferencespostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/SubscriptiononUpdatePreferencespostAuth0Function/SubscriptiononUpdatePreferencespostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnUpdatePreferencesDataResolverFnSubscriptionOnUpdatePreferencesDataResolverFnAppSyncFunction2AA78C49": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnUpdatePreferencesDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/SubscriptionOnUpdatePreferencesDataResolverFn/SubscriptionOnUpdatePreferencesDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdatePreferencesResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "onUpdatePreferences",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdatePreferencesauth0FunctionSubscriptiononUpdatePreferencesauth0FunctionAppSyncFunctionC1F578D7",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdatePreferencespostAuth0FunctionSubscriptiononUpdatePreferencespostAuth0FunctionAppSyncFunction3BAB9994",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnUpdatePreferencesDataResolverFnSubscriptionOnUpdatePreferencesDataResolverFnAppSyncFunction2AA78C49",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdatePreferences\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/subscriptionOnUpdatePreferencesResolver"
+   }
+  },
+  "SubscriptiononDeletePreferencesauth0FunctionSubscriptiononDeletePreferencesauth0FunctionAppSyncFunctionF6CA71BD": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeletePreferencesauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/SubscriptiononDeletePreferencesauth0Function/SubscriptiononDeletePreferencesauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeletePreferencespostAuth0FunctionSubscriptiononDeletePreferencespostAuth0FunctionAppSyncFunction96519A54": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeletePreferencespostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/SubscriptiononDeletePreferencespostAuth0Function/SubscriptiononDeletePreferencespostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnDeletePreferencesDataResolverFnSubscriptionOnDeletePreferencesDataResolverFnAppSyncFunctionBD69F194": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnDeletePreferencesDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/SubscriptionOnDeletePreferencesDataResolverFn/SubscriptionOnDeletePreferencesDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeletePreferencesResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "onDeletePreferences",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeletePreferencesauth0FunctionSubscriptiononDeletePreferencesauth0FunctionAppSyncFunctionF6CA71BD",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeletePreferencespostAuth0FunctionSubscriptiononDeletePreferencespostAuth0FunctionAppSyncFunction96519A54",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnDeletePreferencesDataResolverFnSubscriptionOnDeletePreferencesDataResolverFnAppSyncFunctionBD69F194",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeletePreferences\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/subscriptionOnDeletePreferencesResolver"
+   }
+  },
+  "PreferencesOwnerDataResolverFnPreferencesOwnerDataResolverFnAppSyncFunction9C956326": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "PreferencesOwnerDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/041534e5fd916595f752318f161512d7c7f83b9f2cf32d0f0be381c12253ff68.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/064303962e481067b44300212516363b99aaee539b6bafaf756fdd83ff0b60f0.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/PreferencesOwnerDataResolverFn/PreferencesOwnerDataResolverFn.AppSyncFunction"
+   }
+  },
+  "PreferencesownerResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "owner",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "PreferencesOwnerDataResolverFnPreferencesOwnerDataResolverFnAppSyncFunction9C956326",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Preferences\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"owner\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Preferences"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/preferencesOwnerResolver"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WQQW+DMAyFf8vuwWvpZdcVtOM20d0rkxiUQhIUO50qxH9foFOnnZ4/+cl+dgnl7gV2T/jNhTZDMdoW5ndiIXMS1IOqOv+JER0JxRWq4I0VG7xqiEOKmlSVWIL7w84/6jz2PJubRxdMC1/YjnREJmXRwdyE8e7OuiicJr55DXO92eu2RsHTY+R/ekteryFyms72KeKW6HfzeKW4KD6ckZmE4XWVzHBMeiBZAyyr9yPJlERt7Xxsb32/KB8MwYWfr+UB9vv8mQtbW8TkxTqC5q4/mAHDCTYBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/Preferences/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Outputs": {
+  "GetAttPreferencesTableStreamArn": {
+   "Description": "Your DynamoDB table StreamArn.",
+   "Value": {
+    "Fn::GetAtt": [
+     "PreferencesTable",
+     "TableStreamArn"
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "GetAtt:PreferencesTable:StreamArn"
+      ]
+     ]
+    }
+   }
+  },
+  "GetAttPreferencesTableName": {
+   "Description": "Your DynamoDB table name.",
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "Preferences-",
+      {
+       "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+      },
+      "-NONE"
+     ]
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "GetAtt:PreferencesTable:Name"
+      ]
+     ]
+    }
+   }
+  }
+ }
+}

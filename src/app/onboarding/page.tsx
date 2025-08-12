@@ -56,6 +56,7 @@ export default function Onboarding() {
   
   // Form data
   const [formData, setFormData] = useState({
+    name: '',
     city: '',
     state: '',
     zipCode: '',
@@ -89,23 +90,44 @@ export default function Onboarding() {
   const handleComplete = async () => {
     setLoading(true);
     try {
-      // Get current user
-      const currentUser = await userApi.getCurrentUser();
-      if (!currentUser) {
-        throw new Error('User not found');
+      // Get current authenticated user info
+      const authUser = await getCurrentUser();
+      if (!authUser || !authUser.signInDetails?.loginId) {
+        throw new Error('No authenticated user found');
       }
 
-      // Create/update user profile with location
-      const updatedUser = await userApi.updateProfile(currentUser.id, {
-        location: {
-          city: formData.city,
-          state: formData.state,
-          lat: 41.3947, // Would use geocoding API in production
-          lon: -73.6847
-        },
-        householdSize: formData.householdSize,
-        defaultBudgetPerServing: formData.defaultBudget,
-      });
+      // Check if user exists in database
+      let currentUser = await userApi.getCurrentUser();
+      
+      if (!currentUser) {
+        // Create new user record
+        currentUser = await userApi.createUser({
+          email: authUser.signInDetails.loginId,
+          name: formData.name || authUser.signInDetails.loginId.split('@')[0],
+          location: {
+            city: formData.city,
+            state: formData.state,
+            lat: 41.3947, // Would use geocoding API in production
+            lon: -73.6847
+          },
+          dietaryPreferences: formData.dietaryProfile === 'none' ? [] : [formData.dietaryProfile],
+          allergenList: formData.allergens,
+          defaultBudgetPerServing: formData.defaultBudget,
+          householdSize: formData.householdSize,
+        });
+      } else {
+        // Update existing user
+        currentUser = await userApi.updateProfile(currentUser.id, {
+          location: {
+            city: formData.city,
+            state: formData.state,
+            lat: 41.3947,
+            lon: -73.6847
+          },
+          householdSize: formData.householdSize,
+          defaultBudgetPerServing: formData.defaultBudget,
+        });
+      }
 
       // Create preferences
       const preferences = await userApi.updatePreferences(currentUser.id, {
@@ -118,7 +140,7 @@ export default function Onboarding() {
       });
 
       // Update store
-      setUser(updatedUser);
+      setUser(currentUser);
       setPreferences(preferences);
 
       toast.success('Welcome to ContextChef! Let\'s start cooking.');
@@ -207,8 +229,15 @@ export default function Onboarding() {
               {currentStep === 0 && (
                 <div className="space-y-6">
                   <p className="text-gray-600">
-                    We'll use your location to find nearby stores and current sales.
+                    Let's get to know you and find stores near you.
                   </p>
+                  <Input
+                    label="Your Name"
+                    value={formData.name}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                    placeholder="e.g., John Smith"
+                    required
+                  />
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                     <Input
                       label="City"
@@ -470,7 +499,7 @@ export default function Onboarding() {
                   loading={loading}
                   disabled={
                     loading ||
-                    (currentStep === 0 && (!formData.city || !formData.state))
+                    (currentStep === 0 && (!formData.name || !formData.city || !formData.state))
                   }
                 >
                   {currentStep === STEPS.length - 1 ? 'Complete Setup' : 'Next'}

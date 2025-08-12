@@ -1,0 +1,2171 @@
+{
+ "Parameters": {
+  "DynamoDBModelTableReadIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of read IOPS the table should support."
+  },
+  "DynamoDBModelTableWriteIOPS": {
+   "Type": "Number",
+   "Default": 5,
+   "Description": "The number of write IOPS the table should support."
+  },
+  "DynamoDBBillingMode": {
+   "Type": "String",
+   "Default": "PAY_PER_REQUEST",
+   "AllowedValues": [
+    "PAY_PER_REQUEST",
+    "PROVISIONED"
+   ],
+   "Description": "Configure @model types to create DynamoDB tables with PAY_PER_REQUEST or PROVISIONED billing modes."
+  },
+  "DynamoDBEnablePointInTimeRecovery": {
+   "Type": "String",
+   "Default": "false",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Whether to enable Point in Time Recovery on the table."
+  },
+  "DynamoDBEnableServerSideEncryption": {
+   "Type": "String",
+   "Default": "true",
+   "AllowedValues": [
+    "true",
+    "false"
+   ],
+   "Description": "Enable server side encryption powered by KMS."
+  },
+  "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource3738450FOutputsamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataAmplifyTableManagerTab2F2CB9CA": {
+   "Type": "String"
+  },
+  "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId": {
+   "Type": "String"
+  },
+  "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name": {
+   "Type": "String"
+  },
+  "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref": {
+   "Type": "String"
+  },
+  "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef": {
+   "Type": "String"
+  },
+  "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef": {
+   "Type": "String"
+  }
+ },
+ "Conditions": {
+  "HasEnvironmentParameter": {
+   "Fn::Not": [
+    {
+     "Fn::Equals": [
+      "NONE",
+      "NONE"
+     ]
+    }
+   ]
+  },
+  "ShouldUsePayPerRequestBilling": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBBillingMode"
+    },
+    "PAY_PER_REQUEST"
+   ]
+  },
+  "ShouldUsePointInTimeRecovery": {
+   "Fn::Equals": [
+    {
+     "Ref": "DynamoDBEnablePointInTimeRecovery"
+    },
+    "true"
+   ]
+  },
+  "CDKMetadataAvailable": {
+   "Fn::Or": [
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "af-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-northeast-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-south-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-3"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ap-southeast-4"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "ca-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "cn-northwest-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-central-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-north-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-south-2"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Or": [
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "eu-west-3"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "il-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-central-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "me-south-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "sa-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-1"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-east-2"
+       ]
+      },
+      {
+       "Fn::Equals": [
+        {
+         "Ref": "AWS::Region"
+        },
+        "us-west-1"
+       ]
+      }
+     ]
+    },
+    {
+     "Fn::Equals": [
+      {
+       "Ref": "AWS::Region"
+      },
+      "us-west-2"
+     ]
+    }
+   ]
+  }
+ },
+ "Resources": {
+  "MealPlanTable": {
+   "Type": "Custom::AmplifyDynamoDBTable",
+   "Properties": {
+    "ServiceToken": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataAmplifyTableManagerNestedStackAmplifyTableManagerNestedStackResource3738450FOutputsamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataAmplifyTableManagerTab2F2CB9CA"
+    },
+    "tableName": {
+     "Fn::Join": [
+      "",
+      [
+       "MealPlan-",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "attributeDefinitions": [
+     {
+      "attributeName": "id",
+      "attributeType": "S"
+     }
+    ],
+    "keySchema": [
+     {
+      "attributeName": "id",
+      "keyType": "HASH"
+     }
+    ],
+    "provisionedThroughput": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      {
+       "Ref": "AWS::NoValue"
+      },
+      {
+       "ReadCapacityUnits": {
+        "Ref": "DynamoDBModelTableReadIOPS"
+       },
+       "WriteCapacityUnits": {
+        "Ref": "DynamoDBModelTableWriteIOPS"
+       }
+      }
+     ]
+    },
+    "sseSpecification": {
+     "sseEnabled": false
+    },
+    "streamSpecification": {
+     "streamViewType": "NEW_AND_OLD_IMAGES"
+    },
+    "deletionProtectionEnabled": false,
+    "allowDestructiveGraphqlSchemaUpdates": true,
+    "replaceTableUponGsiUpdate": true,
+    "pointInTimeRecoverySpecification": {
+     "Fn::If": [
+      "ShouldUsePointInTimeRecovery",
+      {
+       "PointInTimeRecoveryEnabled": true
+      },
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    },
+    "billingMode": {
+     "Fn::If": [
+      "ShouldUsePayPerRequestBilling",
+      "PAY_PER_REQUEST",
+      {
+       "Ref": "AWS::NoValue"
+      }
+     ]
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/MealPlanTable/Default/Default"
+   }
+  },
+  "MealPlanIAMRole5C0FC348": {
+   "Type": "AWS::IAM::Role",
+   "Properties": {
+    "AssumeRolePolicyDocument": {
+     "Statement": [
+      {
+       "Action": "sts:AssumeRole",
+       "Effect": "Allow",
+       "Principal": {
+        "Service": "appsync.amazonaws.com"
+       }
+      }
+     ],
+     "Version": "2012-10-17"
+    },
+    "Policies": [
+     {
+      "PolicyDocument": {
+       "Statement": [
+        {
+         "Action": [
+          "dynamodb:BatchGetItem",
+          "dynamodb:BatchWriteItem",
+          "dynamodb:PutItem",
+          "dynamodb:DeleteItem",
+          "dynamodb:GetItem",
+          "dynamodb:Scan",
+          "dynamodb:Query",
+          "dynamodb:UpdateItem",
+          "dynamodb:ConditionCheckItem",
+          "dynamodb:DescribeTable",
+          "dynamodb:GetRecords",
+          "dynamodb:GetShardIterator"
+         ],
+         "Effect": "Allow",
+         "Resource": [
+          {
+           "Fn::Sub": [
+            "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "MealPlan-",
+                {
+                 "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          },
+          {
+           "Fn::Sub": [
+            "arn:${AWS::Partition}:dynamodb:${AWS::Region}:${AWS::AccountId}:table/${tablename}/*",
+            {
+             "tablename": {
+              "Fn::Join": [
+               "",
+               [
+                "MealPlan-",
+                {
+                 "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+                },
+                "-NONE"
+               ]
+              ]
+             }
+            }
+           ]
+          }
+         ]
+        }
+       ],
+       "Version": "2012-10-17"
+      },
+      "PolicyName": "DynamoDBAccess"
+     }
+    ],
+    "RoleName": {
+     "Fn::Join": [
+      "",
+      [
+       "MealPlanIAMRole3b333c-",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "-NONE"
+      ]
+     ]
+    },
+    "Tags": [
+     {
+      "Key": "amplify:deployment-type",
+      "Value": "sandbox"
+     },
+     {
+      "Key": "amplify:friendly-name",
+      "Value": "amplifyData"
+     },
+     {
+      "Key": "created-by",
+      "Value": "amplify"
+     }
+    ]
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/MealPlanIAMRole/Resource"
+   }
+  },
+  "MealPlanDataSource": {
+   "Type": "AWS::AppSync::DataSource",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DynamoDBConfig": {
+     "AwsRegion": {
+      "Ref": "AWS::Region"
+     },
+     "TableName": {
+      "Fn::Select": [
+       1,
+       {
+        "Fn::Split": [
+         "/",
+         {
+          "Fn::Select": [
+           5,
+           {
+            "Fn::Split": [
+             ":",
+             {
+              "Fn::GetAtt": [
+               "MealPlanTable",
+               "TableArn"
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       }
+      ]
+     }
+    },
+    "Name": "MealPlanTable",
+    "ServiceRoleArn": {
+     "Fn::GetAtt": [
+      "MealPlanIAMRole5C0FC348",
+      "Arn"
+     ]
+    },
+    "Type": "AMAZON_DYNAMODB"
+   },
+   "DependsOn": [
+    "MealPlanIAMRole5C0FC348"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/MealPlanDataSource/Resource"
+   }
+  },
+  "QuerygetMealPlanauth0FunctionQuerygetMealPlanauth0FunctionAppSyncFunction36179C9C": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetMealPlanauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6b25c9b572c67e0f7ad41cb8019a90825f3db4b02a0a15b837c7a82dcb302060.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/QuerygetMealPlanauth0Function/QuerygetMealPlanauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerygetMealPlanpostAuth0FunctionQuerygetMealPlanpostAuth0FunctionAppSyncFunction08BB6546": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerygetMealPlanpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/QuerygetMealPlanpostAuth0Function/QuerygetMealPlanpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryGetMealPlanDataResolverFnQueryGetMealPlanDataResolverFnAppSyncFunction80F9EEB2": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "MealPlanDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryGetMealPlanDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/08f4d557693d96c1a4efba0f9dc91330e4b19772fd5477c156468843e3d9cb5e.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4c6a2d29f01c6091bd1d9afe16e5849d456c96f17c3b215938c8067399532719.vtl"
+    }
+   },
+   "DependsOn": [
+    "MealPlanDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/QueryGetMealPlanDataResolverFn/QueryGetMealPlanDataResolverFn.AppSyncFunction"
+   }
+  },
+  "GetMealPlanResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "getMealPlan",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerygetMealPlanauth0FunctionQuerygetMealPlanauth0FunctionAppSyncFunction36179C9C",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerygetMealPlanpostAuth0FunctionQuerygetMealPlanpostAuth0FunctionAppSyncFunction08BB6546",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryGetMealPlanDataResolverFnQueryGetMealPlanDataResolverFnAppSyncFunction80F9EEB2",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"getMealPlan\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "MealPlanTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/queryGetMealPlanResolver"
+   }
+  },
+  "QuerylistMealPlansauth0FunctionQuerylistMealPlansauth0FunctionAppSyncFunctionACFC1715": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistMealPlansauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/6b25c9b572c67e0f7ad41cb8019a90825f3db4b02a0a15b837c7a82dcb302060.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/QuerylistMealPlansauth0Function/QuerylistMealPlansauth0Function.AppSyncFunction"
+   }
+  },
+  "QuerylistMealPlanspostAuth0FunctionQuerylistMealPlanspostAuth0FunctionAppSyncFunctionD697A271": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QuerylistMealPlanspostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/QuerylistMealPlanspostAuth0Function/QuerylistMealPlanspostAuth0Function.AppSyncFunction"
+   }
+  },
+  "QueryListMealPlansDataResolverFnQueryListMealPlansDataResolverFnAppSyncFunction294E34DF": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "MealPlanDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "QueryListMealPlansDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/9fcbe070ecd3023c5bf5b966fa9584757db9762eef123bad0820bd87591b2174.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/cc01911d0269d4080ea57505dc445dfc315ef7ad85d3d9d4ea1357858bff451d.vtl"
+    }
+   },
+   "DependsOn": [
+    "MealPlanDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/QueryListMealPlansDataResolverFn/QueryListMealPlansDataResolverFn.AppSyncFunction"
+   }
+  },
+  "ListMealPlanResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "listMealPlans",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "QuerylistMealPlansauth0FunctionQuerylistMealPlansauth0FunctionAppSyncFunctionACFC1715",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QuerylistMealPlanspostAuth0FunctionQuerylistMealPlanspostAuth0FunctionAppSyncFunctionD697A271",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "QueryListMealPlansDataResolverFnQueryListMealPlansDataResolverFnAppSyncFunction294E34DF",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Query\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"listMealPlans\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "MealPlanTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Query"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/queryListMealPlansResolver"
+   }
+  },
+  "MutationcreateMealPlaninit0FunctionMutationcreateMealPlaninit0FunctionAppSyncFunction12983761": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateMealPlaninit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a183ddccbd956316c38ef97177b8f088ef0826f62023323f5ae6053d348ccffc.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/MutationcreateMealPlaninit0Function/MutationcreateMealPlaninit0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateMealPlanauth0FunctionMutationcreateMealPlanauth0FunctionAppSyncFunction613591DB": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateMealPlanauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/ea05cbfb088b3d9ea2d895ddadb804b1c934c066a5e29d5d8024e1f5efa0bc17.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/MutationcreateMealPlanauth0Function/MutationcreateMealPlanauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationcreateMealPlanpostAuth0FunctionMutationcreateMealPlanpostAuth0FunctionAppSyncFunction4CCCC8C2": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationcreateMealPlanpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/MutationcreateMealPlanpostAuth0Function/MutationcreateMealPlanpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationCreateMealPlanDataResolverFnMutationCreateMealPlanDataResolverFnAppSyncFunction346CEBFB": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "MealPlanDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationCreateMealPlanDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/a439a83913c2e487bad7bf3c3b7f88b9e53133e659825cea81c740f9a129d4d9.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "MealPlanDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/MutationCreateMealPlanDataResolverFn/MutationCreateMealPlanDataResolverFn.AppSyncFunction"
+   }
+  },
+  "CreateMealPlanResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "createMealPlan",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationcreateMealPlaninit0FunctionMutationcreateMealPlaninit0FunctionAppSyncFunction12983761",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateMealPlanauth0FunctionMutationcreateMealPlanauth0FunctionAppSyncFunction613591DB",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationcreateMealPlanpostAuth0FunctionMutationcreateMealPlanpostAuth0FunctionAppSyncFunction4CCCC8C2",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationCreateMealPlanDataResolverFnMutationCreateMealPlanDataResolverFnAppSyncFunction346CEBFB",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"createMealPlan\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "MealPlanTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/mutationCreateMealPlanResolver"
+   }
+  },
+  "MutationupdateMealPlaninit0FunctionMutationupdateMealPlaninit0FunctionAppSyncFunction9B79F5A4": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateMealPlaninit0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/06db846fd14e6fc371f22b12b5545ba8e2dbfeda85d8c8d586c71c282166657b.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/MutationupdateMealPlaninit0Function/MutationupdateMealPlaninit0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateMealPlanauth0FunctionMutationupdateMealPlanauth0FunctionAppSyncFunction21F120C1": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "MealPlanDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateMealPlanauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/5f1b970adb5061a10a232bd3702abf137f02849f6ed866fee2b2381e8e400c12.vtl"
+    }
+   },
+   "DependsOn": [
+    "MealPlanDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/MutationupdateMealPlanauth0Function/MutationupdateMealPlanauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationupdateMealPlanpostAuth0FunctionMutationupdateMealPlanpostAuth0FunctionAppSyncFunctionE2D30E9B": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationupdateMealPlanpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/MutationupdateMealPlanpostAuth0Function/MutationupdateMealPlanpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationUpdateMealPlanDataResolverFnMutationUpdateMealPlanDataResolverFnAppSyncFunction27CD3994": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "MealPlanDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationUpdateMealPlanDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/474bf0776ec2164a13191d1a0a9e057154931e4918fea5086f49850d02a5371b.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "MealPlanDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/MutationUpdateMealPlanDataResolverFn/MutationUpdateMealPlanDataResolverFn.AppSyncFunction"
+   }
+  },
+  "UpdateMealPlanResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "updateMealPlan",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationupdateMealPlaninit0FunctionMutationupdateMealPlaninit0FunctionAppSyncFunction9B79F5A4",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateMealPlanauth0FunctionMutationupdateMealPlanauth0FunctionAppSyncFunction21F120C1",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationupdateMealPlanpostAuth0FunctionMutationupdateMealPlanpostAuth0FunctionAppSyncFunctionE2D30E9B",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationUpdateMealPlanDataResolverFnMutationUpdateMealPlanDataResolverFnAppSyncFunction27CD3994",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"updateMealPlan\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "MealPlanTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/mutationUpdateMealPlanResolver"
+   }
+  },
+  "MutationdeleteMealPlanauth0FunctionMutationdeleteMealPlanauth0FunctionAppSyncFunction5B3AC441": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "MealPlanDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteMealPlanauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/1f5fed297da9c32ae3af922bf3a38ccf23b956078887d16891ec06c20c64722c.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/867fb7d7eb8e4127b6d0136b82c5c3f74a52eb410297086859986f8e7e4b02aa.vtl"
+    }
+   },
+   "DependsOn": [
+    "MealPlanDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/MutationdeleteMealPlanauth0Function/MutationdeleteMealPlanauth0Function.AppSyncFunction"
+   }
+  },
+  "MutationdeleteMealPlanpostAuth0FunctionMutationdeleteMealPlanpostAuth0FunctionAppSyncFunctionCEC7AE51": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationdeleteMealPlanpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/MutationdeleteMealPlanpostAuth0Function/MutationdeleteMealPlanpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "MutationDeleteMealPlanDataResolverFnMutationDeleteMealPlanDataResolverFnAppSyncFunctionC0572783": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Fn::GetAtt": [
+      "MealPlanDataSource",
+      "Name"
+     ]
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MutationDeleteMealPlanDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/4f7907d1209a2c9953a0c053df402c634e359546d70c7cc5c2e8e21ea734880f.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/f4a52b72209a9dfa197b5e7367a5c378c5bb86de6e29ddd9e48b49a3fe54b249.vtl"
+    }
+   },
+   "DependsOn": [
+    "MealPlanDataSource"
+   ],
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/MutationDeleteMealPlanDataResolverFn/MutationDeleteMealPlanDataResolverFn.AppSyncFunction"
+   }
+  },
+  "DeleteMealPlanResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "deleteMealPlan",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteMealPlanauth0FunctionMutationdeleteMealPlanauth0FunctionAppSyncFunction5B3AC441",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationdeleteMealPlanpostAuth0FunctionMutationdeleteMealPlanpostAuth0FunctionAppSyncFunctionCEC7AE51",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "MutationDeleteMealPlanDataResolverFnMutationDeleteMealPlanDataResolverFnAppSyncFunctionC0572783",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Mutation\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"deleteMealPlan\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"AMAZON_DYNAMODB\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n$util.qr($ctx.stash.put(\"tableName\", \"",
+       {
+        "Fn::Select": [
+         1,
+         {
+          "Fn::Split": [
+           "/",
+           {
+            "Fn::Select": [
+             5,
+             {
+              "Fn::Split": [
+               ":",
+               {
+                "Fn::GetAtt": [
+                 "MealPlanTable",
+                 "TableArn"
+                ]
+               }
+              ]
+             }
+            ]
+           }
+          ]
+         }
+        ]
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Mutation"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/mutationDeleteMealPlanResolver"
+   }
+  },
+  "SubscriptiononCreateMealPlanauth0FunctionSubscriptiononCreateMealPlanauth0FunctionAppSyncFunction5F878501": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreateMealPlanauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/SubscriptiononCreateMealPlanauth0Function/SubscriptiononCreateMealPlanauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreateMealPlanpostAuth0FunctionSubscriptiononCreateMealPlanpostAuth0FunctionAppSyncFunctionFA1215DC": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononCreateMealPlanpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/SubscriptiononCreateMealPlanpostAuth0Function/SubscriptiononCreateMealPlanpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnCreateMealPlanDataResolverFnSubscriptionOnCreateMealPlanDataResolverFnAppSyncFunction61A69718": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnCreateMealPlanDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/SubscriptionOnCreateMealPlanDataResolverFn/SubscriptionOnCreateMealPlanDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononCreateMealPlanResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "onCreateMealPlan",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreateMealPlanauth0FunctionSubscriptiononCreateMealPlanauth0FunctionAppSyncFunction5F878501",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononCreateMealPlanpostAuth0FunctionSubscriptiononCreateMealPlanpostAuth0FunctionAppSyncFunctionFA1215DC",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnCreateMealPlanDataResolverFnSubscriptionOnCreateMealPlanDataResolverFnAppSyncFunction61A69718",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onCreateMealPlan\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/subscriptionOnCreateMealPlanResolver"
+   }
+  },
+  "SubscriptiononUpdateMealPlanauth0FunctionSubscriptiononUpdateMealPlanauth0FunctionAppSyncFunctionEB9667FE": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdateMealPlanauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/SubscriptiononUpdateMealPlanauth0Function/SubscriptiononUpdateMealPlanauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdateMealPlanpostAuth0FunctionSubscriptiononUpdateMealPlanpostAuth0FunctionAppSyncFunctionDCBF6D13": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononUpdateMealPlanpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/SubscriptiononUpdateMealPlanpostAuth0Function/SubscriptiononUpdateMealPlanpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnUpdateMealPlanDataResolverFnSubscriptionOnUpdateMealPlanDataResolverFnAppSyncFunction2C5D11D8": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnUpdateMealPlanDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/SubscriptionOnUpdateMealPlanDataResolverFn/SubscriptionOnUpdateMealPlanDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononUpdateMealPlanResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "onUpdateMealPlan",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdateMealPlanauth0FunctionSubscriptiononUpdateMealPlanauth0FunctionAppSyncFunctionEB9667FE",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononUpdateMealPlanpostAuth0FunctionSubscriptiononUpdateMealPlanpostAuth0FunctionAppSyncFunctionDCBF6D13",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnUpdateMealPlanDataResolverFnSubscriptionOnUpdateMealPlanDataResolverFnAppSyncFunction2C5D11D8",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onUpdateMealPlan\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/subscriptionOnUpdateMealPlanResolver"
+   }
+  },
+  "SubscriptiononDeleteMealPlanauth0FunctionSubscriptiononDeleteMealPlanauth0FunctionAppSyncFunction3E0AA60E": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeleteMealPlanauth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/3b6d810ef43cdbd93ef462c40b0df0328b89e04f1473a4f82f1178da1f1d5aa0.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/SubscriptiononDeleteMealPlanauth0Function/SubscriptiononDeleteMealPlanauth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeleteMealPlanpostAuth0FunctionSubscriptiononDeleteMealPlanpostAuth0FunctionAppSyncFunctionD8BF23D0": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptiononDeleteMealPlanpostAuth0Function",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/c1721bcd774e27c514d3454b5be4f9bdd094c0161b57ddf053d618e3b0086a77.vtl"
+    },
+    "ResponseMappingTemplate": "$util.toJson({})"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/SubscriptiononDeleteMealPlanpostAuth0Function/SubscriptiononDeleteMealPlanpostAuth0Function.AppSyncFunction"
+   }
+  },
+  "SubscriptionOnDeleteMealPlanDataResolverFnSubscriptionOnDeleteMealPlanDataResolverFnAppSyncFunction528D589A": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "SubscriptionOnDeleteMealPlanDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/fe3c43ada4b9d681a5e2312663ef7a73386424d73b73e51f8e2e9d4b50f7c502.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/e0cff47fb007f0bbf2a4e43ca256d6aa7ec109821769fd79fa7c5e83f0e7f9fc.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/SubscriptionOnDeleteMealPlanDataResolverFn/SubscriptionOnDeleteMealPlanDataResolverFn.AppSyncFunction"
+   }
+  },
+  "SubscriptiononDeleteMealPlanResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "onDeleteMealPlan",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeleteMealPlanauth0FunctionSubscriptiononDeleteMealPlanauth0FunctionAppSyncFunction3E0AA60E",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptiononDeleteMealPlanpostAuth0FunctionSubscriptiononDeleteMealPlanpostAuth0FunctionAppSyncFunctionD8BF23D0",
+        "FunctionId"
+       ]
+      },
+      {
+       "Fn::GetAtt": [
+        "SubscriptionOnDeleteMealPlanDataResolverFnSubscriptionOnDeleteMealPlanDataResolverFnAppSyncFunction528D589A",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"Subscription\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"onDeleteMealPlan\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "Subscription"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/subscriptionOnDeleteMealPlanResolver"
+   }
+  },
+  "MealPlanOwnerDataResolverFnMealPlanOwnerDataResolverFnAppSyncFunction4AFDBFF6": {
+   "Type": "AWS::AppSync::FunctionConfiguration",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "DataSourceName": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPINONEDS30799B15Name"
+    },
+    "FunctionVersion": "2018-05-29",
+    "Name": "MealPlanOwnerDataResolverFn",
+    "RequestMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/041534e5fd916595f752318f161512d7c7f83b9f2cf32d0f0be381c12253ff68.vtl"
+    },
+    "ResponseMappingTemplateS3Location": {
+     "Fn::Sub": "s3://cdk-hnb659fds-assets-${AWS::AccountId}-${AWS::Region}/064303962e481067b44300212516363b99aaee539b6bafaf756fdd83ff0b60f0.vtl"
+    }
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/MealPlanOwnerDataResolverFn/MealPlanOwnerDataResolverFn.AppSyncFunction"
+   }
+  },
+  "MealPlanownerResolver": {
+   "Type": "AWS::AppSync::Resolver",
+   "Properties": {
+    "ApiId": {
+     "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+    },
+    "FieldName": "owner",
+    "Kind": "PIPELINE",
+    "PipelineConfig": {
+     "Functions": [
+      {
+       "Fn::GetAtt": [
+        "MealPlanOwnerDataResolverFnMealPlanOwnerDataResolverFnAppSyncFunction4AFDBFF6",
+        "FunctionId"
+       ]
+      }
+     ]
+    },
+    "RequestMappingTemplate": {
+     "Fn::Join": [
+      "",
+      [
+       "$util.qr($ctx.stash.put(\"typeName\", \"MealPlan\"))\n$util.qr($ctx.stash.put(\"fieldName\", \"owner\"))\n$util.qr($ctx.stash.put(\"conditions\", []))\n$util.qr($ctx.stash.put(\"metadata\", {}))\n$util.qr($ctx.stash.metadata.put(\"dataSourceType\", \"NONE\"))\n$util.qr($ctx.stash.metadata.put(\"apiId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"connectionAttributes\", {}))\n\n$util.qr($ctx.stash.put(\"authRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthauthenticatedUserRoleFFB1F441Ref"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"unauthRole\", \"arn:",
+       {
+        "Ref": "AWS::Partition"
+       },
+       ":sts::",
+       {
+        "Ref": "AWS::AccountId"
+       },
+       ":assumed-role/",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthunauthenticatedUserRoleE55DBB5CRef"
+       },
+       "/CognitoIdentityCredentials\"))\n$util.qr($ctx.stash.put(\"identityPoolId\", \"",
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9authNestedStackauthNestedStackResourceDA194276Outputsamplifycontextchefsamuelthomassandbox750e377de9authamplifyAuthIdentityPoolA21DF5AERef"
+       },
+       "\"))\n$util.qr($ctx.stash.put(\"adminRoles\", []))\n$util.toJson({})"
+      ]
+     ]
+    },
+    "ResponseMappingTemplate": "$util.toJson($ctx.prev.result)",
+    "TypeName": "MealPlan"
+   },
+   "UpdateReplacePolicy": "Delete",
+   "DeletionPolicy": "Delete",
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/mealPlanOwnerResolver"
+   }
+  },
+  "CDKMetadata": {
+   "Type": "AWS::CDK::Metadata",
+   "Properties": {
+    "Analytics": "v2:deflate64:H4sIAAAAAAAA/1WQQW+DMAyFf8vuwWvpZdcVtOM20d0rkxiUQhIUO50qxH9foFOnnZ4/+cl+dgnl7gV2T/jNhTZDMdoW5ndiIXMS1IOqOv+JER0JxRWq4I0VG7xqiEOKmlSVWIL7w84/6jz2PJubRxdMC1/YjnREJmXRwdyE8e7OuiicJr55DXO92eu2RsHTY+R/ekteryFyms72KeKW6HfzeKW4KD6ckZmE4XWVzHBMeiBZAyyr9yPJlERt7Xxsb32/KB8MwYWfr+UB9vv8mQtbW8TkxTqC5q4/mAHDCTYBAAA="
+   },
+   "Metadata": {
+    "aws:cdk:path": "amplify-contextchef-samuelthomas-sandbox-750e377de9/data/amplifyData/MealPlan/CDKMetadata/Default"
+   },
+   "Condition": "CDKMetadataAvailable"
+  }
+ },
+ "Outputs": {
+  "GetAttMealPlanTableStreamArn": {
+   "Description": "Your DynamoDB table StreamArn.",
+   "Value": {
+    "Fn::GetAtt": [
+     "MealPlanTable",
+     "TableStreamArn"
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "GetAtt:MealPlanTable:StreamArn"
+      ]
+     ]
+    }
+   }
+  },
+  "GetAttMealPlanTableName": {
+   "Description": "Your DynamoDB table name.",
+   "Value": {
+    "Fn::Join": [
+     "",
+     [
+      "MealPlan-",
+      {
+       "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+      },
+      "-NONE"
+     ]
+    ]
+   },
+   "Export": {
+    "Name": {
+     "Fn::Join": [
+      ":",
+      [
+       {
+        "Ref": "referencetoamplifycontextchefsamuelthomassandbox750e377de9dataamplifyDataGraphQLAPICECE7E49ApiId"
+       },
+       "GetAtt:MealPlanTable:Name"
+      ]
+     ]
+    }
+   }
+  }
+ }
+}

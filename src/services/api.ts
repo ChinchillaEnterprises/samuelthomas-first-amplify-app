@@ -1,6 +1,7 @@
 // API service layer for all backend communication
 
 import { generateClient } from 'aws-amplify/api';
+import { getCurrentUser as getCurrentAuthUser } from 'aws-amplify/auth';
 import { Schema } from '@/amplify/data/resource';
 import { OfflineStorage } from '@/utils/offline-storage';
 import { 
@@ -29,12 +30,26 @@ function handleError(error: any, fallbackMessage: string): Error {
 export const userApi = {
   async getCurrentUser() {
     try {
+      // Get the current authenticated user's attributes
+      const { userId, signInDetails } = await getCurrentAuthUser();
+      
+      // Try to find existing user by email
       const { data } = await client.models.User.list({
-        limit: 1
+        filter: { email: { eq: signInDetails?.loginId || '' } }
       });
+      
       return data[0] || null;
     } catch (error) {
       throw handleError(error, 'Failed to fetch current user');
+    }
+  },
+
+  async createUser(userData: any) {
+    try {
+      const { data } = await client.models.User.create(userData);
+      return data;
+    } catch (error) {
+      throw handleError(error, 'Failed to create user');
     }
   },
 

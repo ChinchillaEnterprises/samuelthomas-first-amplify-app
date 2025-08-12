@@ -1,0 +1,1219 @@
+type User @aws_iam @aws_cognito_user_pools {
+  email: AWSEmail!
+  name: String!
+  location: AWSJSON!
+  dietaryPreferences: [String]
+  allergenList: [String]
+  defaultBudgetPerServing: Float
+  householdSize: Int
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+  owner: String
+}
+
+type PantryItem @aws_iam @aws_cognito_user_pools {
+  userId: ID!
+  name: String!
+  brand: String
+  quantity: Float!
+  unit: String!
+  expiresOn: AWSDate
+  tags: [String]
+  nutritionEstimate: AWSJSON
+  source: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+  owner: String
+}
+
+type Recipe @aws_iam @aws_cognito_user_pools {
+  title: String!
+  steps: [String]!
+  ingredients: AWSJSON!
+  nutritionPerServing: AWSJSON!
+  servings: Int!
+  cuisine: String
+  difficulty: String!
+  estimatedCostPerServing: Float!
+  popularityScore: Float
+  prepTimeMinutes: Int
+  cookTimeMinutes: Int
+  tags: [String]
+  imageUrl: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+  owner: String
+}
+
+type Store @aws_iam @aws_cognito_user_pools {
+  name: String!
+  location: AWSJSON!
+  hours: AWSJSON!
+  deliveryOptions: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+  owner: String
+}
+
+type Sale @aws_iam @aws_cognito_user_pools {
+  storeId: ID!
+  itemName: String!
+  price: Float!
+  unit: String!
+  validFrom: AWSDateTime!
+  validTo: AWSDateTime!
+  tags: [String]
+  confidence: Float
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+  owner: String
+}
+
+type Receipt @aws_iam @aws_cognito_user_pools {
+  userId: ID!
+  storeId: ID
+  date: AWSDateTime!
+  total: Float!
+  rawText: String
+  parsedItems: AWSJSON!
+  status: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+  owner: String
+}
+
+type MealPlan @aws_iam @aws_cognito_user_pools {
+  userId: ID!
+  startDate: AWSDate!
+  days: AWSJSON!
+  totalCost: Float
+  avgNutritionPerDay: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+  owner: String
+}
+
+type ShoppingList @aws_iam @aws_cognito_user_pools {
+  userId: ID!
+  planId: ID
+  items: AWSJSON!
+  totalEstimatedCost: Float
+  status: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+  owner: String
+}
+
+type Preferences @aws_iam @aws_cognito_user_pools {
+  userId: ID!
+  dietaryProfile: String
+  allergens: [String]
+  dislikedIngredients: [String]
+  cuisineLikes: [String]
+  costTargetMin: Float
+  costTargetMax: Float
+  nutritionGoals: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+  owner: String
+}
+
+type AnalyticsEvent @aws_iam @aws_cognito_user_pools {
+  userId: ID
+  eventType: String!
+  eventData: AWSJSON
+  timestamp: AWSDateTime!
+  id: ID!
+  createdAt: AWSDateTime!
+  updatedAt: AWSDateTime!
+  owner: String
+}
+
+input AmplifyAIConversationTurnErrorInput {
+  errorType: String!
+  message: String!
+}
+
+input ModelStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelBooleanInput {
+  ne: Boolean
+  eq: Boolean
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+}
+
+input ModelIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  attributeExists: Boolean
+  attributeType: ModelAttributeTypes
+  size: ModelSizeInput
+}
+
+input ModelSubscriptionStringInput {
+  ne: String
+  eq: String
+  le: String
+  lt: String
+  ge: String
+  gt: String
+  contains: String
+  notContains: String
+  between: [String]
+  beginsWith: String
+  in: [String]
+  notIn: [String]
+}
+
+input ModelSubscriptionIntInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+  in: [Int]
+  notIn: [Int]
+}
+
+input ModelSubscriptionFloatInput {
+  ne: Float
+  eq: Float
+  le: Float
+  lt: Float
+  ge: Float
+  gt: Float
+  between: [Float]
+  in: [Float]
+  notIn: [Float]
+}
+
+input ModelSubscriptionBooleanInput {
+  ne: Boolean
+  eq: Boolean
+}
+
+input ModelSubscriptionIDInput {
+  ne: ID
+  eq: ID
+  le: ID
+  lt: ID
+  ge: ID
+  gt: ID
+  contains: ID
+  notContains: ID
+  between: [ID]
+  beginsWith: ID
+  in: [ID]
+  notIn: [ID]
+}
+
+enum ModelAttributeTypes {
+  binary
+  binarySet
+  bool
+  list
+  map
+  number
+  numberSet
+  string
+  stringSet
+  _null
+}
+
+input ModelSizeInput {
+  ne: Int
+  eq: Int
+  le: Int
+  lt: Int
+  ge: Int
+  gt: Int
+  between: [Int]
+}
+
+enum ModelSortDirection {
+  ASC
+  DESC
+}
+
+type ModelUserConnection @aws_iam @aws_cognito_user_pools {
+  items: [User]!
+  nextToken: String
+}
+
+input ModelUserFilterInput {
+  email: ModelStringInput
+  name: ModelStringInput
+  location: ModelStringInput
+  dietaryPreferences: ModelStringInput
+  allergenList: ModelStringInput
+  defaultBudgetPerServing: ModelFloatInput
+  householdSize: ModelIntInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  id: ModelIDInput
+  and: [ModelUserFilterInput]
+  or: [ModelUserFilterInput]
+  not: ModelUserFilterInput
+  owner: ModelStringInput
+}
+
+type Query {
+  getUser(id: ID!): User @aws_iam @aws_cognito_user_pools
+  listUsers(filter: ModelUserFilterInput, limit: Int, nextToken: String): ModelUserConnection @aws_iam @aws_cognito_user_pools
+  getPantryItem(id: ID!): PantryItem @aws_iam @aws_cognito_user_pools
+  listPantryItems(filter: ModelPantryItemFilterInput, limit: Int, nextToken: String): ModelPantryItemConnection @aws_iam @aws_cognito_user_pools
+  getRecipe(id: ID!): Recipe @aws_iam @aws_cognito_user_pools
+  listRecipes(filter: ModelRecipeFilterInput, limit: Int, nextToken: String): ModelRecipeConnection @aws_iam @aws_cognito_user_pools
+  getStore(id: ID!): Store @aws_iam @aws_cognito_user_pools
+  listStores(filter: ModelStoreFilterInput, limit: Int, nextToken: String): ModelStoreConnection @aws_iam @aws_cognito_user_pools
+  getSale(id: ID!): Sale @aws_iam @aws_cognito_user_pools
+  listSales(filter: ModelSaleFilterInput, limit: Int, nextToken: String): ModelSaleConnection @aws_iam @aws_cognito_user_pools
+  getReceipt(id: ID!): Receipt @aws_iam @aws_cognito_user_pools
+  listReceipts(filter: ModelReceiptFilterInput, limit: Int, nextToken: String): ModelReceiptConnection @aws_iam @aws_cognito_user_pools
+  getMealPlan(id: ID!): MealPlan @aws_iam @aws_cognito_user_pools
+  listMealPlans(filter: ModelMealPlanFilterInput, limit: Int, nextToken: String): ModelMealPlanConnection @aws_iam @aws_cognito_user_pools
+  getShoppingList(id: ID!): ShoppingList @aws_iam @aws_cognito_user_pools
+  listShoppingLists(filter: ModelShoppingListFilterInput, limit: Int, nextToken: String): ModelShoppingListConnection @aws_iam @aws_cognito_user_pools
+  getPreferences(id: ID!): Preferences @aws_iam @aws_cognito_user_pools
+  listPreferences(filter: ModelPreferencesFilterInput, limit: Int, nextToken: String): ModelPreferencesConnection @aws_iam @aws_cognito_user_pools
+  getAnalyticsEvent(id: ID!): AnalyticsEvent @aws_iam @aws_cognito_user_pools
+  listAnalyticsEvents(filter: ModelAnalyticsEventFilterInput, limit: Int, nextToken: String): ModelAnalyticsEventConnection @aws_iam @aws_cognito_user_pools
+}
+
+input ModelUserConditionInput {
+  email: ModelStringInput
+  name: ModelStringInput
+  location: ModelStringInput
+  dietaryPreferences: ModelStringInput
+  allergenList: ModelStringInput
+  defaultBudgetPerServing: ModelFloatInput
+  householdSize: ModelIntInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelUserConditionInput]
+  or: [ModelUserConditionInput]
+  not: ModelUserConditionInput
+  owner: ModelStringInput
+}
+
+input CreateUserInput {
+  email: AWSEmail!
+  name: String!
+  location: AWSJSON!
+  dietaryPreferences: [String]
+  allergenList: [String]
+  defaultBudgetPerServing: Float
+  householdSize: Int
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID
+}
+
+input UpdateUserInput {
+  email: AWSEmail
+  name: String
+  location: AWSJSON
+  dietaryPreferences: [String]
+  allergenList: [String]
+  defaultBudgetPerServing: Float
+  householdSize: Int
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+}
+
+input DeleteUserInput {
+  id: ID!
+}
+
+type Mutation {
+  createUser(input: CreateUserInput!, condition: ModelUserConditionInput): User @aws_iam @aws_cognito_user_pools
+  updateUser(input: UpdateUserInput!, condition: ModelUserConditionInput): User @aws_iam @aws_cognito_user_pools
+  deleteUser(input: DeleteUserInput!, condition: ModelUserConditionInput): User @aws_iam @aws_cognito_user_pools
+  createPantryItem(input: CreatePantryItemInput!, condition: ModelPantryItemConditionInput): PantryItem @aws_iam @aws_cognito_user_pools
+  updatePantryItem(input: UpdatePantryItemInput!, condition: ModelPantryItemConditionInput): PantryItem @aws_iam @aws_cognito_user_pools
+  deletePantryItem(input: DeletePantryItemInput!, condition: ModelPantryItemConditionInput): PantryItem @aws_iam @aws_cognito_user_pools
+  createRecipe(input: CreateRecipeInput!, condition: ModelRecipeConditionInput): Recipe @aws_iam @aws_cognito_user_pools
+  updateRecipe(input: UpdateRecipeInput!, condition: ModelRecipeConditionInput): Recipe @aws_iam @aws_cognito_user_pools
+  deleteRecipe(input: DeleteRecipeInput!, condition: ModelRecipeConditionInput): Recipe @aws_iam @aws_cognito_user_pools
+  createStore(input: CreateStoreInput!, condition: ModelStoreConditionInput): Store @aws_iam @aws_cognito_user_pools
+  updateStore(input: UpdateStoreInput!, condition: ModelStoreConditionInput): Store @aws_iam @aws_cognito_user_pools
+  deleteStore(input: DeleteStoreInput!, condition: ModelStoreConditionInput): Store @aws_iam @aws_cognito_user_pools
+  createSale(input: CreateSaleInput!, condition: ModelSaleConditionInput): Sale @aws_iam @aws_cognito_user_pools
+  updateSale(input: UpdateSaleInput!, condition: ModelSaleConditionInput): Sale @aws_iam @aws_cognito_user_pools
+  deleteSale(input: DeleteSaleInput!, condition: ModelSaleConditionInput): Sale @aws_iam @aws_cognito_user_pools
+  createReceipt(input: CreateReceiptInput!, condition: ModelReceiptConditionInput): Receipt @aws_iam @aws_cognito_user_pools
+  updateReceipt(input: UpdateReceiptInput!, condition: ModelReceiptConditionInput): Receipt @aws_iam @aws_cognito_user_pools
+  deleteReceipt(input: DeleteReceiptInput!, condition: ModelReceiptConditionInput): Receipt @aws_iam @aws_cognito_user_pools
+  createMealPlan(input: CreateMealPlanInput!, condition: ModelMealPlanConditionInput): MealPlan @aws_iam @aws_cognito_user_pools
+  updateMealPlan(input: UpdateMealPlanInput!, condition: ModelMealPlanConditionInput): MealPlan @aws_iam @aws_cognito_user_pools
+  deleteMealPlan(input: DeleteMealPlanInput!, condition: ModelMealPlanConditionInput): MealPlan @aws_iam @aws_cognito_user_pools
+  createShoppingList(input: CreateShoppingListInput!, condition: ModelShoppingListConditionInput): ShoppingList @aws_iam @aws_cognito_user_pools
+  updateShoppingList(input: UpdateShoppingListInput!, condition: ModelShoppingListConditionInput): ShoppingList @aws_iam @aws_cognito_user_pools
+  deleteShoppingList(input: DeleteShoppingListInput!, condition: ModelShoppingListConditionInput): ShoppingList @aws_iam @aws_cognito_user_pools
+  createPreferences(input: CreatePreferencesInput!, condition: ModelPreferencesConditionInput): Preferences @aws_iam @aws_cognito_user_pools
+  updatePreferences(input: UpdatePreferencesInput!, condition: ModelPreferencesConditionInput): Preferences @aws_iam @aws_cognito_user_pools
+  deletePreferences(input: DeletePreferencesInput!, condition: ModelPreferencesConditionInput): Preferences @aws_iam @aws_cognito_user_pools
+  createAnalyticsEvent(input: CreateAnalyticsEventInput!, condition: ModelAnalyticsEventConditionInput): AnalyticsEvent @aws_iam @aws_cognito_user_pools
+  updateAnalyticsEvent(input: UpdateAnalyticsEventInput!, condition: ModelAnalyticsEventConditionInput): AnalyticsEvent @aws_iam @aws_cognito_user_pools
+  deleteAnalyticsEvent(input: DeleteAnalyticsEventInput!, condition: ModelAnalyticsEventConditionInput): AnalyticsEvent @aws_iam @aws_cognito_user_pools
+}
+
+input ModelSubscriptionUserFilterInput {
+  email: ModelSubscriptionStringInput
+  name: ModelSubscriptionStringInput
+  location: ModelSubscriptionStringInput
+  dietaryPreferences: ModelSubscriptionStringInput
+  allergenList: ModelSubscriptionStringInput
+  defaultBudgetPerServing: ModelSubscriptionFloatInput
+  householdSize: ModelSubscriptionIntInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  and: [ModelSubscriptionUserFilterInput]
+  or: [ModelSubscriptionUserFilterInput]
+  owner: ModelStringInput
+}
+
+type Subscription {
+  onCreateUser(filter: ModelSubscriptionUserFilterInput, owner: String): User @aws_subscribe(mutations: ["createUser"]) @aws_iam @aws_cognito_user_pools
+  onUpdateUser(filter: ModelSubscriptionUserFilterInput, owner: String): User @aws_subscribe(mutations: ["updateUser"]) @aws_iam @aws_cognito_user_pools
+  onDeleteUser(filter: ModelSubscriptionUserFilterInput, owner: String): User @aws_subscribe(mutations: ["deleteUser"]) @aws_iam @aws_cognito_user_pools
+  onCreatePantryItem(filter: ModelSubscriptionPantryItemFilterInput, owner: String): PantryItem @aws_subscribe(mutations: ["createPantryItem"]) @aws_iam @aws_cognito_user_pools
+  onUpdatePantryItem(filter: ModelSubscriptionPantryItemFilterInput, owner: String): PantryItem @aws_subscribe(mutations: ["updatePantryItem"]) @aws_iam @aws_cognito_user_pools
+  onDeletePantryItem(filter: ModelSubscriptionPantryItemFilterInput, owner: String): PantryItem @aws_subscribe(mutations: ["deletePantryItem"]) @aws_iam @aws_cognito_user_pools
+  onCreateRecipe(filter: ModelSubscriptionRecipeFilterInput): Recipe @aws_subscribe(mutations: ["createRecipe"]) @aws_iam @aws_cognito_user_pools
+  onUpdateRecipe(filter: ModelSubscriptionRecipeFilterInput): Recipe @aws_subscribe(mutations: ["updateRecipe"]) @aws_iam @aws_cognito_user_pools
+  onDeleteRecipe(filter: ModelSubscriptionRecipeFilterInput): Recipe @aws_subscribe(mutations: ["deleteRecipe"]) @aws_iam @aws_cognito_user_pools
+  onCreateStore(filter: ModelSubscriptionStoreFilterInput): Store @aws_subscribe(mutations: ["createStore"]) @aws_iam @aws_cognito_user_pools
+  onUpdateStore(filter: ModelSubscriptionStoreFilterInput): Store @aws_subscribe(mutations: ["updateStore"]) @aws_iam @aws_cognito_user_pools
+  onDeleteStore(filter: ModelSubscriptionStoreFilterInput): Store @aws_subscribe(mutations: ["deleteStore"]) @aws_iam @aws_cognito_user_pools
+  onCreateSale(filter: ModelSubscriptionSaleFilterInput): Sale @aws_subscribe(mutations: ["createSale"]) @aws_iam @aws_cognito_user_pools
+  onUpdateSale(filter: ModelSubscriptionSaleFilterInput): Sale @aws_subscribe(mutations: ["updateSale"]) @aws_iam @aws_cognito_user_pools
+  onDeleteSale(filter: ModelSubscriptionSaleFilterInput): Sale @aws_subscribe(mutations: ["deleteSale"]) @aws_iam @aws_cognito_user_pools
+  onCreateReceipt(filter: ModelSubscriptionReceiptFilterInput, owner: String): Receipt @aws_subscribe(mutations: ["createReceipt"]) @aws_iam @aws_cognito_user_pools
+  onUpdateReceipt(filter: ModelSubscriptionReceiptFilterInput, owner: String): Receipt @aws_subscribe(mutations: ["updateReceipt"]) @aws_iam @aws_cognito_user_pools
+  onDeleteReceipt(filter: ModelSubscriptionReceiptFilterInput, owner: String): Receipt @aws_subscribe(mutations: ["deleteReceipt"]) @aws_iam @aws_cognito_user_pools
+  onCreateMealPlan(filter: ModelSubscriptionMealPlanFilterInput, owner: String): MealPlan @aws_subscribe(mutations: ["createMealPlan"]) @aws_iam @aws_cognito_user_pools
+  onUpdateMealPlan(filter: ModelSubscriptionMealPlanFilterInput, owner: String): MealPlan @aws_subscribe(mutations: ["updateMealPlan"]) @aws_iam @aws_cognito_user_pools
+  onDeleteMealPlan(filter: ModelSubscriptionMealPlanFilterInput, owner: String): MealPlan @aws_subscribe(mutations: ["deleteMealPlan"]) @aws_iam @aws_cognito_user_pools
+  onCreateShoppingList(filter: ModelSubscriptionShoppingListFilterInput, owner: String): ShoppingList @aws_subscribe(mutations: ["createShoppingList"]) @aws_iam @aws_cognito_user_pools
+  onUpdateShoppingList(filter: ModelSubscriptionShoppingListFilterInput, owner: String): ShoppingList @aws_subscribe(mutations: ["updateShoppingList"]) @aws_iam @aws_cognito_user_pools
+  onDeleteShoppingList(filter: ModelSubscriptionShoppingListFilterInput, owner: String): ShoppingList @aws_subscribe(mutations: ["deleteShoppingList"]) @aws_iam @aws_cognito_user_pools
+  onCreatePreferences(filter: ModelSubscriptionPreferencesFilterInput, owner: String): Preferences @aws_subscribe(mutations: ["createPreferences"]) @aws_iam @aws_cognito_user_pools
+  onUpdatePreferences(filter: ModelSubscriptionPreferencesFilterInput, owner: String): Preferences @aws_subscribe(mutations: ["updatePreferences"]) @aws_iam @aws_cognito_user_pools
+  onDeletePreferences(filter: ModelSubscriptionPreferencesFilterInput, owner: String): Preferences @aws_subscribe(mutations: ["deletePreferences"]) @aws_iam @aws_cognito_user_pools
+  onCreateAnalyticsEvent(filter: ModelSubscriptionAnalyticsEventFilterInput, owner: String): AnalyticsEvent @aws_subscribe(mutations: ["createAnalyticsEvent"]) @aws_iam @aws_cognito_user_pools
+  onUpdateAnalyticsEvent(filter: ModelSubscriptionAnalyticsEventFilterInput, owner: String): AnalyticsEvent @aws_subscribe(mutations: ["updateAnalyticsEvent"]) @aws_iam @aws_cognito_user_pools
+  onDeleteAnalyticsEvent(filter: ModelSubscriptionAnalyticsEventFilterInput, owner: String): AnalyticsEvent @aws_subscribe(mutations: ["deleteAnalyticsEvent"]) @aws_iam @aws_cognito_user_pools
+}
+
+type ModelPantryItemConnection @aws_iam @aws_cognito_user_pools {
+  items: [PantryItem]!
+  nextToken: String
+}
+
+input ModelPantryItemFilterInput {
+  userId: ModelIDInput
+  name: ModelStringInput
+  brand: ModelStringInput
+  quantity: ModelFloatInput
+  unit: ModelStringInput
+  expiresOn: ModelStringInput
+  tags: ModelStringInput
+  nutritionEstimate: ModelStringInput
+  source: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  id: ModelIDInput
+  and: [ModelPantryItemFilterInput]
+  or: [ModelPantryItemFilterInput]
+  not: ModelPantryItemFilterInput
+  owner: ModelStringInput
+}
+
+input ModelPantryItemConditionInput {
+  userId: ModelIDInput
+  name: ModelStringInput
+  brand: ModelStringInput
+  quantity: ModelFloatInput
+  unit: ModelStringInput
+  expiresOn: ModelStringInput
+  tags: ModelStringInput
+  nutritionEstimate: ModelStringInput
+  source: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelPantryItemConditionInput]
+  or: [ModelPantryItemConditionInput]
+  not: ModelPantryItemConditionInput
+  owner: ModelStringInput
+}
+
+input CreatePantryItemInput {
+  userId: ID!
+  name: String!
+  brand: String
+  quantity: Float!
+  unit: String!
+  expiresOn: AWSDate
+  tags: [String]
+  nutritionEstimate: AWSJSON
+  source: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID
+}
+
+input UpdatePantryItemInput {
+  userId: ID
+  name: String
+  brand: String
+  quantity: Float
+  unit: String
+  expiresOn: AWSDate
+  tags: [String]
+  nutritionEstimate: AWSJSON
+  source: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+}
+
+input DeletePantryItemInput {
+  id: ID!
+}
+
+input ModelSubscriptionPantryItemFilterInput {
+  userId: ModelSubscriptionIDInput
+  name: ModelSubscriptionStringInput
+  brand: ModelSubscriptionStringInput
+  quantity: ModelSubscriptionFloatInput
+  unit: ModelSubscriptionStringInput
+  expiresOn: ModelSubscriptionStringInput
+  tags: ModelSubscriptionStringInput
+  nutritionEstimate: ModelSubscriptionStringInput
+  source: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  and: [ModelSubscriptionPantryItemFilterInput]
+  or: [ModelSubscriptionPantryItemFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelRecipeConnection @aws_iam @aws_cognito_user_pools {
+  items: [Recipe]!
+  nextToken: String
+}
+
+input ModelRecipeFilterInput {
+  title: ModelStringInput
+  steps: ModelStringInput
+  ingredients: ModelStringInput
+  nutritionPerServing: ModelStringInput
+  servings: ModelIntInput
+  cuisine: ModelStringInput
+  difficulty: ModelStringInput
+  estimatedCostPerServing: ModelFloatInput
+  popularityScore: ModelFloatInput
+  prepTimeMinutes: ModelIntInput
+  cookTimeMinutes: ModelIntInput
+  tags: ModelStringInput
+  imageUrl: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  id: ModelIDInput
+  and: [ModelRecipeFilterInput]
+  or: [ModelRecipeFilterInput]
+  not: ModelRecipeFilterInput
+  owner: ModelStringInput
+}
+
+input ModelRecipeConditionInput {
+  title: ModelStringInput
+  steps: ModelStringInput
+  ingredients: ModelStringInput
+  nutritionPerServing: ModelStringInput
+  servings: ModelIntInput
+  cuisine: ModelStringInput
+  difficulty: ModelStringInput
+  estimatedCostPerServing: ModelFloatInput
+  popularityScore: ModelFloatInput
+  prepTimeMinutes: ModelIntInput
+  cookTimeMinutes: ModelIntInput
+  tags: ModelStringInput
+  imageUrl: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelRecipeConditionInput]
+  or: [ModelRecipeConditionInput]
+  not: ModelRecipeConditionInput
+  owner: ModelStringInput
+}
+
+input CreateRecipeInput {
+  title: String!
+  steps: [String]!
+  ingredients: AWSJSON!
+  nutritionPerServing: AWSJSON!
+  servings: Int!
+  cuisine: String
+  difficulty: String!
+  estimatedCostPerServing: Float!
+  popularityScore: Float
+  prepTimeMinutes: Int
+  cookTimeMinutes: Int
+  tags: [String]
+  imageUrl: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID
+}
+
+input UpdateRecipeInput {
+  title: String
+  steps: [String]
+  ingredients: AWSJSON
+  nutritionPerServing: AWSJSON
+  servings: Int
+  cuisine: String
+  difficulty: String
+  estimatedCostPerServing: Float
+  popularityScore: Float
+  prepTimeMinutes: Int
+  cookTimeMinutes: Int
+  tags: [String]
+  imageUrl: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+}
+
+input DeleteRecipeInput {
+  id: ID!
+}
+
+input ModelSubscriptionRecipeFilterInput {
+  title: ModelSubscriptionStringInput
+  steps: ModelSubscriptionStringInput
+  ingredients: ModelSubscriptionStringInput
+  nutritionPerServing: ModelSubscriptionStringInput
+  servings: ModelSubscriptionIntInput
+  cuisine: ModelSubscriptionStringInput
+  difficulty: ModelSubscriptionStringInput
+  estimatedCostPerServing: ModelSubscriptionFloatInput
+  popularityScore: ModelSubscriptionFloatInput
+  prepTimeMinutes: ModelSubscriptionIntInput
+  cookTimeMinutes: ModelSubscriptionIntInput
+  tags: ModelSubscriptionStringInput
+  imageUrl: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  and: [ModelSubscriptionRecipeFilterInput]
+  or: [ModelSubscriptionRecipeFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelStoreConnection @aws_iam @aws_cognito_user_pools {
+  items: [Store]!
+  nextToken: String
+}
+
+input ModelStoreFilterInput {
+  name: ModelStringInput
+  location: ModelStringInput
+  hours: ModelStringInput
+  deliveryOptions: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  id: ModelIDInput
+  and: [ModelStoreFilterInput]
+  or: [ModelStoreFilterInput]
+  not: ModelStoreFilterInput
+  owner: ModelStringInput
+}
+
+input ModelStoreConditionInput {
+  name: ModelStringInput
+  location: ModelStringInput
+  hours: ModelStringInput
+  deliveryOptions: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelStoreConditionInput]
+  or: [ModelStoreConditionInput]
+  not: ModelStoreConditionInput
+  owner: ModelStringInput
+}
+
+input CreateStoreInput {
+  name: String!
+  location: AWSJSON!
+  hours: AWSJSON!
+  deliveryOptions: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID
+}
+
+input UpdateStoreInput {
+  name: String
+  location: AWSJSON
+  hours: AWSJSON
+  deliveryOptions: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+}
+
+input DeleteStoreInput {
+  id: ID!
+}
+
+input ModelSubscriptionStoreFilterInput {
+  name: ModelSubscriptionStringInput
+  location: ModelSubscriptionStringInput
+  hours: ModelSubscriptionStringInput
+  deliveryOptions: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  and: [ModelSubscriptionStoreFilterInput]
+  or: [ModelSubscriptionStoreFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelSaleConnection @aws_iam @aws_cognito_user_pools {
+  items: [Sale]!
+  nextToken: String
+}
+
+input ModelSaleFilterInput {
+  storeId: ModelIDInput
+  itemName: ModelStringInput
+  price: ModelFloatInput
+  unit: ModelStringInput
+  validFrom: ModelStringInput
+  validTo: ModelStringInput
+  tags: ModelStringInput
+  confidence: ModelFloatInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  id: ModelIDInput
+  and: [ModelSaleFilterInput]
+  or: [ModelSaleFilterInput]
+  not: ModelSaleFilterInput
+  owner: ModelStringInput
+}
+
+input ModelSaleConditionInput {
+  storeId: ModelIDInput
+  itemName: ModelStringInput
+  price: ModelFloatInput
+  unit: ModelStringInput
+  validFrom: ModelStringInput
+  validTo: ModelStringInput
+  tags: ModelStringInput
+  confidence: ModelFloatInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelSaleConditionInput]
+  or: [ModelSaleConditionInput]
+  not: ModelSaleConditionInput
+  owner: ModelStringInput
+}
+
+input CreateSaleInput {
+  storeId: ID!
+  itemName: String!
+  price: Float!
+  unit: String!
+  validFrom: AWSDateTime!
+  validTo: AWSDateTime!
+  tags: [String]
+  confidence: Float
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID
+}
+
+input UpdateSaleInput {
+  storeId: ID
+  itemName: String
+  price: Float
+  unit: String
+  validFrom: AWSDateTime
+  validTo: AWSDateTime
+  tags: [String]
+  confidence: Float
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+}
+
+input DeleteSaleInput {
+  id: ID!
+}
+
+input ModelSubscriptionSaleFilterInput {
+  storeId: ModelSubscriptionIDInput
+  itemName: ModelSubscriptionStringInput
+  price: ModelSubscriptionFloatInput
+  unit: ModelSubscriptionStringInput
+  validFrom: ModelSubscriptionStringInput
+  validTo: ModelSubscriptionStringInput
+  tags: ModelSubscriptionStringInput
+  confidence: ModelSubscriptionFloatInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  and: [ModelSubscriptionSaleFilterInput]
+  or: [ModelSubscriptionSaleFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelReceiptConnection @aws_iam @aws_cognito_user_pools {
+  items: [Receipt]!
+  nextToken: String
+}
+
+input ModelReceiptFilterInput {
+  userId: ModelIDInput
+  storeId: ModelIDInput
+  date: ModelStringInput
+  total: ModelFloatInput
+  rawText: ModelStringInput
+  parsedItems: ModelStringInput
+  status: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  id: ModelIDInput
+  and: [ModelReceiptFilterInput]
+  or: [ModelReceiptFilterInput]
+  not: ModelReceiptFilterInput
+  owner: ModelStringInput
+}
+
+input ModelReceiptConditionInput {
+  userId: ModelIDInput
+  storeId: ModelIDInput
+  date: ModelStringInput
+  total: ModelFloatInput
+  rawText: ModelStringInput
+  parsedItems: ModelStringInput
+  status: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelReceiptConditionInput]
+  or: [ModelReceiptConditionInput]
+  not: ModelReceiptConditionInput
+  owner: ModelStringInput
+}
+
+input CreateReceiptInput {
+  userId: ID!
+  storeId: ID
+  date: AWSDateTime!
+  total: Float!
+  rawText: String
+  parsedItems: AWSJSON!
+  status: String!
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID
+}
+
+input UpdateReceiptInput {
+  userId: ID
+  storeId: ID
+  date: AWSDateTime
+  total: Float
+  rawText: String
+  parsedItems: AWSJSON
+  status: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+}
+
+input DeleteReceiptInput {
+  id: ID!
+}
+
+input ModelSubscriptionReceiptFilterInput {
+  userId: ModelSubscriptionIDInput
+  storeId: ModelSubscriptionIDInput
+  date: ModelSubscriptionStringInput
+  total: ModelSubscriptionFloatInput
+  rawText: ModelSubscriptionStringInput
+  parsedItems: ModelSubscriptionStringInput
+  status: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  and: [ModelSubscriptionReceiptFilterInput]
+  or: [ModelSubscriptionReceiptFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelMealPlanConnection @aws_iam @aws_cognito_user_pools {
+  items: [MealPlan]!
+  nextToken: String
+}
+
+input ModelMealPlanFilterInput {
+  userId: ModelIDInput
+  startDate: ModelStringInput
+  days: ModelStringInput
+  totalCost: ModelFloatInput
+  avgNutritionPerDay: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  id: ModelIDInput
+  and: [ModelMealPlanFilterInput]
+  or: [ModelMealPlanFilterInput]
+  not: ModelMealPlanFilterInput
+  owner: ModelStringInput
+}
+
+input ModelMealPlanConditionInput {
+  userId: ModelIDInput
+  startDate: ModelStringInput
+  days: ModelStringInput
+  totalCost: ModelFloatInput
+  avgNutritionPerDay: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelMealPlanConditionInput]
+  or: [ModelMealPlanConditionInput]
+  not: ModelMealPlanConditionInput
+  owner: ModelStringInput
+}
+
+input CreateMealPlanInput {
+  userId: ID!
+  startDate: AWSDate!
+  days: AWSJSON!
+  totalCost: Float
+  avgNutritionPerDay: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID
+}
+
+input UpdateMealPlanInput {
+  userId: ID
+  startDate: AWSDate
+  days: AWSJSON
+  totalCost: Float
+  avgNutritionPerDay: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+}
+
+input DeleteMealPlanInput {
+  id: ID!
+}
+
+input ModelSubscriptionMealPlanFilterInput {
+  userId: ModelSubscriptionIDInput
+  startDate: ModelSubscriptionStringInput
+  days: ModelSubscriptionStringInput
+  totalCost: ModelSubscriptionFloatInput
+  avgNutritionPerDay: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  and: [ModelSubscriptionMealPlanFilterInput]
+  or: [ModelSubscriptionMealPlanFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelShoppingListConnection @aws_iam @aws_cognito_user_pools {
+  items: [ShoppingList]!
+  nextToken: String
+}
+
+input ModelShoppingListFilterInput {
+  userId: ModelIDInput
+  planId: ModelIDInput
+  items: ModelStringInput
+  totalEstimatedCost: ModelFloatInput
+  status: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  id: ModelIDInput
+  and: [ModelShoppingListFilterInput]
+  or: [ModelShoppingListFilterInput]
+  not: ModelShoppingListFilterInput
+  owner: ModelStringInput
+}
+
+input ModelShoppingListConditionInput {
+  userId: ModelIDInput
+  planId: ModelIDInput
+  items: ModelStringInput
+  totalEstimatedCost: ModelFloatInput
+  status: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelShoppingListConditionInput]
+  or: [ModelShoppingListConditionInput]
+  not: ModelShoppingListConditionInput
+  owner: ModelStringInput
+}
+
+input CreateShoppingListInput {
+  userId: ID!
+  planId: ID
+  items: AWSJSON!
+  totalEstimatedCost: Float
+  status: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID
+}
+
+input UpdateShoppingListInput {
+  userId: ID
+  planId: ID
+  items: AWSJSON
+  totalEstimatedCost: Float
+  status: String
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+}
+
+input DeleteShoppingListInput {
+  id: ID!
+}
+
+input ModelSubscriptionShoppingListFilterInput {
+  userId: ModelSubscriptionIDInput
+  planId: ModelSubscriptionIDInput
+  items: ModelSubscriptionStringInput
+  totalEstimatedCost: ModelSubscriptionFloatInput
+  status: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  and: [ModelSubscriptionShoppingListFilterInput]
+  or: [ModelSubscriptionShoppingListFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelPreferencesConnection @aws_iam @aws_cognito_user_pools {
+  items: [Preferences]!
+  nextToken: String
+}
+
+input ModelPreferencesFilterInput {
+  userId: ModelIDInput
+  dietaryProfile: ModelStringInput
+  allergens: ModelStringInput
+  dislikedIngredients: ModelStringInput
+  cuisineLikes: ModelStringInput
+  costTargetMin: ModelFloatInput
+  costTargetMax: ModelFloatInput
+  nutritionGoals: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  id: ModelIDInput
+  and: [ModelPreferencesFilterInput]
+  or: [ModelPreferencesFilterInput]
+  not: ModelPreferencesFilterInput
+  owner: ModelStringInput
+}
+
+input ModelPreferencesConditionInput {
+  userId: ModelIDInput
+  dietaryProfile: ModelStringInput
+  allergens: ModelStringInput
+  dislikedIngredients: ModelStringInput
+  cuisineLikes: ModelStringInput
+  costTargetMin: ModelFloatInput
+  costTargetMax: ModelFloatInput
+  nutritionGoals: ModelStringInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelPreferencesConditionInput]
+  or: [ModelPreferencesConditionInput]
+  not: ModelPreferencesConditionInput
+  owner: ModelStringInput
+}
+
+input CreatePreferencesInput {
+  userId: ID!
+  dietaryProfile: String
+  allergens: [String]
+  dislikedIngredients: [String]
+  cuisineLikes: [String]
+  costTargetMin: Float
+  costTargetMax: Float
+  nutritionGoals: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID
+}
+
+input UpdatePreferencesInput {
+  userId: ID
+  dietaryProfile: String
+  allergens: [String]
+  dislikedIngredients: [String]
+  cuisineLikes: [String]
+  costTargetMin: Float
+  costTargetMax: Float
+  nutritionGoals: AWSJSON
+  createdAt: AWSDateTime
+  updatedAt: AWSDateTime
+  id: ID!
+}
+
+input DeletePreferencesInput {
+  id: ID!
+}
+
+input ModelSubscriptionPreferencesFilterInput {
+  userId: ModelSubscriptionIDInput
+  dietaryProfile: ModelSubscriptionStringInput
+  allergens: ModelSubscriptionStringInput
+  dislikedIngredients: ModelSubscriptionStringInput
+  cuisineLikes: ModelSubscriptionStringInput
+  costTargetMin: ModelSubscriptionFloatInput
+  costTargetMax: ModelSubscriptionFloatInput
+  nutritionGoals: ModelSubscriptionStringInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  and: [ModelSubscriptionPreferencesFilterInput]
+  or: [ModelSubscriptionPreferencesFilterInput]
+  owner: ModelStringInput
+}
+
+type ModelAnalyticsEventConnection @aws_iam @aws_cognito_user_pools {
+  items: [AnalyticsEvent]!
+  nextToken: String
+}
+
+input ModelAnalyticsEventFilterInput {
+  userId: ModelIDInput
+  eventType: ModelStringInput
+  eventData: ModelStringInput
+  timestamp: ModelStringInput
+  id: ModelIDInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  and: [ModelAnalyticsEventFilterInput]
+  or: [ModelAnalyticsEventFilterInput]
+  not: ModelAnalyticsEventFilterInput
+  owner: ModelStringInput
+}
+
+input ModelAnalyticsEventConditionInput {
+  userId: ModelIDInput
+  eventType: ModelStringInput
+  eventData: ModelStringInput
+  timestamp: ModelStringInput
+  and: [ModelAnalyticsEventConditionInput]
+  or: [ModelAnalyticsEventConditionInput]
+  not: ModelAnalyticsEventConditionInput
+  createdAt: ModelStringInput
+  updatedAt: ModelStringInput
+  owner: ModelStringInput
+}
+
+input CreateAnalyticsEventInput {
+  userId: ID
+  eventType: String!
+  eventData: AWSJSON
+  timestamp: AWSDateTime!
+  id: ID
+}
+
+input UpdateAnalyticsEventInput {
+  userId: ID
+  eventType: String
+  eventData: AWSJSON
+  timestamp: AWSDateTime
+  id: ID!
+}
+
+input DeleteAnalyticsEventInput {
+  id: ID!
+}
+
+input ModelSubscriptionAnalyticsEventFilterInput {
+  userId: ModelSubscriptionIDInput
+  eventType: ModelSubscriptionStringInput
+  eventData: ModelSubscriptionStringInput
+  timestamp: ModelSubscriptionStringInput
+  id: ModelSubscriptionIDInput
+  createdAt: ModelSubscriptionStringInput
+  updatedAt: ModelSubscriptionStringInput
+  and: [ModelSubscriptionAnalyticsEventFilterInput]
+  or: [ModelSubscriptionAnalyticsEventFilterInput]
+  owner: ModelStringInput
+}
