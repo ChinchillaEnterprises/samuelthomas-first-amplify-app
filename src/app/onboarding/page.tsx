@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { motion } from 'framer-motion';
+import { getCurrentUser } from 'aws-amplify/auth';
 import { 
   MapPin, 
   Users, 
@@ -348,7 +349,7 @@ export default function Onboarding() {
                         placeholder="Add custom allergen"
                         value={customAllergen}
                         onChange={(e) => setCustomAllergen(e.target.value)}
-                        onKeyPress={(e) => {
+                        onKeyDown={(e) => {
                           if (e.key === 'Enter') {
                             e.preventDefault();
                             addCustomItem(customAllergen, 'allergens');
@@ -392,7 +393,7 @@ export default function Onboarding() {
                         placeholder="e.g., mushrooms, olives"
                         value={customDislike}
                         onChange={(e) => setCustomDislike(e.target.value)}
-                        onKeyPress={(e) => {
+                        onKeyDown={(e) => {
                           if (e.key === 'Enter') {
                             e.preventDefault();
                             addCustomItem(customDislike, 'dislikedIngredients');

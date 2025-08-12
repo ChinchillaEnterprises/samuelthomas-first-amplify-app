@@ -94,15 +94,17 @@ export const userApi = {
           id: existing.id,
           ...updates
         });
-        await offlineStorage.saveToCache('preferences', data);
-        return data;
+        const preferences = Array.isArray(data) ? data[0] : data;
+        await offlineStorage.saveToCache('preferences', preferences);
+        return preferences;
       } else {
         const { data } = await client.models.Preferences.create({
           userId,
           ...updates
         });
-        await offlineStorage.saveToCache('preferences', data);
-        return data;
+        const preferences = Array.isArray(data) ? data[0] : data;
+        await offlineStorage.saveToCache('preferences', preferences);
+        return preferences;
       }
     } catch (error) {
       // Queue for sync if offline
